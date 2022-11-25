@@ -1,6 +1,4 @@
+@use "./SCSS/Abstracts/variables/map-font-families" as *;
+
 @use "./SCSS/1-Project/reset" as *;
 @use "./SCSS/2-Branches" as *;
-
-html {
-  font-family: ElectronicArtsTextRegular;
-}

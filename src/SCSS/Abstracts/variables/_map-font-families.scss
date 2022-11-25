@@ -1,0 +1,22 @@
+$map-font-families: (
+  ff-ea-heading-400: unquote($string: "ElectronicArtsDisplayRegular, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-heading-900: unquote($string: "ElectronicArtsDisplayBold, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-text-100: unquote($string: "ElectronicArtsTextLight, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-text-400: unquote($string: "ElectronicArtsTextRegular, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-text-900: unquote($string: "ElectronicArtsTextBold, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-open-sans-400: unquote($string: "OpenSans, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-oswald-400: unquote($string: "OswaldRegular, verdana, Helvetica, Arial, sans-serif"),
+  ff-ea-oswald-900: unquote($string: "OswaldBold, verdana, Helvetica, Arial, sans-serif"),
+);
+
+:root {
+  @each $ff, $string in $map-font-families {
+    --#{$ff}: #{$string};
+  }
+}
+
+@each $ff, $string in $map-font-families {
+  .#{$ff} {
+    font-family: var(--#{$ff});
+  }
+}

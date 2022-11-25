@@ -23,6 +23,8 @@ export default function App() {
           </Route>
         </Route>
       </Routes>
+
+      <h1>Ultime Novità</h1>
     </>
   );
 }
