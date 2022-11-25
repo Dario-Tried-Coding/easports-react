@@ -1,5 +1,7 @@
+// ABSTRACTSSSSSSSS
 @use "./SCSS/Abstracts/variables/map-font-families" as *;
 @use "./SCSS/Abstracts/variables/map-colors" as *;
 
-@use "./SCSS/1-Project/reset" as *;
-@use "./SCSS/2-Branches" as *;
+// ATOMIC DESIGN
+@use "./SCSS/7-Project" as *;
+@use "./SCSS/6-Branches" as *;
