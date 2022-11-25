@@ -3,8 +3,3 @@
 
 @use "./SCSS/1-Project/reset" as *;
 @use "./SCSS/2-Branches" as *;
-
-h1 {
-  font-family: var(--ff-ea-heading-900);
-  color: var(--clr-brand-700);
-}
