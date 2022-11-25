@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import Home from "./5-Pages/Home";
-import Games from "./5-Pages/Games/Games";
-import ComingSoon from "./5-Pages/Games/ComingSoon";
+import Games from "./5-Pages/Games";
+import ComingSoon from "./5-Pages/ComingSoon";
 
 export default function App() {
   return (
