@@ -1,0 +1,84 @@
+@use "../mixins/mixin-breakpoints" as *;
+
+$map-font-sizes: (
+  fs: (
+    small: (
+    100: .875rem, //14px
+    200: .875rem, //14px
+    300: 1rem, //16px
+    400: 1rem, //16px
+    500: 1rem, //16px
+    600: 1.25rem, //20px
+    700: 1.25rem, //20px
+    800: 1.5rem, //24px
+    900: 2rem, //32px
+    1000: 2.25rem, //36px
+    ),
+    medium: (
+      100: .875rem, //14px
+      200: .875rem, //14px
+      300: 1rem, //16px
+      400: 1rem, //16px
+      500: 1rem, //16px
+      600: 1.25rem, //20px
+      700: 1.25rem, //20px
+      800: 1.5rem, //24px
+      900: 2rem, //32px
+      1000: 2.375rem, //38px
+    ),
+    large: (
+      100: .875rem, //14px
+      200: .875rem, //14px
+      300: 1rem, //16px
+      400: 1rem, //16px
+      500: 1.125rem, //18px
+      600: 1.25rem, //20px
+      700: 1.5rem, //24px
+      800: 1.5rem, //24px
+      900: 2.5rem, //40px
+      1000: 2.75rem, //44px
+    ),
+    xlarge: (
+      100: .875rem, //14px
+      200: 1rem, //16px
+      300: 1rem, //16px
+      400: 1.125rem, //18px
+      500: 1.125rem, //18px
+      600: 1.5rem, //24px
+      700: 1.5rem, //24px
+      800: 1.625rem, //26px
+      900: 2.75rem, //44px
+      1000: 3.375rem, //54px
+    )
+  )
+);
+
+:root {
+  @each $branch, $breakpoints in $map-font-sizes {
+    @each $breakpoint, $font-sizes in $breakpoints {
+      @if $breakpoint == small {
+        @each $font-size, $size in $font-sizes {
+          --#{$branch}-#{$font-size}: #{$size};
+        }
+      } @else if $breakpoint == medium {
+        @include mq($breakpoint) {
+          @each $font-size, $size in $font-sizes {
+            --#{$branch}-#{$font-size}: #{$size};
+          }
+        }
+      } @else if $breakpoint == large {
+        @include mq($breakpoint) {
+          @each $font-size, $size in $font-sizes {
+            --#{$branch}-#{$font-size}: #{$size};
+          }
+        }
+      } @else if $breakpoint == xlarge {
+        @include mq($breakpoint) {
+          @each $font-size, $size in $font-sizes {
+            --#{$branch}-#{$font-size}: #{$size};
+          }
+        }
+      }
+    }
+  }
+}
