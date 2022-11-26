@@ -6,4 +6,10 @@
   @media only screen and (min-width: $size) {
     @content
   }
-}
+};
+
+@mixin custom-mq($size: 0) {
+  @media only screen and (min-width: $size) {
+    @content
+  }
+};
