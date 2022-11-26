@@ -23,7 +23,7 @@ $map-font-families: (
 @each $branch, $families in $map-font-families {
   @each $family, $value in $families {
     .#{$branch}-#{$family} {
-      color: var(--#{$branch}-#{$family})
+      font-family: var(--#{$branch}-#{$family})
     };
   }
 }
