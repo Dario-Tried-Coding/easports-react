@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Home from "./5-Pages/Home";
 import Games from "./5-Pages/Games";
@@ -23,8 +24,6 @@ export default function App() {
           </Route>
         </Route>
       </Routes>
-
-      <h1>Ultime Novità</h1>
     </>
   );
 }
