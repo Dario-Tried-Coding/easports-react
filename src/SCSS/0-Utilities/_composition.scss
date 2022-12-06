@@ -1,4 +1,4 @@
-.grid-countainer {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(var(--columns, 1), 1fr);
   gap: var(--gap, 1rem);
