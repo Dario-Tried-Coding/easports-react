@@ -1,6 +1,9 @@
 // ABSTRACTSSSSSSSS
 @use "./SCSS/Abstracts/variables/index" as *;
 
+// UTILITY CLASSES
+@use "./SCSS/0-Utilities" as *;
+
 // ATOMIC DESIGN
 @use "./SCSS/7-Project" as *;
 @use "./SCSS/6-Branches" as *;
