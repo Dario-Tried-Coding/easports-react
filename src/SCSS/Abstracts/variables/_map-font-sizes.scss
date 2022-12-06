@@ -82,3 +82,36 @@ $map-font-sizes: (
     }
   }
 }
+
+@each $branch, $font-sizes in $map-font-sizes {
+  .#{$branch}-100 {
+    font-size: var(--#{$branch}-100);
+  }
+  .#{$branch}-200 {
+    font-size: var(--#{$branch}-200);
+  }
+  .#{$branch}-300 {
+    font-size: var(--#{$branch}-300);
+  }
+  .#{$branch}-400 {
+    font-size: var(--#{$branch}-400);
+  }
+  .#{$branch}-500 {
+    font-size: var(--#{$branch}-500);
+  }
+  .#{$branch}-600 {
+    font-size: var(--#{$branch}-600);
+  }
+  .#{$branch}-700 {
+    font-size: var(--#{$branch}-700);
+  }
+  .#{$branch}-800 {
+    font-size: var(--#{$branch}-800);
+  }
+  .#{$branch}-900 {
+    font-size: var(--#{$branch}-900);
+  }
+  .#{$branch}-1000 {
+    font-size: var(--#{$branch}-1000);
+  }
+}
