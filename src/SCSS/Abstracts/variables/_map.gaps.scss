@@ -1,0 +1,62 @@
+@use "../mixins/mixin-breakpoints" as *;
+
+$map-gaps: (
+  gap: (
+    small: (
+      cards-1: 1rem,
+      cards-2: 1rem,
+    ),
+    medium: (
+      cards-1: 1.5rem,
+      cards-2: 1.5rem,
+    ),
+    large: (
+      cards-1: 1.75rem,
+      cards-2: 1rem,
+    ),
+    xlarge: (
+      cards-1: 1.75rem,
+      cards-2: 1rem,
+    )
+  )
+);
+
+:root {
+  @each $branch, $breakpoints in $map-gaps {
+    @each $breakpoint, $gaps in $breakpoints {
+      @if $breakpoint == small {
+        @each $gap, $value in $gaps {
+          --#{$branch}-#{$gap}: #{$value};
+        }
+      } @else if $breakpoint == medium {
+        @include mq($breakpoint) {
+          @each $gap, $value in $gaps {
+            --#{$branch}-#{$gap}: #{$value};
+          }
+        }
+      } @else if $breakpoint == large {
+        @include mq($breakpoint) {
+          @each $gap, $value in $gaps {
+            --#{$branch}-#{$gap}: #{$value};
+          }
+        }
+      } @else if $breakpoint == xlarge {
+        @include mq($breakpoint) {
+          @each $gap, $value in $gaps {
+            --#{$branch}-#{$gap}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $branch, $breakpoints in $map-gaps {
+  @each $breakpoint, $gaps in $breakpoints {
+    @each $gap, $value in $gaps {
+      .#{$branch}-#{$gap} {
+        gap: var(--#{$branch}-#{$gap});
+      }
+    }
+  }
+}
