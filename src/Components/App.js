@@ -6,24 +6,14 @@ import ComingSoon from "./5-Pages/ComingSoon";
 
 export default function App() {
   return (
-    <>
-      <ul>
-        <li><NavLink end to={"/"}>Home</NavLink></li>
-        <ul>
-          <li><NavLink end to={"/games"}>Games</NavLink></li>
-          <li><NavLink end to={"/games/coming-soon"}>Coming Soon</NavLink></li>
-        </ul>
-      </ul>
-
-      <Routes>
-        <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="games">
-            <Route index element={<Games />} />
-            <Route path="coming-soon" element={<ComingSoon />} />
-          </Route>
+    <Routes>
+      <Route path="/">
+        <Route index element={<Home />} />
+        <Route path="games">
+          <Route index element={<Games />} />
+          <Route path="coming-soon" element={<ComingSoon />} />
         </Route>
-      </Routes>
-    </>
+      </Route>
+    </Routes>
   );
 }
