@@ -1,0 +1,58 @@
+body {
+  color: var(--clr-dark-700);
+  background-color: var(--clr-light-400);
+  
+  font-family: var(--ff-text-400);
+  font-size: var(--fs-400);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3, 
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: var(--ff-heading-900);
+}
+
+h1 { 
+  //per niente
+  font-size: var(--fs-1000);
+}
+
+h2 {
+  //titoli sezioni
+  font-size: var(--fs-900);
+}
+
+h3 {
+  //titolo sezione secondaria && sub-heading hero section
+  font-size: var(--fs-700);
+}
+
+h4 {
+  //titoli carte
+  font-size: var(--fs-800);
+}
+
+h5 {
+  // sub-heading di sezione senza heading
+  font-size: var(--fs-400);
+}
+
+h6 {
+  // heading piccole piccole example: footer piccolo piccolo
+  font-size: var(--fs-200);
+}
+
+.h5-UI {
+  font-size: var(--fs-300);
+}
+.h6-UI {
+  font-size: var(--fs-100);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
