@@ -1,0 +1,104 @@
+@import "../../Abstracts/mixins";
+
+.flow > * + * {
+  margin-top: 6px;
+}
+
+.container {
+  // layout
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  
+  // colors
+  background-color: var(--clr-light-100, white);
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 50%);
+
+  // text
+  text-align: center;
+
+  // movements
+  transition: 0.5s ease;
+
+  animation: mounting-animation 0.5s ease;
+  @keyframes mounting-animation {
+    from {
+        transform: translateY(-12px);
+        box-shadow: 0px 28px 30px -3px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0px 28px 30px -3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.img, .body {
+  display: none;
+}
+
+.h4 {
+  line-height: 25px;
+}
+
+.info {
+  gap: 14px;
+}
+.h6 {
+  line-height: 18.9px;
+}
+.from {
+  color: var(--clr-brand-700);
+}
+
+.body {
+  font-size: var(--fs-500);
+}
+
+@include mq(medium) {
+  .container {
+    padding: 0;
+    text-align: left;
+  }
+  
+  .img, .body {
+    display: block;
+  }
+
+  .info {
+    display: flex;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .h6 {
+    display: inline-block;
+  }
+}
+
+@include mq(large) {
+  .container {
+    padding: 0;
+  }
+  
+  .h4 {
+    line-height: 30px;
+  }
+}
+
+@include mq(xlarge) {
+  .h4 {
+    line-height: 32.4px;
+  }
+  
+  .h6 {
+    line-height: 21.6px;
+  }
+}

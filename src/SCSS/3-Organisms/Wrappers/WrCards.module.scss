@@ -1,0 +1,19 @@
+@import "../../Abstracts/mixins/mixin-breakpoints";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding-inline: var(--padd-inline-section);
+}
+
+@include mq(medium) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include mq(large) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
