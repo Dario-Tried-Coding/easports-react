@@ -1,3 +1,4 @@
+
 $map-colors: (
   //next branches -> ex: crl-battlefield or something like that
   clr: (
@@ -15,6 +16,26 @@ $map-colors: (
     dark-900: hsl(0, 0%, 0%) //#000000
   )
 );
+
+/**
+  * @tokens Colors
+  * @presenter Color
+  */
+$light-100: hsl(0, 0%, 100%); //#ffffff
+$light-400: hsl(0, 0%, 95%); //#f2f2f2
+$light-900: hsl(0, 0%, 64%); //#a3a3a3
+
+$brand-400: hsl(0, 100%, 64%); //#FF4747
+$brand-700: hsl(352, 100%, 56%); //#FF1E3C
+
+$dark-200: hsl(60, 1%, 35%); //#5a5a58
+$dark-400: hsl(0, 0%, 35%); //#595959
+$dark-500: hsl(0, 0%, 15%); //#262626
+$dark-700: hsl(0, 0%, 9%); //#171717
+$dark-900: hsl(0, 0%, 0%); //#000000
+/**
+  * @tokens-end
+  */
 
 :root {
   @each $branch, $colors in $map-colors {
