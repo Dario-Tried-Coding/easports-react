@@ -12,6 +12,22 @@ $map-font-families: (
   )
 );
 
+/**
+* @tokens Font Families
+* @presenter FontFamily
+*/
+$heading-400: ElectronicArtsDisplayRegular, verdana, Helvetica, Arial, sans-serif;
+$heading-900: ElectronicArtsDisplayBold, verdana, Helvetica, Arial, sans-serif;
+$text-100: ElectronicArtsTextLight, verdana, Helvetica, Arial, sans-serif;
+$text-400: ElectronicArtsTextRegular, verdana, Helvetica, Arial, sans-serif;
+$text-900: ElectronicArtsTextBold, verdana, Helvetica, Arial, sans-serif;
+$open-sans-400: OpenSans, verdana, Helvetica, Arial, sans-serif;
+$oswald-400: OswaldRegular, verdana, Helvetica, Arial, sans-serif;
+$oswald-900: OswaldBold, verdana, Helvetica, Arial, sans-serif;
+/**
+* @tokens-end
+*/
+
 :root {
   @each $branch, $families in $map-font-families {
     @each $family, $value in $families {
