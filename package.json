@@ -71,6 +71,7 @@
     "prop-types": "^15.8.1",
     "sass": "^1.56.1",
     "storybook-addon-react-router-v6": "^0.2.1",
+    "storybook-dark-mode": "^2.0.4",
     "webpack": "^5.75.0"
   }
 }

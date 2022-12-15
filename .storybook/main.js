@@ -10,7 +10,8 @@ module.exports = {
     "@storybook/preset-create-react-app",
     "storybook-addon-react-router-v6",
     'storybook-design-token',
-    'storybook-addon-breakpoints'
+    'storybook-addon-breakpoints',
+    'storybook-dark-mode'
   ],
   "framework": "@storybook/react",
   "core": {
