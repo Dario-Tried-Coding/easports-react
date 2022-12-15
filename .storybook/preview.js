@@ -9,6 +9,15 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  breakpoints: {
+    breakpointNames: {
+      'small': '0',
+      'medium': '768',
+      'large': '1024',
+      'xlarge': '1440'
+    },
+    debounceTimeout: 200
+  }
 }
 
 export const decorators = [

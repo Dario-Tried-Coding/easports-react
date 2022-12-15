@@ -9,7 +9,8 @@ module.exports = {
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
     "storybook-addon-react-router-v6",
-    'storybook-design-token'
+    'storybook-design-token',
+    'storybook-addon-breakpoints'
   ],
   "framework": "@storybook/react",
   "core": {
