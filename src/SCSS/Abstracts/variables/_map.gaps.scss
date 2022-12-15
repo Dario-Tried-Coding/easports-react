@@ -21,6 +21,16 @@ $map-gaps: (
   )
 );
 
+/**
+* @tokens Gaps
+* @presenter Spacing
+*/
+$gap-cards-1: 1.75rem;
+$gap-cards-2: 1rem;
+/**
+* @tokens-end
+*/
+
 :root {
   @each $branch, $breakpoints in $map-gaps {
     @each $breakpoint, $gaps in $breakpoints {

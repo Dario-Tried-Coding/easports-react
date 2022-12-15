@@ -17,6 +17,15 @@ $map-padding: (
   )
 );
 
+/**
+* @tokens Paddings
+* @presenter Spacing
+*/
+$padd-inline-section: calc((100vw - 1120px) / 2);
+/**
+* @tokens-end
+*/
+
 :root {
   @each $branch, $breakpoints in $map-padding {
     @each $breakpoint, $paddings in $breakpoints {

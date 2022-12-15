@@ -57,49 +57,16 @@ $map-font-sizes: (
 * @tokens Font Sizes
 * @presenter FontSize
 */
-$fs-100-small: .875rem;
-$fs-200-small: .875rem;
-$fs-300-small: 1rem;
-$fs-400-small: 1rem;
-$fs-500-small: 1rem;
-$fs-600-small: 1.25rem;
-$fs-700-small: 1.25rem;
-$fs-800-small: 1.5rem;
-$fs-900-small: 2rem;
-$fs-1000-small: 2.25rem;
-
-$fs-100-medium: .875rem;
-$fs-200-medium: .875rem;
-$fs-300-medium: 1rem;
-$fs-400-medium: 1rem;
-$fs-500-medium: 1rem;
-$fs-600-medium: 1.25rem;
-$fs-700-medium: 1.25rem;
-$fs-800-medium: 1.5rem;
-$fs-900-medium: 2rem;
-$fs-1000-medium: 2.375rem;
-
-$fs-100-large: .875rem;
-$fs-200-large: .875rem;
-$fs-300-large: 1rem;
-$fs-400-large: 1rem;
-$fs-500-large: 1.125rem;
-$fs-600-large: 1.25rem;
-$fs-700-large: 1.5rem;
-$fs-800-large: 1.5rem;
-$fs-900-large: 2.5rem;
-$fs-1000-large: 2.75rem;
-
-$fs-100-xlarge: .875rem;
-$fs-200-xlarge: 1rem;
-$fs-300-xlarge: 1rem;
-$fs-400-xlarge: 1.125rem;
-$fs-500-xlarge: 1.125rem;
-$fs-600-xlarge: 1.5rem;
-$fs-700-xlarge: 1.5rem;
-$fs-800-xlarge: 1.625rem;
-$fs-900-xlarge: 2.75rem;
-$fs-1000-xlarge: 3.375rem;
+$fs-100: .875rem; //14px -> 14px -> 14px -> 14px
+$fs-200: 1rem; //14px -> 14px -> 14px -> 16px
+$fs-300: 1rem; //16px -> 16px -> 16px -> 16px
+$fs-400: 1.125rem; //16px -> 16px -> 16px -> 18px
+$fs-500: 1.125rem; //16px -> 16px -> 18px -> 18px
+$fs-600: 1.5rem; //20px -> 20px -> 20px -> 24px
+$fs-700: 1.5rem; //20px -> 20px -> 24px -> 24px
+$fs-800: 1.625rem; //24px -> 24px -> 24px -> 26px
+$fs-900: 2.75rem; //32px -> 32px -> 40px -> 44px
+$fs-1000: 3.375rem; //36px -> 38px -> 44px -> 54px
 /**
 * @tokens-end
 */
