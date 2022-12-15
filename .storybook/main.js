@@ -12,14 +12,8 @@ module.exports = {
     'storybook-design-token',
     'storybook-addon-breakpoints',
     'storybook-dark-mode',
-    {
-      name: '@storybook/addon-storysource',
-      options: {
-        loaderOptions: {
-          injectStoryParameters: false,
-        },
-      },
-    },
+    '@storybook/addon-storysource',
+    "@whitespace/storybook-addon-html"
   ],
   "framework": "@storybook/react",
   "core": {
