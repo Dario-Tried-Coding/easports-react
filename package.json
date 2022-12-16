@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.6.0",
     "redux": "^4.2.0",
     "storybook-addon-breakpoints": "^1.0.0",
     "storybook-design-token": "^2.8.0",
