@@ -1,0 +1,17 @@
+.btn{
+    cursor: pointer;
+    background: none;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 15px 30px;
+    transition: padding 0.1s;
+    font-family: ElectronicArtsText, Verdana, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    opacity: 0.9;
+    margin: 100px 500px 0px 0px;
+}
+
+
+.btn:hover{
+  padding: 18px 35px;
+}
