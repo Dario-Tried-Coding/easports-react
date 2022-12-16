@@ -1,4 +1,4 @@
-const cards = [
+const cardsData = [
   {
     img: "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/eacom-general-featured-image-16x9.png.adapt.crop16x9.431p.png",
     from: "Electronic Arts Inc.",
@@ -43,4 +43,4 @@ const cards = [
   }
 ]
 
-export default JSON.stringify(cards)
+export default JSON.stringify(cardsData)
