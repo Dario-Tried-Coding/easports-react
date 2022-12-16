@@ -19,7 +19,7 @@
   text-align: center;
 
   // movements
-  transition: 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 
   animation: mounting-animation 0.5s ease;
   @keyframes mounting-animation {
