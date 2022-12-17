@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 
 function Section({ title = "Placeholder Title Default", children }) {
   return (
-    <div className="flow-spacer-section-100">
-      <h2 className={style.title}>{title}</h2>
+    <div className={`flow-spacer-section-100 ${style.section}`}>
+      <h2>{title}</h2>
       {children}
     </div>
   );

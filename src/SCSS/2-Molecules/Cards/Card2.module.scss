@@ -13,29 +13,9 @@
   
   // colors
   background-color: var(--clr-light-100, white);
-  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 50%);
-
+  
   // text
   text-align: center;
-
-  // movements
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-
-  animation: mounting-animation 0.5s ease;
-  @keyframes mounting-animation {
-    from {
-        transform: translateY(-12px);
-        box-shadow: 0px 28px 30px -3px rgba(0, 0, 0, 0.5);
-    }
-    to {
-        box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  &:hover {
-    transform: translateY(-12px);
-    box-shadow: 0px 28px 30px -3px rgba(0, 0, 0, 0.5);
-  }
 }
 
 .img, .body {

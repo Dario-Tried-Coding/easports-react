@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./5-Pages/Home";
 import Games from "./5-Pages/Games";
 import ComingSoon from "./5-Pages/ComingSoon";
