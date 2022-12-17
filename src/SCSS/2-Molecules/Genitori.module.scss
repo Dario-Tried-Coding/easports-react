@@ -1,0 +1,58 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
+.flow > * + * {
+  margin-top: 16px;
+}
+.blocco_genitori {
+  text-align: center;
+  padding-inline: var(--padd-inline-section);
+  padding-block: 32px 16px;
+}
+@include mq(large) {
+  .blocco_genitori {
+    padding-block: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 96px;
+    align-items: center;
+  }
+
+  .flow > * + * {
+    margin-top: 0px;
+  }
+}
+@include mq(xlarge) {
+  .blocco_genitori {
+    height: 112px;
+  }
+}
+.genitori_gio {
+  width: 500px;
+  height: 70.22;
+  color: black;
+  .genitori {
+    font-family: var(--ff-heading-900);
+  }
+}
+.bottone_genitori1 {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem 0rem 0rem;
+}
+.scopridipiu1 {
+  cursor: pointer;
+  background: none;
+  border: 1, 5px solid black;
+  border-radius: 3px;
+  padding: 15px 30px;
+  transition: padding 0.1s;
+  font-family: var(--ff-text-400);
+  font-size: 18px;
+  color: #161616;
+  opacity: 0.9;
+
+  &:hover {
+    padding: 18px 35px;
+  }
+}

@@ -1,17 +1,24 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss" ;
 .btn{
     cursor: pointer;
     background: none;
     border: 1px solid;
     border-radius: 3px;
-    padding: 15px 30px;
+    padding: 12px 24px;
     transition: padding 0.1s;
-    font-family: ElectronicArtsText, Verdana, Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    opacity: 0.9;
-    margin: 100px 500px 0px 0px;
+   width: 100%;
 }
 
-
-.btn:hover{
-  padding: 18px 35px;
+@include custom-mq(640px) {
+  .btn{
+    width: auto;
+  }
 }
+@include mq(xlarge) {
+  .btn{
+    padding: 16px 24px;
+  }
+}
+// .btn:hover{
+//   padding: 18px 35px;
+// }
