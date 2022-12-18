@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <h1>Home</h1>
-      <Section title="Ultime Novità">
+      <Section btnSpacer={"3rem 0 0 0"} title="Ultime Novità">
         <WrCards gap="--gap-cards-2">
           {ultimeNovita.map((obj, index) => (
             <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />
