@@ -1,24 +1,36 @@
-@import "../Abstracts/mixins/_mixin-breakpoints.scss" ;
-.btn{
-    cursor: pointer;
-    background: none;
-    border: 1px solid;
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 3px;
+  width: 100%;
+
+  .border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid;
     border-radius: 3px;
-    padding: 12px 24px;
-    transition: padding 0.1s;
-   width: 100%;
+
+    transition: inset 0.1s;
+  }
+}
+
+.btn:hover {
+  .border {
+    inset: -3px;
+  }
 }
 
 @include custom-mq(640px) {
-  .btn{
+  .btn {
     width: auto;
   }
 }
 @include mq(xlarge) {
-  .btn{
+  .btn {
     padding: 16px 24px;
   }
 }
-// .btn:hover{
-//   padding: 18px 35px;
-// }

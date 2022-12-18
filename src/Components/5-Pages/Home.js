@@ -20,7 +20,7 @@ export default function Home() {
           ))}
         </WrCards>
       </Section>
-      <Genitori  heading='Genitori: il controllo dei videogiochi è nelle vostre mani.' btnContent='Scopri di più'/>
+      <Genitori  heading='Genitori: il controllo dei videogiochi è nelle vostre mani.' btnContent='Scopri di più' />
     </>
   );
 }
