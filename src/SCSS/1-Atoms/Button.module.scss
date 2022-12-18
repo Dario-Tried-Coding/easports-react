@@ -34,7 +34,7 @@
     width: auto;
   }
 }
-@include mq(xlarge) {
+@include mq(large) {
   .btn {
     padding: 16px 24px;
   }
