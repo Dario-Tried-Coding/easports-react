@@ -5,7 +5,7 @@ import React from "react";
 import Card2 from "Components/2-Molecules/Cards/Card2";
 
 export default {
-  title: "Templates/Sections/Section",
+  title: "Templates/Section",
   component: Section,
 };
 
