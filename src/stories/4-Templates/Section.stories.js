@@ -22,5 +22,4 @@ export const ultimeNovita = (args) => {
 };
 ultimeNovita.args = {
   title: "Placeholder Title",
-  btnSpacer: "1rem"
 }

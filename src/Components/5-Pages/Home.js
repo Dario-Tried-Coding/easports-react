@@ -13,14 +13,12 @@ export default function Home() {
   return (
     <>
       <h1>Home</h1>
-      <Section btnSpacer={"3rem 0"} title="Ultime Novità">
-        <WrCards gap="--gap-cards-2">
-          {ultimeNovita.map((obj, index) => (
-            <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />
-          ))}
+      <Section>
+        <WrCards>
+          {ultimeNovita.map((obj, index) => <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />)}
         </WrCards>
       </Section>
-      <Genitori  heading='Genitori: il controllo dei videogiochi è nelle vostre mani.' btnContent='Scopri di più' />
+      <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
     </>
   );
 }
