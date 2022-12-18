@@ -13,7 +13,8 @@ module.exports = {
     'storybook-addon-breakpoints',
     'storybook-dark-mode',
     '@storybook/addon-storysource',
-    "@whitespace/storybook-addon-html"
+    "@whitespace/storybook-addon-html",
+    "storybook-color-picker"
   ],
   "framework": "@storybook/react",
   "core": {
