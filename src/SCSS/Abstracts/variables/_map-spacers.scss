@@ -6,13 +6,13 @@ $map-flow-spacers: (
       section-100: 1.5rem,
     ),
     medium: (
-      section-100: 1.75rem,
-    ),
-    large: (
       section-100: 2rem,
     ),
+    large: (
+      section-100: 2.5rem,
+    ),
     xlarge: (
-      section-100: 2.25rem,
+      section-100: 3rem,
     ),
   ),
 );
@@ -21,7 +21,7 @@ $map-flow-spacers: (
 * @tokens Flow Spacers
 * @presenter Spacing
 */
-$flow-spacer-section-100: 2.25rem; //24px -> 28px -> 32px -> 36px
+$flow-spacer-section-100: 3rem; //24px -> 32px -> 40px -> 48px
 /**
 * @tokens-end
 */
