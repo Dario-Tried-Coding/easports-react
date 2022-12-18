@@ -1,12 +1,17 @@
 @import "../Abstracts/mixins/_mixin-breakpoints.scss";
 
+.link {
+  display: inline-block;
+  width: calc(100% - (var(--marg-inline-section) * 2))
+}
+
 .btn {
   position: relative;
   cursor: pointer;
   border: none;
   padding: 12px 24px;
   border-radius: 3px;
-  width: calc(100% - (var(--marg-inline-section) * 2));
+  width: 100%;
 
   .border {
     position: absolute;
@@ -25,7 +30,7 @@
 }
 
 @include custom-mq(640px) {
-  .btn {
+  .link {
     width: auto;
   }
 }
