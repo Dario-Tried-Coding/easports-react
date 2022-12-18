@@ -24,7 +24,7 @@ export default {
     bgClr: {
       control: {
         type: "color",
-        presetColors: ["hsl(0, 0%, 95%)", "hsl(0, 0%, 9%)"]
+        presetColors: ["hsl(0, 0%, 95%)", "hsl(0, 0%, 9%)", "hsla(0, 0%, 100%, 0)"]
       }
     }
   },
