@@ -2,6 +2,7 @@
 .flow > * + * {
   margin-top: 16px;
 }
+
 .blocco_genitori {
   text-align: center;
   padding-block: 32px 16px;
@@ -10,7 +11,6 @@
 .heading {
   padding-inline: var(--padd-inline-section);
   font-size: var(--fs-800);
-  margin-bottom: 1rem;
 }
 
 @include mq(large) {
