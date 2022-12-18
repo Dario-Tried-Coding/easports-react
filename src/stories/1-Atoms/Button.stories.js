@@ -45,7 +45,9 @@ export default {
   }
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <div style={{textAlign: "center"}}>
+  <Button {...args} />
+</div>;
 
 export const template = Template.bind({});
 template.args = {
