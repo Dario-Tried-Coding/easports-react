@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <h1>Home</h1>
       <Section>
-        <WrCards>
+        <WrCards gap="--gap-cards-2">
           {ultimeNovita.map((obj, index) => <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />)}
         </WrCards>
       </Section>
