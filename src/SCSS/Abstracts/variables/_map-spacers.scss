@@ -1,0 +1,67 @@
+@use "../mixins/mixin-breakpoints" as *;
+
+$map-flow-spacers: (
+  flow-spacer: (
+    small: (
+      section-100: 1.5rem,
+    ),
+    medium: (
+      section-100: 1.75rem,
+    ),
+    large: (
+      section-100: 2rem,
+    ),
+    xlarge: (
+      section-100: 2.25rem,
+    ),
+  ),
+);
+
+/**
+* @tokens Flow Spacers
+* @presenter Spacing
+*/
+$flow-spacer-section-100: 2.25rem; //24px -> 28px -> 32px -> 36px
+/**
+* @tokens-end
+*/
+
+:root {
+  @each $branch, $breakpoints in $map-flow-spacers {
+    @each $breakpoint, $flow-spacers in $breakpoints {
+      @if $breakpoint == small {
+        @each $flow-spacer, $value in $flow-spacers {
+          --#{$branch}-#{$flow-spacer}: #{$value};
+        }
+      } @else if $breakpoint == medium {
+        @include mq($breakpoint) {
+          @each $flow-spacer, $value in $flow-spacers {
+            --#{$branch}-#{$flow-spacer}: #{$value};
+          }
+        }
+      } @else if $breakpoint == large {
+        @include mq($breakpoint) {
+          @each $flow-spacer, $value in $flow-spacers {
+            --#{$branch}-#{$flow-spacer}: #{$value};
+          }
+        }
+      } @else if $breakpoint == xlarge {
+        @include mq($breakpoint) {
+          @each $flow-spacer, $value in $flow-spacers {
+            --#{$branch}-#{$flow-spacer}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $branch, $breakpoints in $map-flow-spacers {
+  @each $breakpoint, $flow-spacers in $breakpoints {
+    @each $flow-spacer, $value in $flow-spacers {
+      .#{$branch}-#{$flow-spacer} > * + * {
+        margin-top: var(--#{$branch}-#{$flow-spacer});
+      }
+    }
+  }
+}

@@ -1,1 +1,0 @@
-Giusto un placeholder da cancellare non appena avremo qualcosa nella cartella
