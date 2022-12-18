@@ -1,8 +1,8 @@
-import { Genitori } from "Components/2-Molecules/Cards/Genitori";
+import { Genitori } from "Components/4-Templates/Genitori";
 import React from "react";
 
 export default {
-  title: "Molecules/Genitori",
+  title: "Templates/Genitori",
   component: Genitori,
 };
 

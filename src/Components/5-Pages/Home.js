@@ -2,7 +2,7 @@ import React from "react";
 import Section from "Components/4-Templates/Section";
 import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 import Card2 from "Components/2-Molecules/Cards/Card2";
-import { Genitori } from 'Components/2-Molecules/Cards/Genitori';
+import { Genitori } from 'Components/4-Templates/Genitori';
 
 // Mock Data
 import UltimeNovita from "Mock-Data/Home/UltimeNovita";
