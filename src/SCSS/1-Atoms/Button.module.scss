@@ -6,7 +6,7 @@
   border: none;
   padding: 12px 24px;
   border-radius: 3px;
-  width: 100%;
+  width: calc(100% - (var(--marg-inline-section) * 2));
 
   .border {
     position: absolute;

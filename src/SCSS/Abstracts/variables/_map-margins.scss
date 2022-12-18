@@ -1,0 +1,67 @@
+@use "../mixins/mixin-breakpoints" as *;
+
+$map-margins: (
+  marg: (
+    small: (
+      inline-section: 7.5vw,
+    ),
+    medium: (
+      inline-section: 7.8125vw,
+    ),
+    large: (
+      inline-section: 7.4218vw,
+    ),
+    xlarge: (
+      inline-section: calc((100vw - 1120px) / 2),
+    )
+  )
+);
+
+/**
+* @tokens Margins
+* @presenter Spacing
+*/
+$marg-inline-section: calc((100vw - 1120px) / 2);
+/**
+* @tokens-end
+*/
+
+:root {
+  @each $branch, $breakpoints in $map-margins {
+    @each $breakpoint, $margins in $breakpoints {
+      @if $breakpoint == small {
+        @each $margin, $value in $margins {
+          --#{$branch}-#{$margin}: #{$value};
+        }
+      } @else if $breakpoint == medium {
+        @include mq($breakpoint) {
+          @each $margin, $value in $margins {
+            --#{$branch}-#{$margin}: #{$value};
+          }
+        }
+      } @else if $breakpoint == large {
+        @include mq($breakpoint) {
+          @each $margin, $value in $margins {
+            --#{$branch}-#{$margin}: #{$value};
+          }
+        }
+      } @else if $breakpoint == xlarge {
+        @include mq($breakpoint) {
+          @each $margin, $value in $margins {
+            --#{$branch}-#{$margin}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $branch, $breakpoints in $map-margins {
+  @each $breakpoint, $margins in $breakpoints {
+    @each $margin, $value in $margins {
+      .#{$branch}-#{$margin} {
+        margin-inline: var(--#{$branch}-#{$margin});
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ function Section({btnSpacer = "0", title = "Placeholder Title Default", children
     <div className={`flow-spacer-section-100 ${style.section}`}>
       <h2>{title}</h2>
       {children}
-      <Button margins={btnSpacer}/>
+      <Button marginsBlock={btnSpacer}/>
     </div>
   );
 }
