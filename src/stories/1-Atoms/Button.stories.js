@@ -10,6 +10,11 @@ export default {
         disable: true
       }
     },
+    marginsBlock: {
+      table: {
+        disable: true
+      }
+    },
     clr: {
       control: {
         type: "color",
