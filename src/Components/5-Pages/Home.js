@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "Components/4-Templates/Section";
-import WrCards from "Components/3-Organisms/Wrappers/WrCards";
-import Card2 from "Components/2-Molecules/Cards/Card2";
+import Cards2Set from "Components/3-Organisms/Cards2Set";
 import { Genitori } from 'Components/4-Templates/Genitori';
 
 // Mock Data
@@ -13,10 +12,8 @@ export default function Home() {
   return (
     <>
       <h1>Home</h1>
-      <Section>
-        <WrCards gap="--gap-cards-2">
-          {ultimeNovita.map((obj, index) => <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />)}
-        </WrCards>
+      <Section title="Ultime Novità" btnContent="placeholder">
+        <Cards2Set data={ultimeNovita} />
       </Section>
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
     </>
