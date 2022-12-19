@@ -4,6 +4,7 @@ $map-colors: (
   clr: (
     light-100: hsl(0, 0%, 100%), //#ffffff | rgb(255, 255, 255)
     light-400: hsl(0, 0%, 95%), //#f2f2f2 | rgb(242, 242, 242)
+    light-500: hsl(0, 0%, 87%), //#dedede | rgb(222, 222, 222)
     light-900: hsl(0, 0%, 64%), //#a3a3a3 | rgb(163, 163, 163)
 
     brand-400: hsl(0, 100%, 64%), //#FF4747 | rgb(255, 71, 71)
@@ -25,6 +26,7 @@ $map-colors: (
   */
 $light-100: hsl(0, 0%, 100%); //#ffffff | rgb(255, 255, 255)
 $light-400: hsl(0, 0%, 95%); //#f2f2f2 | rgb(242, 242, 242)
+$light-500: hsl(0, 0%, 87%); //#dedede | rgb(222, 222, 222)
 $light-900: hsl(0, 0%, 64%); //#a3a3a3 | rgb(163, 163, 163)
 
 $brand-400: hsl(0, 100%, 64%); //#FF4747 | rgb(255, 71, 71)
