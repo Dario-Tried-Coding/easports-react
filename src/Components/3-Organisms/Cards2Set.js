@@ -1,5 +1,6 @@
 import SliderTab from "Components/1-Atoms/SliderTab";
 import Card2 from "Components/2-Molecules/Cards/Card2";
+import Slider1 from "Components/2-Molecules/Sliders/Slider1";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import WrCards from "./Wrappers/WrCards";
@@ -17,11 +18,7 @@ function Cards2Set({ data }) {
 
   return (
     <>
-      <div>
-        {data.map((obj, index) => (
-          <SliderTab key={index} title={obj.setTitle} onClick={handleClick} active={obj.setTitle === activeSet.setTitle ? true : false} />
-        ))}
-      </div>
+      <Slider1 data={data} activate={handleClick} activeSet={activeSet}/>
       <WrCards gap="--gap-cards-2">
         {activeSet.cards.map((obj, index) => (
           <Card2 img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />

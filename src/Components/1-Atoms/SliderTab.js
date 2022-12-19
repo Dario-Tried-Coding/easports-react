@@ -15,8 +15,9 @@ function SliderTab({ title = "default", active = false, onClick }) {
   }
 
   return (
-    <li onClick={handleActivation} title={title} className={`${style["tab-container"]}`}>
+    <li onClick={handleActivation} title={title} className={`${style["tab-container"]} ${isActive ? style.active : undefined}`}>
       <span className={`${style.tab}`}>{title}</span>
+      <span className={`${style.divider}`}></span>
       <motion.span className={`${style.border}`} animate={isActive ? "open" : "close"} variants={variants} ></motion.span>
     </li>
   );

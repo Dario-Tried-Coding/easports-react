@@ -14,7 +14,7 @@
   &:hover,
   &:active,
   &:focus {
-    background-color: var(--clr-light-500);
+    background-color: hsla(0, 0%, 85%, 0.678);
   }
 
   & .border {
@@ -29,6 +29,18 @@
     font-size: var(--fs-500);
     padding-inline: 1rem;
   }
+}
+
+.tab-container.active {
+  background-color: hsla(0, 0%, 85%, 0.678);
+}
+
+.tab-container + .tab-container .divider {
+  position: absolute;
+  height: 50%;
+  width: 2px;
+  left: -1px;
+  background-color: var(--clr-light-500);
 }
 
 @include mq(medium) {
