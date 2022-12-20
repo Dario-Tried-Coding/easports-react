@@ -26,10 +26,10 @@ export default function Home() {
           return cards.map((card, i) => {
             return < Card
             key={card + i}
-            containerClass={`${style["fifa23-card"]}`}
+            containerClass={card.containerClass}
             imgPath={card.imgPath}
             altIMg={card.altIMg}
-            logoClass={`${style["fifa23-logo"]}`}
+            logoClass={card.logoClass}
             imgLogoPath={card.imgLogoPath}
             altLogo={card.altLogo}
             width={card.width}/>

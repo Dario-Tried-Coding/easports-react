@@ -25,7 +25,7 @@ const Cards = (props) => {
               <img
                 src={imgLogoPath}
                 alt={altLogo}
-               style={{width: width}}
+               style={{width: width}} //height - width needs an Object in JSX
               />
             </div>
             <p>Sito ufficiale</p>
