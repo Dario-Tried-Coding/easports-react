@@ -1,16 +1,19 @@
 import React from "react";
+import Card from "Components/2-Molecules/Card";
+import CardsWrapper from "Components/3-Organisms/Wrappers/CardsWrapper";
 import Section from "Components/4-Templates/Section";
 import WrCards from "Components/3-Organisms/Wrappers/WrCards";
-import Card2 from "Components/2-Molecules/Cards/Card2";
 import { Genitori } from 'Components/4-Templates/Genitori';
 
 // Mock Data
 import UltimeNovita from "Mock-Data/Home/UltimeNovita";
-import Card from "Components/2-Molecules/Card";
-import CardsWrapper from "Components/3-Organisms/CardsWrapper";
+import Card2 from "Components/2-Molecules/Cards/Card2";
 
 //Style for Cards
 import style from "../../SCSS/2-Molecules/Cards/Card.module.scss";
+import CardsSection from "Components/4-Templates/CardsSection";
+
+
 
 export default function Home() {
   const ultimeNovita = JSON.parse(UltimeNovita);
@@ -19,25 +22,25 @@ export default function Home() {
     <>
       <h1>Home</h1>
 
-        <section className={style["section-wrapper"]}>
-        <h1>Giochi in evidenza</h1>
-      <CardsWrapper wrapperClass={style["cards-wrapper"]}>
-        {cards => {
-          return cards.map((card, i) => {
-            return < Card
-            key={card + i}
-            containerClass={card.containerClass}
-            imgPath={card.imgPath}
-            altIMg={card.altIMg}
-            logoClass={card.logoClass}
-            imgLogoPath={card.imgLogoPath}
-            altLogo={card.altLogo}
-            width={card.width}/>
-          })
-        }}
-      </CardsWrapper>
-       </section>
-
+        <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
+         <CardsWrapper wrapperClass={style["cards-wrapper"]}>
+          {cards => {
+           return cards.map((card, i) => {
+             return < Card
+             key={card + i}
+             containerClass={card.containerClass}
+             imgPath={card.imgPath}
+             altIMg={card.altIMg}
+             logoClass={card.logoClass}
+             imgLogoPath={card.imgLogoPath}
+             altLogo={card.altLogo}
+             width={card.width}
+             link={<p>Sito Ufficiale</p>}
+             height={card.height}/>
+           })
+         }}
+         </CardsWrapper>
+        </CardsSection>
 
       <Section>
         <WrCards gap="--gap-cards-2">

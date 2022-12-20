@@ -1,11 +1,18 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import style from "../../SCSS/2-Molecules/Cards/Card.module.scss";
+
 
 const Cards = (props) => {
 
-  const {containerClass, imgPath, altIMg, logoClass, imgLogoPath, altLogo, width} = props
-
+  const {containerClass,
+    imgPath,
+    altIMg,
+    logoClass,
+    imgLogoPath,
+    altLogo,
+    height,
+    width,
+    link} = props
 
     return (
 
@@ -15,7 +22,7 @@ const Cards = (props) => {
           <i class="bi bi-x"></i>
         </div> */}
 
-        <NavLink end to = "#">
+          <NavLink end to = "#">
           <div className={containerClass}>
             <img
               src={imgPath}
@@ -25,12 +32,12 @@ const Cards = (props) => {
               <img
                 src={imgLogoPath}
                 alt={altLogo}
-               style={{width: width}} //height - width needs an Object in JSX
+               style={{height: height, width: width}} //height - width needs an Object in JSX
               />
             </div>
-            <p>Sito ufficiale</p>
+            {link}
           </div>
-        </NavLink>
+          </NavLink>
       </div>
      );
 }
