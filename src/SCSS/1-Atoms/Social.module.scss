@@ -1,0 +1,77 @@
+.blocco_social {
+    display: flex;
+    flex-direction: column;
+    width: 238px;
+    height: 62px;
+  }
+  
+  .social_logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 13px;
+     h3 {
+      font-size: var(--fs-500)
+    }
+  }
+  
+  .blocco_loghi {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .facebooklogo {
+    width: 22px;
+    height: 22px;
+    
+  }
+  
+  .facebooklogo:hover {
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+  }
+  
+  .twitterlogo {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .twitterlogo:hover {
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+  }
+  
+  .youtubelogo {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .youtubelogo:hover {
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+  }
+  
+  .instagramlogo {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .instagramlogo:hover {
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+  }
+  
+  .twitchlogo {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .twitchlogo:hover {
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+  }

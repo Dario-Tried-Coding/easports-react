@@ -1,0 +1,33 @@
+.blocco_link_gio {
+    display: flex;
+    flex-direction: row;
+    background-color: #eaeaea;
+    /*  width: 100vw; */
+    /* height: 200px; */
+    justify-content: space-around;
+    align-items: center;
+  }
+.linkf_gio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 884px;
+    height: 81px;
+    @for $i from 1 to 7 {
+     div a:nth-child(#{$i}) {
+        font-size: var(--fs-200)
+      }
+    }
+  }
+  
+  .link_gio {
+    text-decoration: none;
+    color: black;
+    margin: 8px 48px 5px 0px;
+  }
+  
+  .link_gio:hover {
+    text-decoration: none;
+    color: orangered;
+  }

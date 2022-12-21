@@ -5,6 +5,7 @@ import Section from "Components/4-Templates/Section";
 import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 import { Genitori } from 'Components/4-Templates/Genitori';
 
+
 // Mock Data
 import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 import Card2 from "Components/2-Molecules/Cards/Card2";
@@ -12,6 +13,7 @@ import Card2 from "Components/2-Molecules/Cards/Card2";
 //Style for Cards
 import style from "../../SCSS/2-Molecules/Cards/Card.module.scss";
 import CardsSection from "Components/4-Templates/CardsSection";
+import { Links } from "Components/2-Molecules/Links";
 
 
 
@@ -48,6 +50,7 @@ export default function Home() {
         </WrCards>
       </Section>
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
+      <Links />
     </>
   );
 }
