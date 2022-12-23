@@ -21,7 +21,7 @@ const Template = ({numOfChildren, ...args}) => (
     {[...
     // @ts-ignore
     Array(numOfChildren).keys()].map(n => (
-      <div style={{width: "100%", height: "50px", backgroundColor: "red"}}></div>
+      <div style={{width: "100%", height: "50px", backgroundColor: "lightGrey", borderRadius: "5px"}}></div>
     ))}
   </WrCards>
 )
