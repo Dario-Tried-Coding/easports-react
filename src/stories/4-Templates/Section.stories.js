@@ -1,8 +1,8 @@
-import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 import Section from "Components/4-Templates/Section";
 import React from "react";
 
-import Card2 from "Components/2-Molecules/Cards/Card2";
+import Cards2Set from "Components/3-Organisms/Cards2Set";
+import ultimeNovitaMockData from "../../Mock-Data/Home/UltimeNovita"
 
 export default {
   title: "Templates/Section",
@@ -10,13 +10,9 @@ export default {
 };
 
 export const ultimeNovita = (args) => {
-  const mockData = Array(6).fill("a")
-
   return (
     <Section {...args}>
-      <WrCards gap="--gap-cards-2">
-        {mockData.map(item => <Card2 />)}
-      </WrCards>
+      <Cards2Set data={JSON.parse(ultimeNovitaMockData)} />
     </Section>
   )
 };
