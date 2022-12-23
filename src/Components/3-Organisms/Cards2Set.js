@@ -21,7 +21,7 @@ function Cards2Set({ data }) {
       <Slider1 data={data} activate={handleClick} activeSet={activeSet}/>
       <WrCards gap="--gap-cards-2">
         {activeSet.cards.map((obj, index) => (
-          <Card2 img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />
+          <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />
         ))}
       </WrCards>
     </>
