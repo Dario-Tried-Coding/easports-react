@@ -1,8 +1,8 @@
+import Card2 from "Components/2-Molecules/Cards/Card2";
+import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 import Section from "Components/4-Templates/Section";
+import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 import React from "react";
-
-import Cards2Set from "Components/3-Organisms/Cards2Set";
-import ultimeNovitaMockData from "../../Mock-Data/Home/UltimeNovita"
 
 export default {
   title: "Templates/Section",
@@ -29,14 +29,11 @@ template.args = {
 }
 
 export const ultimeNovita = (args) => {
-<<<<<<< HEAD
-=======
-  const mockData = Array(6).fill("")
-
->>>>>>> dev
   return (
     <Section {...args}>
-      <Cards2Set data={JSON.parse(ultimeNovitaMockData)} />
+      <WrCards>
+        {JSON.parse(UltimeNovita)[0].cards.map((obj, index) => <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />)}
+      </WrCards>
     </Section>
   )
 };
