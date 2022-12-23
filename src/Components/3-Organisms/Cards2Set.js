@@ -1,4 +1,3 @@
-import SliderTab from "Components/1-Atoms/SliderTab";
 import Card2 from "Components/2-Molecules/Cards/Card2";
 import Slider1 from "Components/2-Molecules/Sliders/Slider1";
 import React, { useState } from "react";

@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "Components/2-Molecules/Cards/Card1";
-import Card2 from "Components/2-Molecules/Cards/Card2";
 import CardsWrapper from "Components/3-Organisms/Wrappers/Custom/CardsWrapper";
 import CardsSection from "Components/4-Templates/Custom/CardsSection";
 import Section from "Components/4-Templates/Section";
@@ -31,7 +30,7 @@ export default function Home() {
         </CardsWrapper>
       </CardsSection>
 
-      <Section title="Ultime Novità" btnContent="placeholder">
+      <Section title="Ultime Novita" btnContent="Scopri di più">
         <Cards2Set data={ultimeNovita} />
       </Section>
 
