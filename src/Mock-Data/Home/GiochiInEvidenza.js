@@ -1,5 +1,5 @@
 //Cards database passed as a prop
-import style from "../../SCSS/2-Molecules/Cards/Card.module.scss"
+import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss"
 
 const cardsDatabase = [
     {
