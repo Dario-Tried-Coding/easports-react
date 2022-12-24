@@ -12,12 +12,16 @@ export default {
       type: "number",
       defaultValue: 1
     },
+    flowRem:{
+      options: ["--flow-spacer-section-100"],
+      control: {type: "select"}
+    }
   }
 };
 
-export const template = ({numOfChildren, args}) => {
+export const template = ({numOfChildren, flowRem, args}) => {
   return (
-    <Section {...args}>
+    <Section flowRem={flowRem} {...args}>
       {Array(numOfChildren).fill("").map(el => <div style={{height: "250px", width: "100%", backgroundColor: "lightGrey", borderRadius: "5px"}}></div> )}
     </Section>
   )
@@ -25,12 +29,13 @@ export const template = ({numOfChildren, args}) => {
 template.args = {
   title: "Placeholder Title",
   btnContent: "Placeholder",
-  numOfChildren: 1
+  numOfChildren: 1,
+  flowRem: "--flow-spacer-section-100"
 }
 
-export const ultimeNovita = (args) => {
+export const ultimeNovita = ({flowRem, args}) => {
   return (
-    <Section {...args}>
+    <Section flowRem={flowRem} {...args}>
       <WrCards>
         {JSON.parse(UltimeNovita)[0].cards.map((obj, index) => <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />)}
       </WrCards>
@@ -40,6 +45,7 @@ export const ultimeNovita = (args) => {
 ultimeNovita.args = {
   title: "Ultime Novità",
   btnContent: "Scopri di più",
+  flowRem: "--flow-spacer-section-100"
 }
 ultimeNovita.parameters = {
   controls: {
