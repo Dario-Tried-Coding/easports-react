@@ -7,11 +7,13 @@ import Cards2Set from "Components/3-Organisms/Cards2Set";
 
 import { Genitori } from "Components/4-Templates/Genitori";
 
+
 // Mock Data
 import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 
 //Style for Cards
 import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
+import { Links } from "Components/4-Templates/Links";
 
 export default function Home() {
   const ultimeNovita = JSON.parse(UltimeNovita);
@@ -35,6 +37,8 @@ export default function Home() {
       </Section>
 
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
+      
+      <Links />
     </>
   );
 }
