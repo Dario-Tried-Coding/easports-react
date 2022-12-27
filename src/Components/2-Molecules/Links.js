@@ -23,6 +23,7 @@ return(
             </div>
             
         </div>
+        <hr className={style.hr} />
         <Social />
     </div>
     

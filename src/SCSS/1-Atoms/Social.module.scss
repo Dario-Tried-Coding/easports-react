@@ -1,23 +1,17 @@
+.title_social {
+  font-size: var(--fs-200);
+  margin: 0px 0px 20px 0px;
+}
 .blocco_social {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.blocco_loghi {
     display: flex;
-    flex-direction: column;
-    width: 238px;
-    height: 62px;
-  }
-  
-  .social_logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 13px;
-     h3 {
-      font-size: var(--fs-500)
-    }
-  }
-  
-  .blocco_loghi {
-    display: flex;
-    justify-content: space-around;
+    justify-content:flex-start;
+    gap:25px;
   }
   
   .facebooklogo {

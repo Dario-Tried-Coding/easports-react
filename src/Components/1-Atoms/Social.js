@@ -4,9 +4,8 @@ import style from "../../SCSS/1-Atoms/Social.module.scss"
 export function Social(){
     return(
         <div className={style.blocco_social}>
-            <div className={style.social_logo}>
-                <h3 className={style.title_social}>Partecipa alla conversazione</h3>
-            </div>
+            
+            <h3 className={style.title_social}>Partecipa alla conversazione</h3>
             <div className={style.blocco_loghi}>
                 <div className={style.facebooklogo}>
                     <a href="https://www.facebook.com/EA/">
@@ -36,8 +35,8 @@ export function Social(){
                         </svg>
                     </a>
                 </div>
-                {/*
-                 NELLE PATH E' PRESENTE DICITURA bx:origin CHE DA ERRORE E NON FA RENDERIZZARE IL LOGO.
+                
+                 {/* NELLE PATH E' PRESENTE DICITURA bx:origin CHE DA ERRORE E NON FA RENDERIZZARE IL LOGO.
                 
                 <div className="instagramlogo">
                 <a className="instalogo" href="https://www.instagram.com/ea/"
@@ -60,8 +59,8 @@ export function Social(){
                         d="M 12.265 2.755 C 11.552 2.75 11.1 3.548 11.452 4.191 C 11.805 4.834 12.697 4.84 13.058 4.202 C 13.14 4.057 13.184 3.891 13.185 3.723 C 13.19 3.192 12.777 2.757 12.265 2.755 Z"
                         bx:origin="0.554 0.462"
                       ></path>
-                    </g></svg></a>
-              </div> */}
+                    </g></svg></a> 
+    </div>*/}
           
           <div className={style.twitchlogo}>
             <a className="ttchlogo" href="https://www.twitch.tv/ea"
