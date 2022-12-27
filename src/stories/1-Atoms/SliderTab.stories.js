@@ -20,9 +20,9 @@ template.args = {
   title: "Placeholder Title",
   active: false
 };
-template.parameters = {
-  controls: {
-    exclude: ["onClick"]
+template.argTypes = {
+  onClick: {
+    control: false
   }
 }
 
@@ -31,8 +31,8 @@ active.args = {
   title: "Placeholder Title",
   active: true
 };
-active.parameters = {
-  controls: {
-    exclude: ["onClick"]
+active.argTypes = {
+  onClick: {
+    control: false
   }
 }
