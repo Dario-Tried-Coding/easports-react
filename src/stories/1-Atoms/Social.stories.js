@@ -3,12 +3,18 @@ import React from "react";
 
 export default {
   title: "Atoms/Social",
-  component: Social,
+  component: Social
 };
 
-const Template = (args) => <div style={{textAlign: "center"}}>
-  <Social {...args} />
+const Template = (right, args) => <div style={{display: "flex", justifyContent: "center"}}>
+  <div style={{border: "5px solid lightGrey", borderRadius: 10, padding: 20}}>
+    <Social {...args} />
+  </div>
 </div>;
 
 export const template = Template.bind({});
-
+template.parameters = {
+  controls: {
+    exclude: ["className"]
+  }
+}
