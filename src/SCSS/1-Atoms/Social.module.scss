@@ -1,3 +1,4 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
 .title_social {
   font-size: var(--fs-200);
   margin: 0px 0px 20px 0px;
@@ -16,4 +17,10 @@
 
 .logo:hover {
   transform: scale(1.2);
+}
+
+@include mq(xlarge) {
+  .blocco_loghi {
+    gap: 35px;
+  }
 }

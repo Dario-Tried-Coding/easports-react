@@ -1,9 +1,9 @@
 import React from "react";
 import style from "../../SCSS/1-Atoms/Social.module.scss";
 
-export function Social() {
+export function Social({className = null}) {
   return (
-    <div className={style.blocco_social}>
+    <div className={`${style.blocco_social} ${className}`}>
       <h3 className={style.title_social}>Partecipa alla conversazione</h3>
       <div className={style.blocco_loghi}>
         <div className={style.logo}>

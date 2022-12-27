@@ -13,7 +13,7 @@ import Card2 from "Components/2-Molecules/Cards/Card2";
 //Style for Cards
 import style from "../../SCSS/2-Molecules/Cards/Card.module.scss";
 import CardsSection from "Components/4-Templates/CardsSection";
-import { Links } from "Components/2-Molecules/Links";
+import { Links } from "Components/4-Templates/Links";
 
 
 

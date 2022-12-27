@@ -1,4 +1,4 @@
-import { Links } from "../../Components/2-Molecules/Links";
+import { Links } from "../../Components/4-Templates/Links";
 import React from "react";
 
 export default {

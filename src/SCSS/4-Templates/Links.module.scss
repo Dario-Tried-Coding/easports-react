@@ -1,0 +1,71 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
+.wrapper {
+  --padd-inline: 22px;
+  @include mq(medium) {
+    --padd-inline: var(--padd-inline-section)
+  }
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-light-500);
+  align-items: stretch;
+  padding: 44px var(--padd-inline) 70px;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  & a {
+    font-size: var(--fs-300);
+  }
+}
+.link:hover {
+  text-decoration: none;
+  color: var(--clr-brand-400);
+}
+
+.hr {
+  background-color: black;
+  width: 100%;
+  margin-block: 15px 20px;
+}
+
+@include mq(medium){
+  .links {
+    display: flex;
+    justify-content: flex-start;
+    gap:30px;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .hr{
+    display: none;
+  }
+}
+
+@include mq(large){
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-block: 44px;
+  }
+
+  .links {
+    margin-bottom: 0;
+  }
+
+  .social > h3 {
+    text-align: right;
+  }
+}
+
+@include mq(xlarge) {
+  .wrapper {
+    padding-block: 60px;
+  }
+}
