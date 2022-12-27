@@ -6,7 +6,7 @@ import { Button } from "../1-Atoms/Button";
 function Section({title = "Placeholder Title Default", btnContent = "default", children }) {
   return (
     <div className={`flow-spacer-section-100 ${style.section}`}>
-      <h2>{title}</h2>
+      <h2 className={style.h2}>{title}</h2>
       {children}
       <Button content={btnContent} />
     </div>
@@ -14,7 +14,8 @@ function Section({title = "Placeholder Title Default", btnContent = "default", c
 }
 
 Section.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  btnContent: PropTypes.string,
 }
 
 export default Section;

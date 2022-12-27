@@ -1,8 +1,8 @@
+import Card2 from "Components/2-Molecules/Cards/Card2";
 import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 import Section from "Components/4-Templates/Section";
+import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 import React from "react";
-
-import Card2 from "Components/2-Molecules/Cards/Card2";
 
 export default {
   title: "Templates/Section",
@@ -11,7 +11,7 @@ export default {
     numOfChildren: {
       type: "number",
       defaultValue: 1
-    },
+    }
   }
 };
 
@@ -25,16 +25,14 @@ export const template = ({numOfChildren, args}) => {
 template.args = {
   title: "Placeholder Title",
   btnContent: "Placeholder",
-  numOfChildren: 1
+  numOfChildren: 1,
 }
 
-export const ultimeNovita = (args) => {
-  const mockData = Array(6).fill("")
-
+export const ultimeNovita = ({args}) => {
   return (
     <Section {...args}>
-      <WrCards gap="--gap-cards-2">
-        {mockData.map(item => <Card2 />)}
+      <WrCards>
+        {JSON.parse(UltimeNovita)[0].cards.map((obj, index) => <Card2 key={index} img={obj.img} from={obj.from} date={obj.date} title={obj.title} body={obj.body} />)}
       </WrCards>
     </Section>
   )
