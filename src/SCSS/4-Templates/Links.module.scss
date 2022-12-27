@@ -14,7 +14,7 @@
 
 .links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   row-gap: 10px;
   & a {
     font-size: var(--fs-300);
@@ -29,6 +29,13 @@
   background-color: black;
   width: 100%;
   margin-block: 15px 20px;
+}
+
+@include custom-mq(320px) {
+  .links {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
 }
 
 @include mq(medium){
