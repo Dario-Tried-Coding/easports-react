@@ -1,0 +1,48 @@
+.container_gio {
+    display: flex;
+    position: relative;
+    height: 410px;
+  }
+  
+  .blocco_bgplay {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: absolute;
+  }
+  
+  .bg_play {
+    height: 410px;
+    width: 100%;
+    // display: inline-block;
+  }
+  
+  .play {
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 320px;
+    flex-direction: column;
+}
+  
+  .scritta_play {
+    display: flex;
+    position: relative;
+    color: white;
+    width: 544px;
+    height: 54px;
+    font-size: 27px;
+  }
+  
+  .h6_play {
+    margin-bottom: 24px;
+    justify-content: center;
+    align-items: center;
+    // font-family: map-get($ultimi-giochi-font, heading);
+  }
+  
+  .img_play {
+    width: 240px;
+    height: 101px;
+  }
+  
