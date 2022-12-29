@@ -33,7 +33,7 @@
 }
 
 @include custom-mq(640px) {
-  .link {
+  .link, .link.full {
     width: auto;
   }
 }
