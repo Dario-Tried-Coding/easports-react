@@ -4,6 +4,9 @@
   display: inline-block;
   width: calc(100% - (var(--marg-inline-section) * 2))
 }
+.link.full {
+  width: 100%;
+}
 
 .btn {
   position: relative;
