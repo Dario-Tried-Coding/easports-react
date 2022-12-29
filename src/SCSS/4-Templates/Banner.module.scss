@@ -9,11 +9,12 @@
 }
 
 .contentWrapper {
+  --marg-inline: var(--marg-inline-section);
   position: absolute;
   inset: 0;
   margin-block: auto;
   height: min-content;
-  margin-inline: var(--marg-inline-section);
+  margin-inline: var(--marg-inline);
 
   display: flex;
   flex-direction: column;
@@ -22,4 +23,28 @@
 
 .contentWrapper > *:first-child {
   width: 100%;
+}
+
+@include mq(medium) {
+  .contentWrapper > *:first-child {
+    width: max-content;
+  }
+
+  .contentWrapper.left {
+    align-items: flex-start;
+  }
+
+  .contentWrapper.center {
+    align-items: center;
+  }
+
+  .contentWrapper.right {
+    align-items: flex-end;
+  }
+}
+
+@include mq(xlarge) {
+  .contentWrapper {
+    --marg-inline: var(--custom-marg-inline, 1rem);
+  }
 }

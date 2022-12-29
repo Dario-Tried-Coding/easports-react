@@ -13,9 +13,12 @@ import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 //Style for Cards
 import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
 import { Links } from "Components/4-Templates/Links";
+import Play from "Mock-Data/Home/Play";
+import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 
 export default function Home() {
   const ultimeNovita = JSON.parse(UltimeNovita);
+  const play = JSON.parse(Play)
 
   return (
     <>
@@ -34,9 +37,11 @@ export default function Home() {
       <Section title="Ultime Novita" btnContent="Scopri di più">
         <Cards2Set data={ultimeNovita} />
       </Section>
-      <Banner btnTransparent={false} btnContent="Sfoglia offerte" btnBgColor="white">
+      
+      <Banner bgImageData={play} btnTransparent={false} btnContent="Sfoglia offerte" btnBgColor="white">
         <h6>Ciao</h6>
       </Banner>
+
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
 
       <Links />
