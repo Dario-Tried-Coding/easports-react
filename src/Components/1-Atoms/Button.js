@@ -6,7 +6,7 @@ export function Button({marginsBlock = "0", fullWidth = false, content = "Placeh
     return (
         <Link to={to} className={fullWidth ? `${style.link} ${style.full}` : `${style.link}`} >
             <button style={{ color: `${clr}`, backgroundColor: `${bgClr}`, marginBlock: `${marginsBlock}` }} className={style.btn} type="submit">
-                <span style={{borderColor: `${transparent ? clr : bgClr}`}} className={style.border}></span>
+                <span style={{borderColor: `${transparent ? clr : bgClr}`, backgroundColor: `${bgClr}`}} className={style.border}></span>
                 {content}
             </button>
         </Link>
