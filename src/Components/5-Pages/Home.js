@@ -18,7 +18,7 @@ import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 
 export default function Home() {
   const ultimeNovita = JSON.parse(UltimeNovita);
-  const play = JSON.parse(Play)
+  const play = JSON.parse(Play);
 
   return (
     <>
@@ -37,13 +37,9 @@ export default function Home() {
       <Section title="Ultime Novita" btnContent="Scopri di più">
         <Cards2Set data={ultimeNovita} />
       </Section>
-      
-      <Banner bgImageData={play} btnTransparent={false} btnContent="Sfoglia offerte" btnBgColor="white">
-        <h6>Ciao</h6>
-      </Banner>
 
+      <Banner textPosition="left" textAlign="left" bgImageData={play}  btnContent="Sfoglia offerte" btnColor="var(--clr-light-400)" logoImg="https://media.contentapi.ea.com/content/dam/eacom/subscription/ea-play/common/hero-logos/color/ea-play-logo-coral-hero-logo-small.svg" body="Non limitarti al gioco. Gioca al massimo. Sblocca ricompense esclusive, contenuti per i soli membri e una libreria dei migliori titoli." />
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
-
       <Links />
     </>
   );

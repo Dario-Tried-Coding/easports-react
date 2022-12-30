@@ -25,6 +25,18 @@
   width: 100%;
 }
 
+.contentWrapper > div > img {
+  max-width: 240px;
+}
+.contentWrapper > div > *:last-child{
+  margin-top: 16px;
+}
+.contentWrapper > div > .body {
+  line-height: 16px;
+  font-family: var(--ff-heading-400);
+  font-weight: 400;
+  letter-spacing: normal;
+}
 @include mq(medium) {
   .contentWrapper > *:first-child {
     width: max-content;
@@ -41,10 +53,28 @@
   .contentWrapper.right {
     align-items: flex-end;
   }
+  .contentWrapper > .childContent {
+    width: 40%;
+  }
+  
+}
+@include mq(large){
+  .contentWrapper > div > *:last-child{
+    margin-top: 21px;
+  }
+  .contentWrapper > div > .body {
+    line-height: 18px;
+  }
 }
 
 @include mq(xlarge) {
   .contentWrapper {
     --marg-inline: var(--custom-marg-inline, 1rem);
+  }
+  .contentWrapper > .childContent {
+    width: 50%;
+  }
+  .contentWrapper > div > *:last-child{
+    margin-top: 24px;
   }
 }
