@@ -4,6 +4,22 @@
   position: relative;
 }
 
+.container.stacked {
+  padding-top: 56.25%;
+  .img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .contentWrapper {
+    position: relative;
+
+    & > .childContent {
+      margin-block: 32px;
+    }
+  }
+}
+
 .img {
   z-index: -1;
 }
@@ -31,48 +47,93 @@
 .contentWrapper > div > *:last-child{
   margin-top: 16px;
 }
+.contentWrapper > div > .title {
+  line-height: 41.1px;
+}
+.contentWrapper > div > .subtitle {
+  margin-top: 13px;
+  font-family: var(--ff-heading-400);
+  font-weight: 400;
+}
 .contentWrapper > div > .body {
-  line-height: 16px;
+  line-height: 24px;
   font-family: var(--ff-heading-400);
   font-weight: 400;
   letter-spacing: normal;
 }
 @include mq(medium) {
+  .container.stacked {
+    padding-block: unset;
+
+    .img {
+      position: unset;
+    }
+
+    .contentWrapper {
+      --marg-inline: var(--marg-inline-section);
+      position: absolute;
+      inset: 0;
+      margin-block: auto;
+      height: min-content;
+      margin-inline: var(--marg-inline);
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & > .childContent {
+        margin-block: unset;
+      }
+    }
+  }
   .contentWrapper > *:first-child {
     width: max-content;
   }
 
-  .contentWrapper.left {
+  .contentWrapper.left, .container.stacked .contentWrapper.left {
     align-items: flex-start;
   }
 
-  .contentWrapper.center {
+  .contentWrapper.center, .container.stacked .contentWrapper.center {
     align-items: center;
   }
 
-  .contentWrapper.right {
+  .contentWrapper.right, .container.stacked .contentWrapper.right {
     align-items: flex-end;
   }
   .contentWrapper > .childContent {
-    width: 40%;
+    width: 45%;
   }
   
+  .contentWrapper > div > .title {
+    line-height: 43.7px;
+  }
 }
 @include mq(large){
   .contentWrapper > div > *:last-child{
     margin-top: 21px;
   }
   .contentWrapper > div > .body {
-    line-height: 18px;
+    line-height: 27px;
+  }
+  .contentWrapper > div > .title {
+    line-height: 50.6px;
   }
 }
 
 @include mq(xlarge) {
-  .contentWrapper {
+  .contentWrapper, .container.stacked .contentWrapper {
     --marg-inline: var(--custom-marg-inline, 1rem);
   }
   .contentWrapper > .childContent {
+    max-width: 650px;
     width: 50%;
+  }
+  .contentWrapper > div > .title {
+    line-height: 62.1px;
+  }
+  .contentWrapper > div > .subtitle {
+    margin-top: 15.6px;
   }
   .contentWrapper > div > *:last-child{
     margin-top: 24px;
