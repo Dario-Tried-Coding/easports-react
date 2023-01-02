@@ -9,6 +9,19 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  backgrounds: {
+    default: 'light',
+    values: [
+      {
+        name: 'light',
+        value: '#f2f2f2',
+      },
+      {
+        name: 'dark',
+        value: '#9a9a9a',
+      },
+    ],
+  },
   breakpoints: {
     breakpointNames: {
       'small': '0',

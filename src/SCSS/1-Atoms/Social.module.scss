@@ -1,0 +1,26 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
+.title_social {
+  font-size: var(--fs-200);
+  margin: 0px 0px 20px 0px;
+}
+
+.blocco_loghi {
+  display: flex;
+  gap: 25px;
+}
+
+.logo {
+  width: 22px;
+  height: 22px;
+  transition-duration: 0.2s;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+@include mq(xlarge) {
+  .blocco_loghi {
+    gap: 35px;
+  }
+}
