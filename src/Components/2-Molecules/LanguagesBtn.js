@@ -6,9 +6,8 @@ const LanguagesBtn = () => {
   return (
     <div className="languages-text">
       <h5>language</h5>
-      <p onClick={() => setIsOpen(true)}>
-        language <span onClick={() => setIsOpen(false)}> :--</span>
-      </p>
+      <p onClick={() => setIsOpen(true)}>language</p>
+      <span onClick={() => setIsOpen(false)}> :--</span>
       {isOpen && <LanguagesModal />}
     </div>
   );
