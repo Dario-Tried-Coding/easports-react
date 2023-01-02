@@ -1,3 +1,7 @@
+import LanguagesBtn from "Components/2-Molecules/LanguagesBtn";
+
+import RegionsBtn from "Components/2-Molecules/RegionsBtn";
+
 import React from "react";
 import "../../SCSS/4-Templates/Footer-style.scss";
 const Footer = () => {
@@ -17,15 +21,24 @@ const Footer = () => {
           <div className="aiuto">Aiuto</div>
         </div>
         <div className="section2">
-          <div className="section2-n1">Note legali e privacy</div>
-          <div className="section2-n2">Accordo con l'utente</div>
-          <div className="section2-n3">Politica sulla privacy e sui cookie (i tuoi diritti sulla privacy)</div>
-          <div className="section2-n4">Termini di servizio di YouTube</div>
-          <div className="section2-n5">Norme sulla privacy di Google</div>
-          <div className="section2-n6">© 2023 Electronic Arts Inc.</div>
+          <div className="privacy">Note legali e privacy</div>
+          <div className="accordo-con-utente">Accordo con l'utente</div>
+          <div className="cookie-policy">Politica sulla privacy e sui cookie (i tuoi diritti sulla privacy)</div>
+          <div className="youtube-policy">Termini di servizio di YouTube</div>
+          <div className="google-privacy">Norme sulla privacy di Google</div>
+          <div className="eletronic-arts">© 2023 Electronic Arts Inc.</div>
         </div>
       </section>
-      <aside></aside>
+      <aside>
+        <div className="regions">
+          <RegionsBtn />
+        </div>
+        <div className="languages">
+          <LanguagesBtn />
+        </div>
+        <div className="online-services">Aggiornamenti sui servizi online</div>
+        <div className="privacy-logo"></div>
+      </aside>
     </div>
   );
 };
