@@ -37,7 +37,7 @@ const Footer = () => {
           <LanguagesBtn />
         </div>
         <div className="online-services">Aggiornamenti sui servizi online</div>
-        <div className="privacy-logo"></div>
+        <div className="privacy-logo">LOGO</div>
       </aside>
     </div>
   );

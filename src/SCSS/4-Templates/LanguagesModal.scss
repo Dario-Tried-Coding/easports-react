@@ -1,0 +1,37 @@
+.languagesBlock {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-flow: column;
+  border: 2px solid grey;
+  background-color: white;
+  .firstBlock {
+    display: flex;
+    height: 450px;
+    width: 500px;
+    border: 2px solid grey;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        flex: 32%;
+        border-bottom: 1px solid grey;
+      }
+    }
+  }
+  .secondBlock {
+    display: flex;
+    height: 450px;
+    width: 500px;
+    border: 2px solid grey;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        flex: 32%;
+        justify-content: flex-start;
+        border-bottom: 1px solid grey;
+      }
+    }
+  }
+}

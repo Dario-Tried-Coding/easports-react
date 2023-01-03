@@ -1,8 +1,8 @@
 import React from "react";
-
+import "../../SCSS/4-Templates/LanguagesModal.scss";
 const LanguagesModal = () => {
   return (
-    <div>
+    <div className="languagesBlock">
       <div className="firstBlock">
         <ul>
           <li>United States</li>
