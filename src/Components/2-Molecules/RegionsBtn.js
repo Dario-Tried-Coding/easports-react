@@ -10,8 +10,8 @@ const RegionsBtn = () => {
         <h5>prezzi per regione</h5>
         <p onClick={() => setIsOpen(true)}>state</p>
         <span onClick={() => setIsOpen(false)}>:--</span>
-        {isOpen && <RegionsModal />}
       </div>
+      {isOpen && <RegionsModal />}
     </>
   );
 };
