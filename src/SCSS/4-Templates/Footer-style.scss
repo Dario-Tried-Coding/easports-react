@@ -126,6 +126,7 @@
     font-size: small;
     border: 2px solid violet;
     .regions {
+      position: relative;
       grid-column: 2/3;
       grid-row: 2/3;
       //border: 2px solid violet;
@@ -137,6 +138,7 @@
       }
     }
     .languages {
+      position: relative;
       grid-column: 4/5;
       grid-row: 2/3;
       // border: 2px solid violet;
