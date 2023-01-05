@@ -48,6 +48,7 @@ export default function Home() {
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
 
       <Links />
+      {/* <Footer /> */}
       <Footer />
     </>
   );

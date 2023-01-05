@@ -7,6 +7,7 @@
   background-color: white;
   .firstBlock {
     display: flex;
+    z-index: 100;
     height: 450px;
     width: 500px;
     border: 2px solid grey;
@@ -21,6 +22,7 @@
   }
   .secondBlock {
     display: flex;
+    z-index: 100;
     height: 450px;
     width: 500px;
     border: 2px solid grey;
