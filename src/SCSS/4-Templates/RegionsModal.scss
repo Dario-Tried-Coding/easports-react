@@ -9,6 +9,7 @@
   flex-flow: column;
   border: 2px solid grey;
   background-color: white;
+
   .firstBlock {
     display: flex;
     z-index: 100;
@@ -20,7 +21,8 @@
       flex-wrap: wrap;
       li {
         flex: 25%;
-        border-bottom: 1px solid grey;
+        text-decoration: underline;
+        text-decoration-color: grey;
       }
     }
   }
@@ -35,8 +37,9 @@
       flex-wrap: wrap;
       li {
         flex: 32%;
+        text-decoration: underline;
+        text-decoration-color: grey;
         justify-content: flex-start;
-        border-bottom: 1px solid grey;
       }
     }
   }

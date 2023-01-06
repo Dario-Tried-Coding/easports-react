@@ -19,7 +19,8 @@
       flex-wrap: wrap;
       li {
         flex: 32%;
-        border-bottom: 1px solid grey;
+        text-decoration: underline;
+        text-decoration-color: grey;
       }
     }
   }
@@ -34,7 +35,8 @@
       li {
         flex: 32%;
         justify-content: flex-start;
-        border-bottom: 1px solid grey;
+        text-decoration: underline;
+        text-decoration-color: grey;
       }
     }
   }
