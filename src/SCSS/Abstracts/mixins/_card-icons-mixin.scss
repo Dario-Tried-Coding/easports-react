@@ -1,0 +1,17 @@
+
+@mixin icons ($position: absolute) {
+
+    &::after {
+        @content;
+        background: $bg-base-blue;
+        background: $bg-linear-gradient;
+        opacity: .82;
+    }
+
+    &:hover::after{
+        background: $bg-base-blue;
+        background: $bg-linear-gradient;
+        opacity: .82;
+    }
+
+  }

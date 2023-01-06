@@ -1,4 +1,12 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
+
 .section {
   text-align: center;
-  margin-bottom: var(--flow-spacer-section-100);
+  margin-block: calc(var(--flow-spacer-section-100) * 1.5) var(--flow-spacer-section-100);
+}
+
+@include mq(medium) {
+  .h2 {
+    margin-bottom: calc(-1 * (var(--flow-spacer-section-100) / 100 * 70))
+  }
 }
