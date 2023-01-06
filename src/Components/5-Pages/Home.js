@@ -14,12 +14,12 @@ import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
 import { Links } from "Components/4-Templates/Links";
 import Play from "Mock-Data/Home/Play";
-import WrCards from "Components/3-Organisms/Wrappers/WrCards";
+
 import Hero from "Mock-Data/Home/Hero";
 import Footer from "Components/4-Templates/Footer";
 
 export default function Home() {
-  const hero = JSON.parse(Hero)
+  const hero = JSON.parse(Hero);
   const ultimeNovita = JSON.parse(UltimeNovita);
   const play = JSON.parse(Play);
 
@@ -43,11 +43,10 @@ export default function Home() {
         <Cards2Set data={ultimeNovita} />
       </Section>
 
-      <Banner textPosition="left" textAlign="left" bgImageData={play}  btnContent="Sfoglia offerte" btnColor="var(--clr-light-400)" logoImg="https://media.contentapi.ea.com/content/dam/eacom/subscription/ea-play/common/hero-logos/color/ea-play-logo-coral-hero-logo-small.svg" body="Non limitarti al gioco. Gioca al massimo. Sblocca ricompense esclusive, contenuti per i soli membri e una libreria dei migliori titoli." />
+      <Banner textPosition="left" textAlign="left" bgImageData={play} btnContent="Sfoglia offerte" btnColor="var(--clr-light-400)" logoImg="https://media.contentapi.ea.com/content/dam/eacom/subscription/ea-play/common/hero-logos/color/ea-play-logo-coral-hero-logo-small.svg" body="Non limitarti al gioco. Gioca al massimo. Sblocca ricompense esclusive, contenuti per i soli membri e una libreria dei migliori titoli." />
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
       <Links />
       <Footer />
-
     </>
   );
 }
