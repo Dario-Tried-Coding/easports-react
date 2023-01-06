@@ -14,8 +14,8 @@ import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
 import { Links } from "Components/4-Templates/Links";
 import Play from "Mock-Data/Home/Play";
-import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 import Hero from "Mock-Data/Home/Hero";
+import NetworkNav from "Components/4-Templates/NetworkNav";
 
 export default function Home() {
   const hero = JSON.parse(Hero)
@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home</h1>
+      <NetworkNav />
 
       <Banner stacked bgImageData={hero} textPosition="left" margInlineXL="6%" title="2022: un anno animato dal gioco" subtitle="Ripercorriamo il modo in cui i giocatori hanno apprezzato i nostri giochi nel 2022" textClrLight={false} btnTransparent={false} btnBgColor="var(--clr-dark-700)" btnColor="var(--clr-light-400)" btnContent="Esplora subito" />
 

@@ -1,0 +1,52 @@
+.networkNav {
+  background-color: var(--clr-dark-900);
+}
+
+.header {
+  height: 40px;
+
+  .ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .homeNavLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        background: none;
+        display: block;
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      svg {
+        width: 18px;
+        height: 18px;
+  
+        &.homeSVG {
+          width: 30px;
+          height: 30px;
+        }
+        
+        path {
+          fill: var(--clr-light-400);
+        }
+      }
+    }
+  }
+}
