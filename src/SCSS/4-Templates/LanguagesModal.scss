@@ -21,6 +21,15 @@
         flex: 32%;
         text-decoration: underline;
         text-decoration-color: grey;
+        .flags {
+          display: flex;
+          gap: 0.5rem;
+          .flagsImg {
+            height: 20px;
+            width: 20px;
+            border: 2px solid red;
+          }
+        }
       }
     }
   }
@@ -37,6 +46,15 @@
         justify-content: flex-start;
         text-decoration: underline;
         text-decoration-color: grey;
+        .flags {
+          display: flex;
+          gap: 0.5rem;
+          .flagsImg {
+            height: 20px;
+            width: 20px;
+            border: 2px solid red;
+          }
+        }
       }
     }
   }
