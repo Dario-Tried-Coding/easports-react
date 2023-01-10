@@ -1,9 +1,27 @@
+@use "../Abstracts/mixins/_mixin-styling.scss" as *;
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+$svgIconsSpacing: 32px;
+
 .networkNav {
-  background-color: var(--clr-dark-900);
+  font-family: var(--ff-open-sans-400);
+  font-size: var(--fs-300);
+  color: var(--clr-light-400);
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  // transform: translateY(-100%);
+  // transition: transform 0.4s cubic-bezier(0.5, 0.25, 0.015, 1);
+}
+
+.networkNav.visible {
+  // transform: translateY(0);
 }
 
 .header {
   height: 40px;
+  margin-right: $svgIconsSpacing;
 
   .ul {
     list-style: none;
@@ -13,38 +31,216 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: $svgIconsSpacing;
 
     li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexCenter();
 
       .homeNavLink {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter();
       }
 
       button {
+        border: none;
+        cursor: pointer;
         background: none;
         display: block;
-      
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter();
       }
   
       svg {
         width: 18px;
         height: 18px;
-  
-        &.homeSVG {
-          width: 30px;
-          height: 30px;
-        }
         
         path {
+          fill: var(--clr-light-900);
+        }
+
+        &:hover path {
           fill: var(--clr-light-400);
+        }
+      }
+
+      svg.homeSVG {
+        width: 30px;
+        height: 30px;
+
+        path {
+          fill: var(--clr-dark-200);
+        }
+
+        &:hover path {
+          fill: var(--clr-light-900);
+        }
+      }
+    }
+  }
+}
+
+.body {
+  position: relative;
+  @include flexCenter();
+  overflow: hidden;
+
+  transform-origin: top;
+  // transition: transform 0.4s cubic-bezier(0.5, 0.25, 0.015, 1), height 0.5s cubic-bezier(0.5, 0.25, 0.015, 1);
+
+  .flexContainer {
+    @include flexCenter();
+    padding-inline: var(--padd-inline-section);
+    padding-block: 16px;
+    width: 100%;
+
+    ul {
+      width: 100%;
+      max-width: 272px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 16px;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+
+  .gridContainer {
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    @include flexCenter();
+
+    padding-block: 16px;
+    padding-inline: var(--padd-inline-section);
+
+    .content {
+      flex-grow: 1;
+      padding-block: 32px 16px;
+      @include flexCenter();
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 16px;
+
+      p:first-child {
+        font-family: var(--ff-oswald-900);
+        font-size: var(--fs-550);
+      }
+
+      ul {
+        align-self: center;
+        margin: 0;
+        padding: 0;
+        max-width: 270px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        li {
+          @include flexCenter();
+          justify-content: flex-start;
+          text-align: left;
+        }
+      }
+
+      p:last-child {
+        font-size: var(--fs-100);
+
+        .link {
+          font-size: inherit;
+          color: var(--clr-brand-400);
+        }
+      }
+    }
+  }
+
+  .flexContainer, .gridContainer {
+    position: absolute;
+    // transition: opacity 0.5s cubic-bezier(0.5, 0.25, 0.015, 1), transform 0.5s cubic-bezier(0.5, 0.25, 0.015, 1);
+  }
+
+  img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@include custom-mq(544px) {
+  .body {
+    .flexContainer {
+      padding-block: 24px;
+
+      ul {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 32px;
+        max-width: 640px;
+        
+        li {
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    .gridContainer {
+      .content {
+        gap: 24px;
+
+        ul {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 638px;
+          column-gap: 32px;
+          row-gap: 24px;
+        }
+      }
+    }
+  }
+}
+
+@include mq(large) {
+  .body {
+    .flexContainer {
+      ul {
+        max-width: 560px;
+        li {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .gridContainer {
+      .content {
+        ul {
+          li {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(xlarge) {
+  .body {
+    .flexContainer {
+      ul {
+        gap: 48px;
+      }
+    }
+
+    .gridContainer {
+      .content {
+        ul {
+          column-gap: 48px;
+          row-gap: 24px;
         }
       }
     }
