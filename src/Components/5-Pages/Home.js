@@ -15,15 +15,18 @@ import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
 import { Links } from "Components/4-Templates/Links";
 import Play from "Mock-Data/Home/Play";
 import Hero from "Mock-Data/Home/Hero";
-import NetworkNav from "Components/4-Templates/NetworkNav";
+import Navigation from "Components/4-Templates/Navigation";
+import Navbar from "Mock-Data/Home/Navbar";
 
 export default function Home() {
-  const hero = JSON.parse(Hero)
+  const navigation = JSON.parse(Navbar)
+  const hero = JSON.parse(Hero);
   const ultimeNovita = JSON.parse(UltimeNovita);
   const play = JSON.parse(Play);
 
   return (
-    <NetworkNav>
+    <>
+      <Navigation data={navigation} />
       <Banner stacked bgImageData={hero} textPosition="left" margInlineXL="6%" title="2022: un anno animato dal gioco" subtitle="Ripercorriamo il modo in cui i giocatori hanno apprezzato i nostri giochi nel 2022" textClrLight={false} btnTransparent={false} btnBgColor="var(--clr-dark-700)" btnColor="var(--clr-light-400)" btnContent="Esplora subito" />
 
       <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
@@ -40,9 +43,9 @@ export default function Home() {
         <Cards2Set data={ultimeNovita} />
       </Section>
 
-      <Banner textPosition="left" textAlign="left" bgImageData={play}  btnContent="Sfoglia offerte" btnColor="var(--clr-light-400)" logoImg="https://media.contentapi.ea.com/content/dam/eacom/subscription/ea-play/common/hero-logos/color/ea-play-logo-coral-hero-logo-small.svg" body="Non limitarti al gioco. Gioca al massimo. Sblocca ricompense esclusive, contenuti per i soli membri e una libreria dei migliori titoli." />
+      <Banner textPosition="left" textAlign="left" bgImageData={play} btnContent="Sfoglia offerte" btnColor="var(--clr-light-400)" logoImg="https://media.contentapi.ea.com/content/dam/eacom/subscription/ea-play/common/hero-logos/color/ea-play-logo-coral-hero-logo-small.svg" body="Non limitarti al gioco. Gioca al massimo. Sblocca ricompense esclusive, contenuti per i soli membri e una libreria dei migliori titoli." />
       <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
       <Links />
-    </NetworkNav>
+    </>
   );
 }

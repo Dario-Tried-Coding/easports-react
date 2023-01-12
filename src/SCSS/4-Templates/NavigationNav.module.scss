@@ -1,0 +1,74 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.navigationNav {
+  --navHeight: 53px;
+  --shelfGap: 20px;
+  @include mq(medium) {
+    --navHeight: 57px;
+  }
+  @include mq(large) {
+    --navHeight: 56px;
+  }
+  @include mq(xlarge) {
+    --navHeight: 60px;
+    --shelfGap: 34px;
+  }
+
+  height: var(--navHeight);
+  width: 100%;
+  background-color: var(--clr-light-100);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  & > * {
+    height: 100%;
+  }
+}
+
+.toggle {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.shelf {
+  margin: 0;
+  margin-left: 56px;
+  padding: 0;
+
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--shelfGap);
+
+  & > li {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@include mq(large) {
+  .logo {
+    margin-left: 10px;
+  }
+
+  .shelf {
+    display: flex;
+  }
+}
