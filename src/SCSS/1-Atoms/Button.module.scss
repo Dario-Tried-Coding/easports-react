@@ -38,6 +38,7 @@
 @include custom-mq(640px) {
   .link, .link.full {
     width: auto;
+    min-width: 160px;
   }
 }
 @include mq(large) {
