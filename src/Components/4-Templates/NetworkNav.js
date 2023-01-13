@@ -6,15 +6,15 @@ import { motion } from "framer-motion";
 import NavbarLink from "Components/1-Atoms/NavbarLink";
 import style from "../../SCSS/4-Templates/NetworkNav.module.scss";
 
-const heightVariants = {closed: {height: 0}, open: {height: 400}}
-const opacityVariants = {disabled: {opacity: 0}, active: {opacity: 1}}
-const visiblityVariants = {visible: {transform: "translateY(0px)"}, hidden: {transform: "translateY(-200px)"}}
+const heightVariants = { closed: { height: 0 }, open: { height: 400 } };
+const opacityVariants = { disabled: { opacity: 0, pointerEvents: "none" }, active: { opacity: 1, pointerEvents: "auto" } };
+const visiblityVariants = { visible: { transform: "translateY(0px)" }, hidden: { transform: "translateY(-200px)" } };
 
 function NetworkNav() {
-  const [is1Active, setIs1Active] = useState(false)
-  const [is2Active, setIs2Active] = useState(false)
-  const [is1Visible, setIs1Visible] = useState(true)
-  const [is2Visible, setIs2Visible] = useState(true)
+  const [is1Active, setIs1Active] = useState(false);
+  const [is2Active, setIs2Active] = useState(false);
+  const [is1Visible, setIs1Visible] = useState(true);
+  const [is2Visible, setIs2Visible] = useState(true);
 
   // close if click outside
   const networkNavbarRef = useRef(null);
@@ -24,8 +24,8 @@ function NetworkNav() {
         if (!networkNavbarRef.current.contains(e.target)) {
           setIs1Active(false);
           setIs2Active(false);
-          setIs1Visible(true)
-          setIs2Visible(true)
+          setIs1Visible(true);
+          setIs2Visible(true);
         }
       }
     });
@@ -38,39 +38,35 @@ function NetworkNav() {
 
   function handleAccountSVGClick() {
     if (!is1Active && !is2Active) {
-      setIs1Active(true)
-      setIs2Visible(false)
-    }
-    else if (!is1Active && is2Active) {
-      setIs1Active(true)
-      setIs2Active(false)
-      setIs1Visible(true)
-      setIs2Visible(false)
-    }
-    else if (is1Active && !is2Active) {
-      setIs1Active(false)
-      setIs2Visible(true)
+      setIs1Active(true);
+      setIs2Visible(false);
+    } else if (!is1Active && is2Active) {
+      setIs1Active(true);
+      setIs2Active(false);
+      setIs1Visible(true);
+      setIs2Visible(false);
+    } else if (is1Active && !is2Active) {
+      setIs1Active(false);
+      setIs2Visible(true);
     }
   }
   function handleHelpSVGClick() {
     if (!is1Active && !is2Active) {
-      setIs2Active(true)
-      setIs1Visible(false)
-    }
-    else if (is1Active && !is2Active) {
-      setIs1Active(false)
-      setIs2Active(true)
-      setIs2Visible(true)
-      setIs1Visible(false)
-    }
-    else if (!is1Active && is2Active) {
-      setIs2Active(false)
-      setIs1Visible(true)
+      setIs2Active(true);
+      setIs1Visible(false);
+    } else if (is1Active && !is2Active) {
+      setIs1Active(false);
+      setIs2Active(true);
+      setIs2Visible(true);
+      setIs1Visible(false);
+    } else if (!is1Active && is2Active) {
+      setIs2Active(false);
+      setIs1Visible(true);
     }
   }
 
   return (
-    <motion.div ref={networkNavbarRef} animate={is1Active || is2Active ? "open" : "closed"} className={style.networkNav} style={{backgroundColor: is1Active || is2Active ? "var(--clr-dark-700)" : "var(--clr-dark-700)"}}>
+    <motion.div ref={networkNavbarRef} animate={is1Active || is2Active ? "open" : "closed"} className={style.networkNav} style={{ backgroundColor: is1Active || is2Active ? "var(--clr-dark-700)" : "var(--clr-dark-700)" }}>
       <header className={style.header}>
         <ul className={style.ul}>
           <li>
@@ -99,7 +95,13 @@ function NetworkNav() {
         </ul>
       </header>
       <motion.div className={style.body} variants={heightVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.5 }}>
-        <motion.div className={style.opacityDiv} variants={opacityVariants} animate={is1Active ? "active" : "disabled"} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
+        <motion.div
+          className={style.opacityDiv}
+          // @ts-ignore
+          variants={opacityVariants}
+          animate={is1Active ? "active" : "disabled"}
+          transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}
+        >
           <motion.div className={style.flexContainer} variants={visiblityVariants} animate={is1Visible ? "visible" : "hidden"} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
             <ul>
               <li>
@@ -111,7 +113,13 @@ function NetworkNav() {
             </ul>
           </motion.div>
         </motion.div>
-        <motion.div className={style.opacityDiv} variants={opacityVariants} animate={is2Active ? "active" : "disabled"} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
+        <motion.div
+          className={style.opacityDiv}
+          // @ts-ignore
+          variants={opacityVariants}
+          animate={is2Active ? "active" : "disabled"}
+          transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}
+        >
           <motion.div className={style.gridContainer} variants={visiblityVariants} animate={is2Visible ? "visible" : "hidden"} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
             <div className={style.content}>
               <p>Ti serve aiuto?</p>
