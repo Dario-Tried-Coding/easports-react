@@ -30,7 +30,7 @@ function NavbarDropdown({ data = defaultMockData}) {
         : ( <div className={style.body}>
               <div className={`${style.menu}`}>
                 {data.columns.map(obj => (<div className={style.col}>
-                    <p>{obj.heading}</p>
+                    <p className={style.p}>{obj.heading}</p>
                     <ul className={style.list}>
                       {obj.links.map(link => <li>{link}</li> )}
                     </ul>
