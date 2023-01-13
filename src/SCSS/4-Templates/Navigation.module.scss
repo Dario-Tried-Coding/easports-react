@@ -1,3 +1,18 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+:root {
+  --navHeight: 53px;
+  @include mq(medium) {
+    --navHeight: 57px;
+  }
+  @include mq(large) {
+    --navHeight: 56px;
+  }
+  @include mq(xlarge) {
+    --navHeight: 60px;
+  }
+}
+
 .nav {
   position: fixed;
   z-index: 9999;
@@ -14,4 +29,8 @@
 .nav > *:last-child {
   position: absolute;
   top: 40px;
+}
+
+.spacer {
+  height: calc(var(--navHeight) + 40px);
 }

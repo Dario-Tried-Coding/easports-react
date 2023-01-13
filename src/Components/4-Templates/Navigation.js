@@ -63,10 +63,13 @@ function Navigation({data = mockData}) {
   }, [scrollY, updateIsVisible]);
 
   return (
-    <motion.nav className={style.nav} animate={isVisible ? "visible" : "hidden"} variants={isVisibleVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
-      <NetworkNav />
-      <NavigationNav data={data} />
-    </motion.nav>
+    <>
+      <motion.nav className={style.nav} animate={isVisible ? "visible" : "hidden"} variants={isVisibleVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
+        <NetworkNav />
+        <NavigationNav data={data} />
+      </motion.nav>
+      <div className={style.spacer}></div>
+    </>
   );
 }
 
