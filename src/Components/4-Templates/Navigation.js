@@ -1,5 +1,5 @@
 import { motion, useScroll } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavigationNav from "./NavigationNav";
 import NetworkNav from "./NetworkNav";
 
@@ -47,8 +47,9 @@ const mockData = [
   },
 ];
 
-function Navigation({data = mockData}) {
+function Navigation({data = mockData, children}) {
   const [isVisible, setIsVisible] = useState(true);
+  const pageContent = useRef(null)
 
   // hide/show
   const { scrollY } = useScroll();
@@ -65,10 +66,13 @@ function Navigation({data = mockData}) {
   return (
     <>
       <motion.nav className={style.nav} animate={isVisible ? "visible" : "hidden"} variants={isVisibleVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
-        <NetworkNav />
+        <NetworkNav pageContentRef={pageContent} />
         <NavigationNav data={data} />
       </motion.nav>
       <div className={style.spacer}></div>
+      <div ref={pageContent}>
+        {children}
+      </div>
     </>
   );
 }

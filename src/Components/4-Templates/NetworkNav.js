@@ -10,7 +10,7 @@ const heightVariants = { closed: { height: 0 }, open: { height: 400 } };
 const opacityVariants = { disabled: { opacity: 0, pointerEvents: "none" }, active: { opacity: 1, pointerEvents: "auto" } };
 const visiblityVariants = { visible: { transform: "translateY(0px)" }, hidden: { transform: "translateY(-200px)" } };
 
-function NetworkNav() {
+function NetworkNav({pageContentRef}) {
   const [is1Active, setIs1Active] = useState(false);
   const [is2Active, setIs2Active] = useState(false);
   const [is1Visible, setIs1Visible] = useState(true);
@@ -32,7 +32,7 @@ function NetworkNav() {
   });
 
   // anable/disable scroll
-  const [blockScroll, allowScroll] = useScrollBlock(networkNavbarRef);
+  const [blockScroll, allowScroll] = useScrollBlock(pageContentRef);
   if (is1Active || is2Active) blockScroll();
   else allowScroll();
 

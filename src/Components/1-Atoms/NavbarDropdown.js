@@ -24,15 +24,15 @@ function NavbarDropdown({ data = defaultMockData}) {
       {data.singleColumn
         ? ( <div className={style.body}>
               <div className={`${style.menu} ${style.singleColumn}`}>
-                <ul className={style.list}>{data.links.map(link => <li>{link}</li> )}</ul>
+                <ul className={style.list}>{data.links.map((link, i) => <li key={i}>{link}</li> )}</ul>
               </div>
           </div> )
         : ( <div className={style.body}>
               <div className={`${style.menu}`}>
-                {data.columns.map(obj => (<div className={style.col}>
+                {data.columns.map((obj, i) => (<div key={i} className={style.col}>
                     <p className={style.p}>{obj.heading}</p>
                     <ul className={style.list}>
-                      {obj.links.map(link => <li>{link}</li> )}
+                      {obj.links.map((link, i) => <li key={i}>{link}</li> )}
                     </ul>
                   </div>
                 ))}

@@ -14,7 +14,7 @@ function useScrollBlock(ref) {
     html.style.overflow = "hidden"
     body.style.position = "relative"
     body.style.overflow = "hidden"
-    ref.current.nextElementSibling.style["pointer-events"] = "none"
+    ref.current.style["pointer-events"] = "none"
 
     // @ts-ignore
     scrollBlocked.current = true
@@ -27,7 +27,7 @@ function useScrollBlock(ref) {
     html.style.overflow = '';
     body.style.position = '';
     body.style.overflow = '';
-    ref.current.nextElementSibling.style["pointer-events"] = "auto"
+    ref.current.style["pointer-events"] = "auto"
 
     // @ts-ignore
     scrollBlocked.current = false;

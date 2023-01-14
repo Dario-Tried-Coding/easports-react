@@ -79,8 +79,8 @@ function NavigationNav({ data = mockData }) {
       </div>
 
       <ul className={style.shelf}>
-        {data.map((dataObj) => (
-          <li>
+        {data.map((dataObj, key) => (
+          <li key={key}>
             <NavbarDropdown
               // @ts-ignore
               data={dataObj}
