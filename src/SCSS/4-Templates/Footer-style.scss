@@ -111,8 +111,9 @@
       grid-row: 2/3;
       //border: 2px solid violet;
       .regions-text {
-        height: 80px;
-        width: 200px;
+        margin-top: 2rem;
+        height: 60px;
+        width: 180px;
         background-color: lightgrey;
         border: 2px solid blue;
       }
@@ -123,13 +124,15 @@
       grid-row: 2/3;
       // border: 2px solid violet;
       .languages-text {
-        height: 80px;
-        width: 200px;
+        margin-top: 2rem;
+        height: 60px;
+        width: 180px;
         background-color: lightgrey;
         border: 2px solid blue;
       }
     }
     .online-services {
+      margin-left: 1.5rem;
       grid-column: 1/3;
       grid-row: 4/5;
       border: 2px solid violet;
