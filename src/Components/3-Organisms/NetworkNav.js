@@ -18,6 +18,13 @@ function NetworkNav({ pageContentRef }) {
   const [is2Visible, setIs2Visible] = useState(true);
   const { isScrollBlocked } = useContext(ScrollBlockedContext);
 
+  function closeNavbar() {
+    setIs1Active(false);
+    setIs2Active(false);
+    setIs1Visible(true);
+    setIs2Visible(true);
+  }
+
   // close if click outside
   const networkNavbarRef = useRef(null);
   useEffect(() => {
@@ -99,6 +106,13 @@ function NetworkNav({ pageContentRef }) {
         </ul>
       </header>
       <motion.div className={style.body} variants={heightVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.5 }}>
+        <div onClick={closeNavbar} className={style.x}>
+          <svg viewBox="0 0 16 16">
+            <g>
+              <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" transform="rotate(45,8,8)"></path>
+            </g>
+          </svg>
+        </div>
         <motion.div
           className={style.opacityDiv}
           // @ts-ignore

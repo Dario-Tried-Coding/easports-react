@@ -170,6 +170,20 @@ $svgIconsSpacing: 32px;
   }
 }
 
+.x {
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 34px;
+  right: 28px;
+  width: 13px;
+  height: 13px;
+
+  path {
+    fill: white;
+  }
+}
+
 @include custom-mq(544px) {
   .body {
     .flexContainer {
