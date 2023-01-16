@@ -23,12 +23,27 @@
 
 .nav > *:first-child {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
 }
 
-.nav > *:last-child {
+.nav > *:nth-child(2) {
   position: absolute;
   top: 40px;
+}
+
+.nav > *:nth-child(3) {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
 }
 
 .spacer {

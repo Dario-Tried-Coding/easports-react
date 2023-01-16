@@ -1,20 +1,22 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import useScrollBlock from "Hooks/useScrollBlock";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import NavbarLink from "Components/1-Atoms/NavbarLink";
-import style from "../../SCSS/4-Templates/NetworkNav.module.scss";
+import style from "../../SCSS/3-Organisms/NetworkNav.module.scss";
+import ScrollBlockedContext from "Context/ScrollBlockedContext";
 
 const heightVariants = { closed: { height: 0 }, open: { height: 400 } };
 const opacityVariants = { disabled: { opacity: 0, pointerEvents: "none" }, active: { opacity: 1, pointerEvents: "auto" } };
 const visiblityVariants = { visible: { transform: "translateY(0px)" }, hidden: { transform: "translateY(-200px)" } };
 
-function NetworkNav({pageContentRef}) {
+function NetworkNav({ pageContentRef }) {
   const [is1Active, setIs1Active] = useState(false);
   const [is2Active, setIs2Active] = useState(false);
   const [is1Visible, setIs1Visible] = useState(true);
   const [is2Visible, setIs2Visible] = useState(true);
+  const { isScrollBlocked } = useContext(ScrollBlockedContext);
 
   // close if click outside
   const networkNavbarRef = useRef(null);
@@ -33,8 +35,10 @@ function NetworkNav({pageContentRef}) {
 
   // anable/disable scroll
   const [blockScroll, allowScroll] = useScrollBlock(pageContentRef);
-  if (is1Active || is2Active) blockScroll();
-  else allowScroll();
+  if (!isScrollBlocked) {
+    if (is1Active || is2Active) blockScroll();
+    else allowScroll();
+  }
 
   function handleAccountSVGClick() {
     if (!is1Active && !is2Active) {

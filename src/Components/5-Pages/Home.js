@@ -16,17 +16,19 @@ import { Links } from "Components/4-Templates/Links";
 import Play from "Mock-Data/Home/Play";
 import Hero from "Mock-Data/Home/Hero";
 import Navigation from "Components/4-Templates/Navigation";
-import Navbar from "Mock-Data/Home/Navbar";
+import Navbar from "Mock-Data/Home/Navigation";
+import Sidebar from "Mock-Data/Home/Sidebar";
 
 export default function Home() {
   const navigation = JSON.parse(Navbar);
+  const sidebar = JSON.parse(Sidebar);
   const hero = JSON.parse(Hero);
   const ultimeNovita = JSON.parse(UltimeNovita);
   const play = JSON.parse(Play);
 
   return (
     <>
-      <Navigation data={navigation}>
+      <Navigation navigationData={navigation} sidebarData={sidebar}>
         <Banner stacked logoMaxWidth="346px" logoImg="https://media.contentapi.ea.com/content/dam/eacom/images/2022/12/eacom-homepage-f23-toty-logo-7x2-xl.png.adapt.crop7x2.1920w.png" bgImageData={hero} textPosition="left" margInlineXL="6%" title="SQUADRA DELL'ANNO" subtitle="Di' la tua sui migliori al mondo. Vota e aiutaci a decidere chi farà parte della Squadra dell'anno." textClrLight={true} btnTransparent={false} btnBgColor="var(--clr-light-400)" btnColor="var(--clr-dark-700)" btnContent="Vota ora" />
 
         <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>

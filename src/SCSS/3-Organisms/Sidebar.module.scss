@@ -1,0 +1,107 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.sidebarDesktop {
+  --sidebarWidth: 100%;
+  width: var(--sidebarWidth);
+  height: calc(100vh - 40px);
+  padding-inline: 32px 50px;
+  padding-bottom: 56px;
+  background-color: var(--clr-light-100);
+  font-family: var(--ff-heading-900);
+  color: var(--clr-light-900);
+
+  overflow: scroll;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-block: 46px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+      cursor: pointer;
+    }
+    svg:hover {
+      path {
+        fill: var(--clr-brand-400);
+      }
+    }
+  }
+
+  .cards {
+    & > *:first-child {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.sidebarDesktop::-webkit-scrollbar {
+  display: none;
+}
+
+@include mq(medium) {
+  .sidebarDesktop {
+    --sidebarWidth: calc(5 * ((100vw - 2 * 7.8125vw - 24px * 11) / 12) + 6 * 24px);
+  }
+}
+@include mq(large) {
+  .sidebarDesktop {
+    --sidebarWidth: calc(4 * ((100vw - 2 * 7.4218vw - 28px * 11) / 12) + 5 * 28px);
+  }
+}
+@include mq(xlarge) {
+  .sidebarDesktop {
+    --sidebarWidth: calc(4 * ((100vw - 2 * ((100vw - 1120px) / 2) - 32px * 11) / 12) + 5 * 32px);
+  }
+}
+
+.sidebarMobile {
+  --sidebarWidth: 100%;
+  --sidebarMaxWidth: 375px;
+  --headerHeight: 53px;
+  width: var(--sidebarWidth);
+  max-width: var(--sidebarMaxWidth);
+  height: calc(100vh - 40px);
+  background-color: var(--clr-light-100);
+  overflow: auto;
+
+  header {
+    padding-inline: 14px;
+    height: var(--headerHeight);
+    background-color: var(--clr-light-400);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .closeSVG {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--clr-dark-700);
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+    }
+  }
+
+  .body {
+    padding-inline: 28px;
+  }
+}
+@include custom-mq(321px) {
+  .sidebarMobile {
+    --sidebarWidth: 86.5%;
+  }
+}
+@include mq(medium) {
+  .sidebarMobile {
+    --headerHeight: 57px;
+  }
+}
