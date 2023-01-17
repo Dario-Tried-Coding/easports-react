@@ -15,38 +15,38 @@ const defaultMockData = [
     columns: [
       {
         heading: "Heading",
-        links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5", "Link 6"],
+        links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"], ["Link 6", "/"]],
       },
       {
         heading: "Heading",
-        links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+        links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
       },
     ],
   },
   {
     btn: "Button",
     singleColumn: true,
-    links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+    links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
   },
   {
     btn: "Button",
     singleColumn: true,
-    links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+    links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
   },
   {
     btn: "Button",
     singleColumn: true,
-    links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+    links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
   },
   {
     btn: "Button",
     singleColumn: true,
-    links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+    links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
   },
   {
     btn: "Button",
     singleColumn: true,
-    links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+    links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
   },
 ];
 

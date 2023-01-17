@@ -20,33 +20,33 @@ const mockData = [
     columns: [
       {
         heading: "Column Heading",
-        links: ["Link label", "Link label", "Link label", "Link label", "Link label", "Link label"],
+        links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
       },
       {
         heading: "Column Heading",
-        links: ["Link label", "Link label", "Link label", "Link label", "Link label"],
+        links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
       },
     ],
   },
   {
     btn: "Button 2",
     singleColumn: true,
-    links: ["Link label", "Link label", "Link label", "Link label", "Link label"],
+    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
   },
   {
     btn: "Button 3",
     singleColumn: true,
-    links: ["Link label", "Link label", "Link label", "Link label", "Link label"],
+    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
   },
   {
     btn: "Button 4",
     singleColumn: true,
-    links: ["Link label", "Link label", "Link label", "Link label", "Link label"],
+    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
   },
   {
     btn: "Button 5",
     singleColumn: true,
-    links: ["Link label", "Link label", "Link label", "Link label", "Link label"],
+    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
   },
 ];
 const defaultSidebarDesktopMockData = {

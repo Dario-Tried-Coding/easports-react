@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import style from "../../SCSS/1-Atoms/SidebarDropdown.module.scss";
 import SidebarSubDropDown from "./SidebarSubDropdown";
@@ -32,17 +33,22 @@ const defaultMockData = {
   columns: [
     {
       heading: "Heading",
-      links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5", "Link 6"],
+      links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"], ["Link 6", "/"]],
     },
     {
       heading: "Heading",
-      links: ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5"],
+      links: [["Link 1", "/"], ["Link 2", "/"], ["Link 3", "/"], ["Link 4", "/"], ["Link 5", "/"]],
     },
   ],
 }
 
 function SidebarDropdown({data = defaultMockData }) {
-  const [isOpen, setIsOpen] = useState(false);
+  function determineIfOpenOrClose() {
+    if (!data.singleColumn) return data.columns.some(obj => obj.links.some(arr => arr.includes("active")))
+    else return false
+  }
+
+  const [isOpen, setIsOpen] = useState(determineIfOpenOrClose);
 
   return !data.singleColumn ? (
     <div className={style.dropdown}>
@@ -67,7 +73,7 @@ function SidebarDropdown({data = defaultMockData }) {
         </div>
       </motion.button>
       <motion.ul animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0, transition: { opacity: { duration: 0.2 } } }}>
-        {data.links.map((link, i) => <li key={i}>{link}</li> )}
+        {data.links.map((link, i) => <li key={i}><Link to={link[1]}>{link[0]}</Link></li> )}
       </motion.ul>
     </div>
   );
