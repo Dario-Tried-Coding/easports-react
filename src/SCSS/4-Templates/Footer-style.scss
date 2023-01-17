@@ -17,12 +17,6 @@
       .logo {
         grid-column: 1;
         grid-row: 1/8;
-        background-color: blue;
-        .logo img {
-          height: 40px;
-          width: 50px;
-          object-fit: cover;
-        }
       }
       .libreria-giochi {
         grid-column: 2/5;
