@@ -1,7 +1,7 @@
 import LanguagesBtn from "Components/2-Molecules/LanguagesBtn";
 
 import RegionsBtn from "Components/2-Molecules/RegionsBtn";
-
+import logo from "../../Assets/ea-LOGO.png";
 import React from "react";
 import "../../SCSS/4-Templates/Footer-style.scss";
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
       <section>
         <div className="section1">
           <div className="logo">
-            <img src="/Assets/ea-LOGO.png" alt="logo" />
+            <img src={logo} alt="logo" />
           </div>
           <div className="libreria-giochi">Libreria dei giochi</div>
           <div className="registrati">Registrati</div>
