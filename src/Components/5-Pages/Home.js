@@ -18,6 +18,8 @@ import Hero from "Mock-Data/Home/Hero";
 import Navigation from "Components/4-Templates/Navigation";
 import Navbar from "Mock-Data/Home/Navigation";
 import Sidebar from "Mock-Data/Home/Sidebar";
+import { Card3 } from "Components/2-Molecules/Cards/Card3";
+import WrCards from "Components/3-Organisms/Wrappers/WrCards";
 
 export default function Home() {
   const navigation = JSON.parse(Navbar);
@@ -44,12 +46,22 @@ export default function Home() {
         <Section title="Ultime Novita" btnContent="Scopri di più">
           <Cards2Set data={ultimeNovita} />
         </Section>
-
+       <Section>
+        <WrCards>
+          <Card3 />
+          <Card3 />
+          <Card3 />
+          <Card3 />
+          <Card3 />
+          <Card3 />
+        </WrCards>
+       </Section>
         <Banner textPosition="left" textAlign="left" bgImageData={play} btnContent="Sfoglia offerte" btnColor="var(--clr-light-400)" logoImg="https://media.contentapi.ea.com/content/dam/eacom/subscription/ea-play/common/hero-logos/color/ea-play-logo-coral-hero-logo-small.svg" logoMaxWidth="240px" body="Non limitarti al gioco. Gioca al massimo. Sblocca ricompense esclusive, contenuti per i soli membri e una libreria dei migliori titoli." />
 
         <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
 
         <Links />
+        
       </Navigation>
     </>
   );
