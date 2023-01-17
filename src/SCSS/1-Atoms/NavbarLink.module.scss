@@ -7,6 +7,11 @@
   gap: 8px;
   padding-right: 24px;
   transition: transform 0.25s ease-in-out;
+
+  img {
+    max-width: 40px;
+    max-height: 40px;
+  }
 }
 
 .link:hover {

@@ -46,6 +46,10 @@
       cursor: pointer;
       font-size: var(--fs-100);
       padding-block: 7px;
+
+      .linkTag {
+        font-size: inherit;
+      }
     }
     li:last-child {
       padding-bottom: calc(14px + 7px);

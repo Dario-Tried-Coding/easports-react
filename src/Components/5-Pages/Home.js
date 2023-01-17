@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <Navigation navigationData={navigation} sidebarData={sidebar}>
-        <Banner stacked logoMaxWidth="346px" logoImg="https://media.contentapi.ea.com/content/dam/eacom/images/2022/12/eacom-homepage-f23-toty-logo-7x2-xl.png.adapt.crop7x2.1920w.png" bgImageData={hero} textPosition="left" margInlineXL="6%" title="SQUADRA DELL'ANNO" subtitle="Di' la tua sui migliori al mondo. Vota e aiutaci a decidere chi farà parte della Squadra dell'anno." textClrLight={true} btnTransparent={false} btnBgColor="var(--clr-light-400)" btnColor="var(--clr-dark-700)" btnContent="Vota ora" />
+        <Banner stacked logoMaxWidth="220px" logoImg="https://media.contentapi.ea.com/content/dam/eacom/images/2022/10/eacom-apex-eclipse-adaptive-logo-xl.png.adapt.crop7x2.1920w.png" bgImageData={hero} textPosition="right" margInlineXL="6%" subtitle="Strega i tuoi avversari nell'evento collezione" textClrLight btnTransparent={false} btnBgColor="var(--clr-light-400)" btnColor="var(--clr-dark-700)" btnContent="Altre informazioni" />
 
         <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
           <CardsWrapper wrapperClass={style["cards-wrapper"]}>

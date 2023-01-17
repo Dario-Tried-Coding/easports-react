@@ -4,7 +4,6 @@ import Home from "./5-Pages/Home";
 import Games from "./5-Pages/Games";
 import ComingSoon from "./5-Pages/ComingSoon";
 import ScrollBlockedContext from "Context/ScrollBlockedContext";
-import Navigation from "./4-Templates/Navigation";
 
 export default function App() {
   const [isScrollBlocked, setIsScrollBlocked] = useState(false);

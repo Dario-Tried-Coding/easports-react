@@ -7,7 +7,7 @@
     --shelfGap: 34px;
   }
 
-  height: var(--navHeight);
+  height: var(--navHeight, 56px);
   width: 100%;
   background-color: var(--clr-light-100);
 
