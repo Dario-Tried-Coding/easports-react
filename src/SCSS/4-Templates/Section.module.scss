@@ -2,11 +2,11 @@
 
 .section {
   text-align: center;
-  margin-block: calc(var(--flow-spacer-section-100) * 1.5) var(--flow-spacer-section-100);
+  margin-block: calc(var(--flow-spacer-section-100) * 1.4) var(--flow-spacer-section-100);
 }
 
 @include mq(medium) {
   .h2 {
-    margin-bottom: calc(-1 * (var(--flow-spacer-section-100) / 100 * 70))
+    margin-bottom: calc(-1 * (var(--flow-spacer-section-100) / 100 * 60))
   }
 }
