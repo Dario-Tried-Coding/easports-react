@@ -1,11 +1,11 @@
+@import "../../Abstracts/mixins/_card-mixin.scss";
+@import "../../Abstracts/mixins/_card-icons-mixin.scss";
+
 .containerClass{
    width: 100%;
    background-color:white;
 }
 
-.altImg{
-
-}
 .card3title{
     display: flex;
     justify-content: flex-start;
@@ -14,9 +14,10 @@
     color: black;
     font-size: 24px;
     }
-.card3p{
-    
+    .card3p{
+        margin: 30px 0px;
     }
+
     .rowp{
         display: flex;
 
@@ -27,6 +28,9 @@
         font-size: 18px;
         font-weight: bold;
         color: black;
+        width: 150px;
+        height: 28px;
+        text-align: left;
         
     }
     .subData{
@@ -34,7 +38,8 @@
         font-size: 18px;
         color: black;
     }
-    a{
+    
+    .a{
         color: red;
     }
     .btn{
