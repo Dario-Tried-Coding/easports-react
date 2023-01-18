@@ -74,7 +74,7 @@ function SidebarDropdown({data = defaultMockData }) {
         </div>
       </motion.button>
       <motion.ul animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0, transition: { opacity: { duration: 0.2 } } }}>
-        {data.links.map((link, i) => <li key={i} style={{color: link[2] ? "var(--clr-brand-400)" : "var(--clr-dark-700)"}}><Link to={link[1]}>{link[0]}</Link></li> )}
+        {data.links.map((link, i) => <motion.li whileHover={{color: "var(--clr-brand-400)"}} transition={{duration: 0}} key={i} initial={{color: link[2] ? "var(--clr-brand-400)" : "var(--clr-dark-700)"}}><Link to={link[1]}>{link[0]}</Link></motion.li> )}
       </motion.ul>
     </div>
   );
