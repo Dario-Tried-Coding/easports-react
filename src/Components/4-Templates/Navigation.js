@@ -20,33 +20,70 @@ const mockData = [
     columns: [
       {
         heading: "Column Heading",
-        links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
+        links: [
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+        ],
       },
       {
         heading: "Column Heading",
-        links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
+        links: [
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+          ["Link label", "/"],
+        ],
       },
     ],
   },
   {
     btn: "Button 2",
     singleColumn: true,
-    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
+    links: [
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+    ],
   },
   {
     btn: "Button 3",
     singleColumn: true,
-    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
+    links: [
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+    ],
   },
   {
     btn: "Button 4",
     singleColumn: true,
-    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
+    links: [
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+    ],
   },
   {
     btn: "Button 5",
     singleColumn: true,
-    links: [["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"], ["Link label", "/"]],
+    links: [
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+      ["Link label", "/"],
+    ],
   },
 ];
 const defaultSidebarDesktopMockData = {
@@ -56,7 +93,7 @@ const defaultSidebarDesktopMockData = {
     to: "/",
     bgImgAlt: "description",
     logoImgAlt: "description",
-    logoImgWidth: 30
+    logoImgWidth: 30,
   },
   cards: [
     {
@@ -65,7 +102,7 @@ const defaultSidebarDesktopMockData = {
       to: "/",
       bgImgAlt: "description",
       logoImgAlt: "description",
-      logoImgWidth: 30
+      logoImgWidth: 30,
     },
     {
       bgImg: "https://via.placeholder.com/767",
@@ -73,7 +110,7 @@ const defaultSidebarDesktopMockData = {
       to: "/",
       bgImgAlt: "description",
       logoImgAlt: "description",
-      logoImgWidth: 30
+      logoImgWidth: 30,
     },
     {
       bgImg: "https://via.placeholder.com/767",
@@ -81,7 +118,7 @@ const defaultSidebarDesktopMockData = {
       to: "/",
       bgImgAlt: "description",
       logoImgAlt: "description",
-      logoImgWidth: 30
+      logoImgWidth: 30,
     },
     {
       bgImg: "https://via.placeholder.com/767",
@@ -89,7 +126,7 @@ const defaultSidebarDesktopMockData = {
       to: "/",
       bgImgAlt: "description",
       logoImgAlt: "description",
-      logoImgWidth: 30
+      logoImgWidth: 30,
     },
     {
       bgImg: "https://via.placeholder.com/767",
@@ -97,7 +134,7 @@ const defaultSidebarDesktopMockData = {
       to: "/",
       bgImgAlt: "description",
       logoImgAlt: "description",
-      logoImgWidth: 30
+      logoImgWidth: 30,
     },
     {
       bgImg: "https://via.placeholder.com/767",
@@ -105,17 +142,17 @@ const defaultSidebarDesktopMockData = {
       to: "/",
       bgImgAlt: "description",
       logoImgAlt: "description",
-      logoImgWidth: 30
+      logoImgWidth: 30,
     },
-  ]
-}
+  ],
+};
 
-const MotionSidebar = motion(Sidebar)
+const MotionSidebar = motion(Sidebar);
 
-function Navigation({navigationData = mockData, sidebarData = defaultSidebarDesktopMockData, children}) {
+function Navigation({ navigationData = mockData, sidebarData = defaultSidebarDesktopMockData, children }) {
   const [isVisible, setIsVisible] = useState(true);
-  const {isScrollBlocked, setIsScrollBlocked} = useContext(ScrollBlockedContext)
-  const pageContent = useRef(null)
+  const { isScrollBlocked, setIsScrollBlocked } = useContext(ScrollBlockedContext);
+  const pageContent = useRef(null);
 
   // hide/show
   const { scrollY } = useScroll();
@@ -130,35 +167,37 @@ function Navigation({navigationData = mockData, sidebarData = defaultSidebarDesk
   }, [scrollY, updateIsVisible]);
 
   // sidebar
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   function handleToggleClick() {
-    setIsVisible(true)
-    setSidebarOpen(true)
-    setIsScrollBlocked(true)
+    setIsVisible(true);
+    setSidebarOpen(true);
+    setIsScrollBlocked(true);
   }
   function handleCloseSidebar() {
-    if (scrollY.current !== 0) setIsVisible(false)
-    setSidebarOpen(false)
-    setIsScrollBlocked(false)
+    if (scrollY.current !== 0) setIsVisible(false);
+    setSidebarOpen(false);
+    setIsScrollBlocked(false);
   }
 
   // anable/disable scroll
   const [blockScroll, allowScroll] = useScrollBlock();
-  if (isScrollBlocked) blockScroll()
-  else allowScroll()
+  useEffect(() => {
+    if (isScrollBlocked) blockScroll();
+    else allowScroll();
+
+    return () => setIsScrollBlocked(false)
+  }, [isScrollBlocked]);
 
   return (
     <>
       <motion.nav className={style.nav} animate={isVisible ? "visible" : "hidden"} variants={isVisibleVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
         <NetworkNav pageContentRef={pageContent} />
         <NavigationNav openSidebar={handleToggleClick} data={navigationData} />
-        <MotionSidebar initial={false} animate={{x: sidebarOpen ? 0 : "-100%"}} closeSidebar={handleCloseSidebar} navigationData={navigationData} sidebarData={sidebarData} />
-        <motion.div onClick={handleCloseSidebar} className={style.backdrop} initial={false} animate={sidebarOpen ? {opacity: 0.7, pointerEvents: "auto"} : {opacity: 0, pointerEvents: "none"}} transition={{duration: 0.2}}></motion.div>
+        <MotionSidebar initial={false} animate={{ x: sidebarOpen ? 0 : "-100%" }} closeSidebar={handleCloseSidebar} navigationData={navigationData} sidebarData={sidebarData} />
+        <motion.div onClick={handleCloseSidebar} className={style.backdrop} initial={false} animate={sidebarOpen ? { opacity: 0.7, pointerEvents: "auto" } : { opacity: 0, pointerEvents: "none" }} transition={{ duration: 0.2 }}></motion.div>
       </motion.nav>
       <div className={style.spacer}></div>
-      <div ref={pageContent}>
-        {children}
-      </div>
+      <div ref={pageContent}>{children}</div>
     </>
   );
 }
