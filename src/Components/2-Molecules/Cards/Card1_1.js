@@ -35,7 +35,7 @@ function Card1_1({data = defaultMockData }) {
           <div className={style.overlay} style={{backgroundColor: "black", opacity: 0.3}} ></div>
           <MotionLink className={style.overlay} to={data.cardLink} style={{background: data.gradient ? "linear-gradient(90deg, rgba(32,27,112,0.896796218487395) 0%, rgba(204,32,32,0.8995973389355743) 100%)" : "rgba(13,9,84,0.9)"}} variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }} transition={{ duration: 0.2 }}></MotionLink>
           <div className={style.content}>
-            <motion.img variants={{ rest: { y: 0 }, hover: { y: -65 } }} className={style.logoImg} style={{width: `${data.logoImgWidth}%`}} src={data.logoImg} alt="logo image" />
+            <motion.img variants={{ rest: { y: "0%" }, hover: { y: "-80%" } }} className={style.logoImg} style={{width: `${data.logoImgWidth}%`}} src={data.logoImg} alt="logo image" />
             <motion.div variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }} className={style.links}>
               {data.links.map((arr, i) => <MotionLink variants={{ rest: { y: `-${i * 100}%` }, hover: { y: "0%" } }} to={arr[1]} className={style.link}>{arr[0]}</MotionLink> )}
             </motion.div>
@@ -49,7 +49,7 @@ function Card1_1({data = defaultMockData }) {
           <div className={style.overlay} style={{backgroundColor: "black", opacity: 0.3}} ></div>
           <MotionLink className={style.overlay} to={data.cardLink} style={{background: data.gradient ? "linear-gradient(90deg, rgba(32,27,112,0.896796218487395) 0%, rgba(204,32,32,0.8995973389355743) 100%)" : "rgba(13,9,84,0.9)"}} variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }} transition={{ duration: 0.2 }}></MotionLink>
           <div className={style.content}>
-            <motion.img variants={{ rest: { y: 0 }, hover: { y: -65 } }} className={style.logoImg} src={data.logoImg} alt="logo image" />
+            <motion.img variants={{ rest: { y: "0%" }, hover: { y: "-80%" } }} className={style.logoImg} src={data.logoImg} alt="logo image" />
             <motion.div variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }} className={style.links}>
               {data.links.map((arr, i) => <MotionLink variants={{ rest: { y: `-${i * 100}%` }, hover: { y: "0%" } }} to={arr[1]} className={style.link}>{arr[0]}</MotionLink> )}
             </motion.div>
