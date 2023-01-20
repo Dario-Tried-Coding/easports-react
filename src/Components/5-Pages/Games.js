@@ -7,20 +7,25 @@ import HeroImg, { HeroVideo } from "Mock-Data/Games/Hero";
 import { Banner } from "Components/4-Templates/Banner";
 import Section from "Components/4-Templates/Section";
 import WrCards from "Components/3-Organisms/Wrappers/WrCards";
+import Card1_1 from "Components/2-Molecules/Cards/Card1_1";
+import UltimiGiochi from "Mock-Data/Games/UltimiGiochi";
 
 export default function Games() {
   const navigationData = JSON.parse(NavigationData);
   const sidebarData = JSON.parse(Sidebar);
   const heroBannerData = JSON.parse(HeroImg);
-  const heroVideoData = JSON.parse(HeroVideo)
+  const heroVideoData = JSON.parse(HeroVideo);
+  const ultimiGiochiData = JSON.parse(UltimiGiochi)
 
   return (
     <Navigation navigationData={navigationData} sidebarData={sidebarData}>
-      <Banner stacked bgImageData={heroBannerData} bgVideoData={heroVideoData}/>
+      <Banner stacked bgImageData={heroBannerData} bgVideoData={heroVideoData} />
 
       <Section title="Ultimi giochi" btnContent="Vedi tutti i giochi" to="/games/library" margTop="small" btnMargTop="xlarge" margBottom="xlarge">
         <WrCards>
-          {["", "", "", "", "", ""].map(item => <div style={{backgroundColor: "lightGrey", width: "100%", aspectRatio: "1 / 1"}}></div> )}
+          {ultimiGiochiData.map((obj, i) => (
+            <Card1_1 key={i} data={obj} />
+          ))}
         </WrCards>
       </Section>
 
