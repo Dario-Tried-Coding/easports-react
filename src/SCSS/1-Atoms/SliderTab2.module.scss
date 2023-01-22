@@ -1,0 +1,36 @@
+@import "../Abstracts/mixins/_mixin-breakpoints.scss";
+
+.tabContainer {
+  --bg-clr: hsl(0 0% 100% / 0%);
+  position: relative;
+
+  height: 50px;
+  padding-inline: 1rem;
+  font-size: var(--fs-500);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .border {
+    position: absolute;
+    z-index: 1;
+    bottom: 1px;
+    height: 3px;
+    background-color: var(--clr-brand-700);
+  }
+}
+
+.link + .link .divider {
+  position: absolute;
+  height: 50%;
+  width: 2px;
+  left: -1px;
+  background-color: var(--clr-light-500);
+}
+
+@include mq(medium) {
+  .tabContainer {
+    height: 60px;
+  }
+}
