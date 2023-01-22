@@ -181,12 +181,12 @@ function Navigation({ navigationData = mockData, sidebarData = defaultSidebarDes
 
   // anable/disable scroll
   const [blockScroll, allowScroll] = useScrollBlock();
+  if (isScrollBlocked) blockScroll();
+  else allowScroll();
+  
   useEffect(() => {
-    if (isScrollBlocked) blockScroll();
-    else allowScroll();
-
-    return () => setIsScrollBlocked(false)
-  }, [isScrollBlocked]);
+    setIsScrollBlocked(false)
+  }, []);
 
   return (
     <>
