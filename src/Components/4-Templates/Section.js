@@ -3,7 +3,7 @@ import style from "../../SCSS/4-Templates/Section.module.scss"
 import PropTypes from "prop-types"
 import { Button } from "../1-Atoms/Button";
 
-function Section({title = "Placeholder Title Default", btnContent = "default", to = "/", children, margTop = "default", margBottom = "default", flow = "default", titleMargBottom = "default", btnMargTop = "default" }) {
+function Section({title = "Placeholder Title Default", btnContent = "", to = "/", children, margTop = "default", margBottom = "default", flow = "default", titleMargBottom = "default", btnMargTop = "default" }) {
   const cssStylePropObj = {
     "--flow": flow === "default" ? "var(--flow-spacer-section-100)" : `var(--spac-${flow}`,
     "--headingMargBottom": titleMargBottom === "default" ? "var(--flow)" : `var(--spac-${titleMargBottom}`,
@@ -17,7 +17,7 @@ function Section({title = "Placeholder Title Default", btnContent = "default", t
     <div style={cssStylePropObj} className={`${style.section}`}>
       <h2 className={style.h2}>{title}</h2>
       {children}
-      <Button to={to} content={btnContent} />
+      {btnContent && <Button to={to} content={btnContent} />}
     </div>
   );
 }
