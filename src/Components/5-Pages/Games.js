@@ -29,7 +29,7 @@ export default function Games() {
       <Section title="Ultimi giochi" btnContent="Vedi tutti i giochi" to="/games/library" margTop="small" btnMargTop="xlarge" margBottom="xlarge">
         <WrCards>
           {ultimiGiochiData.map((obj, i) => (
-            <Card1_1 key={i} data={obj} />
+            <Card1_1 key={i} bgImg={obj.bgImg} logoImg={obj.logoImg} logoImgWidth={obj.logoImgWidth} gradient={obj.gradient} cardLink={obj.cardLink} links={obj.links} />
           ))}
         </WrCards>
       </Section>
