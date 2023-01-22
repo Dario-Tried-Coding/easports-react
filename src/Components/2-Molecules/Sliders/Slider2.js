@@ -97,7 +97,7 @@ function Slider2({ data = defaultMockData }) {
         <div ref={containerRef}>
           <motion.ul ref={tabsRef} animate={{ x: slidePosition }} transition={{ duration: 0.4, ease: "easeInOut" }}>
             {data.map((obj, i) => (
-              <SliderTab2 key={i} data={obj} />
+              <SliderTab2 key={i} isActive={obj.isActive} to={obj.to} text={obj.text} />
             ))}
           </motion.ul>
         </div>
