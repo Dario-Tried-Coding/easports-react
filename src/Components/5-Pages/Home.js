@@ -1,7 +1,7 @@
 import React from "react";
-import Card from "Components/2-Molecules/Cards/Card1";
-import CardsWrapper from "Components/3-Organisms/Wrappers/Custom/CardsWrapper";
-import CardsSection from "Components/4-Templates/Custom/CardsSection";
+// import Card from "Components/2-Molecules/Cards/Card1";
+// import CardsWrapper from "Components/3-Organisms/Wrappers/Custom/CardsWrapper";
+// import CardsSection from "Components/4-Templates/Custom/CardsSection";
 import Section from "Components/4-Templates/Section";
 import Cards2Set from "Components/3-Organisms/Cards2Set";
 import { Banner } from "Components/4-Templates/Banner";
@@ -11,7 +11,8 @@ import { Genitori } from "Components/4-Templates/Genitori";
 import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 
 //Style for Cards
-import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
+// import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
+import style from "../../SCSS/2-Molecules/Cards/Card3.module.scss"
 import { Links } from "Components/4-Templates/Links";
 import Play from "Mock-Data/Home/Play";
 import Hero from "Mock-Data/Home/Hero";
@@ -33,7 +34,7 @@ export default function Home() {
       <Navigation navigationData={navigation} sidebarData={sidebar}>
         <Banner stacked logoMaxWidth="220px" logoImg="https://media.contentapi.ea.com/content/dam/eacom/images/2022/10/eacom-apex-eclipse-adaptive-logo-xl.png.adapt.crop7x2.1920w.png" bgImageData={hero} textPosition="right" margInlineXL="6%" subtitle="Strega i tuoi avversari nell'evento collezione" textClrLight btnTransparent={false} btnBgColor="var(--clr-light-400)" btnColor="var(--clr-dark-700)" btnContent="Altre informazioni" />
 
-        <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
+        {/* <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
           <CardsWrapper wrapperClass={style["cards-wrapper"]}>
             {(cards) => {
               return cards.map((card, i) => {
@@ -41,7 +42,13 @@ export default function Home() {
               });
             }}
           </CardsWrapper>
-        </CardsSection>
+        </CardsSection> */}
+
+        <Section btnContent="Ultimi giochi" title="Ultime novità">
+          <WrCards>
+            {["", "", "", "", "", ""].map((item, i) => <div style={{backgroundColor: "lightgray", width: "100%", aspectRatio: "1 / 1"}}></div> )}
+          </WrCards>
+        </Section>
 
         <Section title="Ultime Novita" btnContent="Scopri di più">
           <Cards2Set data={ultimeNovita} />

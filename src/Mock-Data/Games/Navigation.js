@@ -5,7 +5,7 @@ const mockData = [
     columns: [
       {
         heading: "Esplora i giochi",
-        links: [["Ultimi giochi", "/games"], ["Prossimamente", "/games/coming-soon"], ["Giochi gratuiti", "/games/library/freetoplay"], ["EA SPORTS", "/sports"], ["EA Originals", "/ea-originals"], ["Libreria dei giochi", "/games/library"]],
+        links: [["Ultimi giochi", "/games", "active"], ["Prossimamente", "/games/coming-soon"], ["Giochi gratuiti", "/games/library/freetoplay"], ["EA SPORTS", "/sports"], ["EA Originals", "/ea-originals"], ["Libreria dei giochi", "/games/library"]],
       },
       {
         heading: "Piattaforme",

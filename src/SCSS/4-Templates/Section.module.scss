@@ -1,12 +1,55 @@
 @import "../Abstracts/mixins/_mixin-breakpoints.scss";
 
 .section {
-  text-align: center;
-  margin-block: calc(var(--flow-spacer-section-100) * 1.5) var(--flow-spacer-section-100);
+  --spac-small: 24px;
+  --spac-medium: 40px;
+  --spac-large: 72px;
+  --spac-xlarge: 72px;
+}
+@include mq(medium) {
+  .section {
+    --spac-small: 28px;
+    --spac-medium: 48px;
+    --spac-large: 48px;
+    --spac-xlarge: 82px;
+  }
+}
+@include mq(large) {
+  .section {
+    --spac-small: 32px;
+    --spac-medium: 56px;
+    --spac-large: 56px;
+    --spac-xlarge: 92px;
+  }
+}
+@include mq(xlarge) {
+  .section {
+    --spac-small: 36px;
+    --spac-medium: 64px;
+    --spac-large: 64px;
+    --spac-xlarge: 112px;
+  }
 }
 
+.section {
+  text-align: center;
+  margin-block: var(--margTop) var(--margBottom);
+}
+.section + .section {
+  margin-top: calc(var(--margTop) + 16px);
+}
 @include mq(medium) {
   .h2 {
-    margin-bottom: calc(-1 * (var(--flow-spacer-section-100) / 100 * 70))
+    margin-bottom: calc(-1 * (var(--headingMargBottom) / 100 * 50));
   }
+}
+
+.section > * + * {
+  margin-top: var(--flow);
+}
+.section > *:nth-child(2) {
+  margin-top: var(--headingMargBottom);
+}
+.section > *:last-child {
+  margin-top: var(--btnMargTop);
 }

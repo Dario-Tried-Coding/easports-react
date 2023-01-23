@@ -25,6 +25,21 @@ const hero3 = [
 ];
 const play = JSON.parse(Play);
 
+const heroSectionVideoImg = [
+  "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/ea-hero-md-bg-mashup-trailer-pegi-16-7x2-xl.png.adapt.crop16x9.320w.png",
+  "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/ea-hero-md-bg-mashup-trailer-pegi-16-7x2-xl.png.adapt.crop16x9.767w.png",
+  "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/ea-hero-md-bg-mashup-trailer-pegi-16-7x2-xl.png.adapt.crop2x1.1023w.png",
+  "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/ea-hero-md-bg-mashup-trailer-pegi-16-7x2-xl.png.adapt.crop5x2.1455w.png",
+  "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/ea-hero-md-bg-mashup-trailer-pegi-16-7x2-xl.png.adapt.crop7x2.1920w.png"
+]
+const heroSectionVideoVideo = [
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-about-top-video-sizzle-xs.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-about-top-video-sizzle-s.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-about-top-video-sizzle-m.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-games-hero-md-fy23-sizzle-reel-5x2-lg.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-games-hero-md-fy23-sizzle-reel-7x2-xl.mp4"
+]
+
 export default {
   title: "Templates/Banner",
   component: Banner,
@@ -68,7 +83,7 @@ heroSection1.args = {
 };
 heroSection1.parameters = {
   controls: {
-    exclude: ["logoImg", "logoMaxWidth", "body"],
+    exclude: ["logoImg", "logoMaxWidth", "body", "bgImageData", "bgVideoData"],
   },
 };
 
@@ -90,7 +105,7 @@ heroSection2.args = {
 };
 heroSection2.parameters = {
   controls: {
-    exclude: ["logoImg", "logoMaxWidth", "body"],
+    exclude: ["logoImg", "logoMaxWidth", "body", "bgImageData", "bgVideoData"],
   },
 };
 
@@ -111,7 +126,7 @@ heroSection3.args = {
 };
 heroSection3.parameters = {
   controls: {
-    exclude: ["logoImg", "logoMaxWidth", "body", "title"],
+    exclude: ["logoImg", "logoMaxWidth", "body", "title", "bgImageData", "bgVideoData"],
   },
 };
 
@@ -129,6 +144,18 @@ playSection.args = {
 };
 playSection.parameters = {
   controls: {
-    exclude: ["logoImg", "logoMaxWidth", "title", "subtitle", "margInlineXL"],
+    exclude: ["logoImg", "logoMaxWidth", "title", "subtitle", "margInlineXL", "bgImageData", "bgVideoData"],
+  },
+};
+
+export const heroSectionVideo = ({ stacked, args }) => (
+  <Banner stacked={stacked} bgVideoData={heroSectionVideoVideo} bgImageData={heroSectionVideoImg} {...args} />
+);
+heroSectionVideo.args = {
+  stacked: true
+};
+heroSectionVideo.parameters = {
+  controls: {
+    exclude: ["logoImg", "logoMaxWidth", "body", "title", "bgImageData", "bgVideoData", "textClrLight", "subtitle", "textPosition", "textAlign", "btnContent", "btnTransparent", "btnColor", "btnBgColor", "margInlineXL"],
   },
 };

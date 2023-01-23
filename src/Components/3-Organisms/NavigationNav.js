@@ -4,6 +4,7 @@ import useWindowDimensions from "Hooks/useWindowDimensions";
 import style from "../../SCSS/3-Organisms/NavigationNav.module.scss";
 import NavbarDropdown from "Components/1-Atoms/NavbarDropdown";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const mockData = [
   {
@@ -75,7 +76,7 @@ function NavigationNav({ data = mockData, openSidebar = () => console.log("You n
       )}
 
       <div className={style.logo}>
-        <img src="https://media.contentapi.ea.com/content/dam/eacom/common/ea-wordmark-network-nav-coral.svg" alt="logo" />
+        <Link to="/"><img src="https://media.contentapi.ea.com/content/dam/eacom/common/ea-wordmark-network-nav-coral.svg" alt="logo" /></Link>
       </div>
 
       <ul className={style.shelf}>

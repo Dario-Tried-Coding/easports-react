@@ -1,0 +1,28 @@
+@use "../../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.wrapper {
+  margin-inline: var(--marg-inline-section);
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 40px;
+}
+
+@include mq(medium) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    row-gap: 44px;
+  }
+}
+@include mq(large) {
+  .wrapper {
+    column-gap: 28px;
+    row-gap: 48px;
+  }
+}
+@include mq(large) {
+  .wrapper {
+    column-gap: 32px;
+    row-gap: 48px;
+  }
+}

@@ -18,20 +18,9 @@ const Template = (args) => <div style={{display: "flex", justifyContent: "center
 export const template = Template.bind({});
 template.args = {
   title: "Placeholder Title",
-  active: false
-};
-template.argTypes = {
-  onClick: {
-    control: false
-  }
-}
-
-export const active = Template.bind({});
-active.args = {
-  title: "Placeholder Title",
   active: true
 };
-active.argTypes = {
+template.argTypes = {
   onClick: {
     control: false
   }
