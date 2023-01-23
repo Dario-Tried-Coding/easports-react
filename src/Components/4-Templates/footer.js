@@ -4,6 +4,7 @@ import RegionsBtn from "Components/2-Molecules/RegionsBtn";
 import logo from "../../Assets/ea-LOGO.png";
 import React from "react";
 import "../../SCSS/4-Templates/Footer-style.scss";
+import logosvg from "../../Assets/logo.jpg";
 const Footer = () => {
   return (
     <div className="footer">
@@ -37,7 +38,9 @@ const Footer = () => {
           <LanguagesBtn />
         </div>
         <div className="online-services">Aggiornamenti sui servizi online</div>
-        <div className="privacy-logo">LOGO</div>
+        <div className="privacy-logo">
+          <img src={logosvg} alt="logo" />
+        </div>
       </aside>
     </div>
   );
