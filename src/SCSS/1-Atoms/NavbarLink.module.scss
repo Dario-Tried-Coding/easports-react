@@ -1,0 +1,27 @@
+@use "../Abstracts/mixins/_mixin-styling.scss" as *;
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.link {
+  font-size: var(--fs-300);
+  @include flexCenter();
+  gap: 8px;
+  padding-right: 24px;
+  transition: transform 0.25s ease-in-out;
+
+  img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
+
+.link:hover {
+  transform: translateY(-5px);
+  transition: transform 0.1s ease-in-out;
+}
+
+@include mq(large) {
+  .link {
+    flex-direction: column;
+    padding-inline: 16px;
+  }
+}

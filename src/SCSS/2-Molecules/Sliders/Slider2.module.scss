@@ -1,0 +1,110 @@
+@import "../../Abstracts/mixins/_mixin-breakpoints.scss";
+
+.container {
+  overflow-x: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowContainer {
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before, &::after {
+    content: '';
+    display: inline-block;
+    height: 3px;
+    width: 15px;
+    border-radius: 3px;
+    background-color: var(--clr-dark-200);
+
+    position: absolute;
+  }
+
+  @include mq(medium) {
+    height: 60px;
+  }
+}
+
+.arrowContainerLeft {
+  left: 0;
+  padding-inline: 20px 40px;
+  
+  &::before {
+    transform: rotate(48.5deg);
+    margin-top: 9.5px;
+  }
+  
+  &::after {
+    transform: rotate(-48.5deg);
+    margin-top: -9.5px;
+  }
+}
+
+.arrowContainerRight {
+  right: 0;
+  padding-inline: 40px 20px;
+
+  &::before {
+    transform: rotate(-48.5deg);
+    margin-top: 9.5px;
+  }
+  
+  &::after {
+    transform: rotate(48.5deg);
+    margin-top: -9.5px;
+  }
+}
+
+// slider's tabs
+.wrapperDiv {
+  --mask-width: 12px;
+  --tabs-mask-width: calc(var(--padd-inline-section) + var(--mask-width));
+  --tabs-mask-width-outside: calc(var(--padd-inline-section));
+
+  width: 100%;
+  padding-inline: var(--padd-inline-section);
+
+  @include mq(medium) {
+    --tabs-mask-width: 60px;
+    --tabs-mask-width-outside: calc(var(--tabs-mask-width) / 2);
+  }
+
+  ul {
+    width: max-content;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.wrapperDiv.hideLeft {
+  -webkit-mask-image: linear-gradient( 90deg, transparent calc(var(--tabs-mask-width-outside)), #000 var(--tabs-mask-width), black calc(100% - var(--tabs-mask-width-outside)), transparent calc(100% - var(--tabs-mask-width-outside) + 1px));
+}
+.wrapperDiv.hideRight {
+  -webkit-mask-image: linear-gradient( 90deg, transparent calc(var(--tabs-mask-width-outside) - 1px), #000 var(--tabs-mask-width-outside), #000 calc(100% - var(--tabs-mask-width)), transparent calc(100% - var(--tabs-mask-width-outside)));
+}
+.wrapperDiv.hideBoth {
+  -webkit-mask-image: linear-gradient( 90deg, transparent calc(var(--tabs-mask-width-outside)), black var(--tabs-mask-width), #000 calc(100% - var(--tabs-mask-width)), transparent calc(100% - var(--tabs-mask-width-outside)) );
+}
+
+// horizontal bottom line
+.borderBottom {
+  align-self: flex-end;
+
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  margin-top: -2px;
+  left: 0;
+  background-color: var(--clr-light-500);
+  z-index: 0;
+}
