@@ -1,0 +1,17 @@
+.link {
+  display: block;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  .logoImg {
+    position: absolute;
+    display: block;
+  }
+}

@@ -1,0 +1,51 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+:root {
+  --navHeight: 53px;
+  @include mq(medium) {
+    --navHeight: 57px;
+  }
+  @include mq(large) {
+    --navHeight: 56px;
+  }
+  @include mq(xlarge) {
+    --navHeight: 60px;
+  }
+}
+
+.nav {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav > *:first-child {
+  position: absolute;
+  z-index: 3;
+}
+
+.nav > *:nth-child(2) {
+  position: absolute;
+  top: 40px;
+}
+
+.nav > *:nth-child(3) {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.spacer {
+  height: calc(var(--navHeight) + 40px);
+}
