@@ -13,7 +13,7 @@
   z-index: 1;
   cursor: pointer;
 
-  // display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -81,7 +81,6 @@
     width: max-content;
     display: flex;
     padding: 0;
-    transition: transform 0.4s;
     margin: 0;
   }
 }
