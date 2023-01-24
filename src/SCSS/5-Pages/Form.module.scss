@@ -1,0 +1,139 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.page {
+  background-color: #1D2033;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  padding-inline: 48px;
+
+  .content {
+    margin-top: 60px;
+    width: 100%;
+    max-width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    img {
+      align-self: center;
+      max-width: 64px;
+    }
+  
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
+      margin-block: 16px 24px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    label {
+      font-size: 12px;
+      font-family: var(--ff-text-900);
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: #fff;
+
+      margin-bottom: 8px;
+    }
+
+    .input {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      margin-bottom: 16px;
+
+      button {
+        position: absolute;
+        right: 10px;
+
+        background-color: #343647;
+        border: none;
+        border-radius: 8px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 40px;
+        height: 32px;
+      }
+    }
+    input {
+      width: 100%;
+      color: #fff;
+      letter-spacing: .75px;
+      background-color: #141724;
+      border: 2px solid #4A5256;
+      border-radius: 8px;
+      padding-inline: 12px 10px;
+      height: 48px;
+    }
+    input::placeholder {
+      color: #4A5256;
+    }
+
+    .checkbox {
+      margin-block: 8px 20px;
+
+      label {
+        text-transform: none;
+        font-size: 16px;
+        font-family: var(--ff-text-400);
+        letter-spacing: unset;
+        font-weight: 400;
+      }
+      .square {
+        width: 26px;
+        height: 26px;
+        background-color: #141724;
+        border: 2px solid #4A5256;
+        border-radius: 4px;
+        margin-right: 6px;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    form > button {
+      display: block;
+      margin-block: 12px;
+      border: none;
+      border-radius: 8px;
+      height: 48px;
+      color: #fff;
+      background-color: #1f55ca;
+      font-weight: bold;
+      letter-spacing: 2.8px;
+
+      &.transparent {
+        border: 2px solid #1f55ca;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@include mq(large) {
+  .page {
+    align-items: center;
+
+    .content {
+      margin-top: -60px
+    }
+  }
+}
