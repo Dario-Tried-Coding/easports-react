@@ -1,61 +1,62 @@
 import SliderTab from "Components/1-Atoms/SliderTab";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useAnimationControls, useMotionValue, useMotionValueEvent } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import styleCSS from "../../../SCSS/2-Molecules/Sliders/Slider1.module.scss";
 
 function Slider1({ data = [], activate, activeSet }) {
-  function getTranslation() {
-    return (slidePosition * maxSlide) / -100;
-  }
+  const [slidePosition, setSlidePosition] = useState(0);
+  const [maxSlide, setMaxSlide] = useState(0);
 
   const sliderRef = useRef(null);
   const tabsRef = useRef(null);
 
-  const [slidePosition, setSlidePosition] = useState(0);
-  const [maxSlide, setMaxSlide] = useState(0);
-  const [dragging, setDragging] = useState(false);
-
+  const controls = useAnimationControls();
   const xMotionValue = useMotionValue(0);
+  useMotionValueEvent(xMotionValue, "animationComplete", () => setSlidePosition(Math.round((xMotionValue.get() / maxSlide) * -100)));
 
-  function handleArrowClickDx() {
-    const movement = maxSlide * (sliderRef.current.offsetWidth / (maxSlide * 2))
-    setSlidePosition(Math.min(100, slidePosition + Math.round(movement / maxSlide * 100)))
-  }
-  function handleArrowClickSx() {
-    const movement = maxSlide * (sliderRef.current.offsetWidth / (maxSlide * 2))
-    setSlidePosition(Math.max(0, slidePosition + Math.round(movement / maxSlide * -100)))
-  }
-
-  let wrapperDivClassname
-  if (slidePosition === 100) wrapperDivClassname = `${styleCSS["wrapper-div"]} ${styleCSS["hide-left"]}`
-  else if (slidePosition === 0) wrapperDivClassname = `${styleCSS["wrapper-div"]} ${styleCSS["hide-right"]}`
-  else wrapperDivClassname = `${styleCSS["wrapper-div"]} ${styleCSS["hide-both"]}`
-
+  // update maxSlide on resize
   useEffect(() => {
-    function getMaxSlide() {
-      setMaxSlide(tabsRef.current.offsetWidth - sliderRef.current.offsetWidth);
-    }
+    const updateMaxSlide = () => setMaxSlide(tabsRef.current.offsetWidth - sliderRef.current.offsetWidth);
+    
+    setMaxSlide(tabsRef.current.offsetWidth - sliderRef.current.offsetWidth);
+    window.addEventListener("resize", updateMaxSlide)
+    
+    return () => window.removeEventListener("resize", updateMaxSlide)
+  }, []);
 
-    getMaxSlide()
-    window.addEventListener("resize", getMaxSlide)
-    return () => window.removeEventListener("resize", getMaxSlide)
-  });
-  useEffect(() => {if (maxSlide < 0) setSlidePosition(0)}, [maxSlide]);
+  // snap slidePosition back to 0 if slider not needed (maxSlide < 0)
+  useEffect(() => {if (maxSlide <= 0) controls.start({x: 0})}, [maxSlide])
+
+  // slide left/right on arrow click
+  function handleArrowDX() {
+    const movement = maxSlide * (sliderRef.current.offsetWidth / (maxSlide * 2));
+    controls.start({ x: Math.max(-maxSlide, xMotionValue.get() - movement), transition: { duration: 0.4, ease: "easeInOut" } });
+  }
+  function handleArrowSX() {
+    const movement = maxSlide * (sliderRef.current.offsetWidth / (maxSlide * 2));
+    controls.start({ x: Math.min(0, xMotionValue.get() + movement), transition: { duration: 0.4, ease: "easeInOut" } });
+  }
+
+  // show/hide right or left
+  let wrapperDivClassname;
+  if (slidePosition === 100) wrapperDivClassname = `${styleCSS["wrapper-div"]} ${styleCSS["hide-left"]}`;
+  else if (slidePosition === 0) wrapperDivClassname = `${styleCSS["wrapper-div"]} ${styleCSS["hide-right"]}`;
+  else wrapperDivClassname = `${styleCSS["wrapper-div"]} ${styleCSS["hide-both"]}`;
 
   return (
     <div className={styleCSS.container}>
-      {maxSlide > 0 && slidePosition > 0 && <div onClick={handleArrowClickSx} className={`${styleCSS["arrow-container"]} ${styleCSS["arrow-container-left"]}`}></div>}
+      {maxSlide > 0 && slidePosition > 0 && <div onClick={handleArrowSX} className={`${styleCSS["arrow-container"]} ${styleCSS["arrow-container-left"]}`}></div>}
       <div className={wrapperDivClassname}>
         <div ref={sliderRef}>
-          <motion.ul ref={tabsRef} drag={maxSlide > 0 ? "x" : false} onDragStart={() => setDragging(true)} onDrag={() => setSlidePosition(Math.round((xMotionValue.get() / maxSlide) * -100))} onDragEnd={() => setDragging(false)} dragConstraints={sliderRef} dragMomentum={false} dragElastic={false} style={{ x: xMotionValue }} animate={dragging ? false : { x: getTranslation() }} transition={{duration: 0.4, ease: "easeInOut"}}>
+          <motion.ul ref={tabsRef} drag="x" dragConstraints={sliderRef} dragMomentum={false} dragElastic={false} dragListener={maxSlide <= 0 ? false : true} animate={controls} style={{ x: xMotionValue }}>
             {data.map((obj, index) => (
               <SliderTab key={index} title={obj.setTitle} onClick={activate} active={obj.setTitle === activeSet.setTitle ? true : false} />
             ))}
           </motion.ul>
         </div>
       </div>
-      {maxSlide > 0 && slidePosition < 100 && <div onClick={handleArrowClickDx} className={`${styleCSS["arrow-container"]} ${styleCSS["arrow-container-right"]}`}></div>}
+      {maxSlide > 0 && slidePosition < 100 && <div onClick={handleArrowDX} className={`${styleCSS["arrow-container"]} ${styleCSS["arrow-container-right"]}`}></div>}
       <div className={`${styleCSS["border-bottom"]}`}></div>
     </div>
   );
