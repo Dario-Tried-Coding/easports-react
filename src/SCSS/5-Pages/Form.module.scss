@@ -56,10 +56,10 @@
       margin-bottom: 16px;
 
       button {
+        cursor: pointer;
         position: absolute;
         right: 10px;
 
-        background-color: #343647;
         border: none;
         border-radius: 8px;
 
@@ -80,13 +80,23 @@
       border-radius: 8px;
       padding-inline: 12px 10px;
       height: 48px;
+      transition: box-shadow 0.2s ease-in-out;
     }
     input::placeholder {
       color: #4A5256;
     }
+    input:hover {
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    }
+    input:focus {
+      box-shadow: 0 0 10px 0 rgba(255,255,255,0.76);
+    }
 
     .checkbox {
       margin-block: 8px 20px;
+
+      display: flex;
+      align-items: center;
 
       label {
         text-transform: none;
@@ -94,11 +104,12 @@
         font-family: var(--ff-text-400);
         letter-spacing: unset;
         font-weight: 400;
+        margin-bottom: 0;
       }
       .square {
+        cursor: pointer;
         width: 26px;
         height: 26px;
-        background-color: #141724;
         border: 2px solid #4A5256;
         border-radius: 4px;
         margin-right: 6px;
@@ -106,23 +117,40 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+
+        span {
+          color: #fff
+        }
       }
     }
 
     form > button {
+      cursor: pointer;
       display: block;
       margin-block: 12px;
       border: none;
       border-radius: 8px;
       height: 48px;
       color: #fff;
-      background-color: #1f55ca;
       font-weight: bold;
       letter-spacing: 2.8px;
 
       &.transparent {
         border: 2px solid #1f55ca;
         background-color: transparent;
+      }
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+
+      button {
+        cursor: pointer;
+        background-color: transparent;
+        color: #1f55ca;
+        border: none;
+        padding-inline: 2px;
       }
     }
   }
