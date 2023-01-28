@@ -73,6 +73,12 @@
   .spacer {
     width: 100%;
     height: var(--spacerHeight);
+    &[data-nth-last] {
+      height: 0;
+      @include mq(medium) {
+        height: var(--spacerHeight);
+      }
+    }
   }
 
   .ratio {
@@ -86,6 +92,9 @@
     position: absolute;
     inset: 0;
     width: 100%;
+  }
+  picture img {
+    height: 100%;
   }
 
   .content {
@@ -137,7 +146,7 @@
     }
   }
 
-  img {
+  .logoImg {
     max-width: var(--imgWidth, 100%);
   }
   h1 {
@@ -159,5 +168,6 @@
   }
   .btn {
     margin-top: var(--btnMargTop);
+    width: 100%;
   }
 }

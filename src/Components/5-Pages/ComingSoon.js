@@ -1,5 +1,4 @@
 import Slider2 from 'Components/2-Molecules/Sliders/Slider2';
-import { Banner } from 'Components/4-Templates/Banner';
 import { Links } from 'Components/4-Templates/Links';
 import Navigation from 'Components/4-Templates/Navigation';
 import Section from 'Components/4-Templates/Section';
@@ -9,19 +8,21 @@ import React from 'react';
 
 import NavigationData from 'Mock-Data/ComingSoon/Navigation';
 import Sidebar from 'Mock-Data/ComingSoon/Sidebar';
-import {HeroVideo} from "../../Mock-Data/ComingSoon/Hero"
+import Hero, {HeroVideo} from "../../Mock-Data/ComingSoon/Hero"
 import Slider from 'Mock-Data/ComingSoon/Slider';
 import ComingSoonData from 'Mock-Data/ComingSoon/ComingSoon';
+import Banner1 from 'Components/4-Templates/Banner1';
 
 export default function ComingSoon() {
   const navigationData = JSON.parse(NavigationData)
   const sidebarData = JSON.parse(Sidebar)
   const heroVideoData = JSON.parse(HeroVideo)
+  const heroBgImgData = JSON.parse(Hero)
   const sliderData = JSON.parse(Slider)
   const cardsData = JSON.parse(ComingSoonData)
 
   return <Navigation navigationData={navigationData} sidebarData={sidebarData}>
-    <Banner bgVideoData={heroVideoData} stacked/>
+    <Banner1 stacked video videoData={heroVideoData} bgImg bgImageData={heroBgImgData} />
     <Slider2 data={sliderData} />
     <Section title='Prossimamente' titleMargBottom='medium'>
       <WrCards2>

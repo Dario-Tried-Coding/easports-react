@@ -54,13 +54,12 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
           </picture>
         ) : null}
       </div>
-      <div className={style.spacer}></div>
       {animateEntrance ? (
         <motion.div className={`${style.content} ${stacked && style.stacked}`} initial={{y: 50, opacity: 0}} animate={isInView ? {y: 0, opacity: 1} : {y: 50, opacity: 0}} transition={{duration: 1}} data-text-position={textPosition} data-text-align={textAlign} data-text-color={textColor}>
-          {logoImg && <img src={logoImg} alt="logo" />}
-          {title && <h1>EA app per Windows</h1>}
-          {subTitle && <h2>Potenzia la nuova generazione di gioco per PC di EA</h2>}
-          {body && <h6>Solo una scritta di prova</h6>}
+          {logoImg && <img className={style.logoImg} src={logoImg} alt="logo" />}
+          {title && <h1>{title}</h1>}
+          {subTitle && <h2>{subTitle}</h2>}
+          {body && <h6>{body}</h6>}
           {btnContent && (
             <div className={style.btn}>
               <Button fullWidth content={btnContent} to={to} transparent={btnTransparent} bgClr={!btnTransparent ? (textColor === "dark" ? "var(--clr-dark-700)" : "var(--clr-light-400)") : "transparent"} clr={!btnTransparent ? (textColor === "dark" ? "var(--clr-light-400)" : "var(--clr-dark-700)") : textColor === "dark" ? "var(--clr-dark-700)" : "var(--clr-light-400)"} />
@@ -69,10 +68,10 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
         </motion.div>
       ) : (
         <div className={`${style.content} ${stacked && style.stacked}`} data-text-position={textPosition} data-text-align={textAlign} data-text-color={textColor}>
-          {logoImg && <img src={logoImg} alt="logo" />}
-          {title && <h1>EA app per Windows</h1>}
-          {subTitle && <h2>Potenzia la nuova generazione di gioco per PC di EA</h2>}
-          {body && <h6>Solo una scritta di prova</h6>}
+          {logoImg && <img className={style.logoImg} src={logoImg} alt="logo" />}
+          {title && <h1>{title}</h1>}
+          {subTitle && <h2>{subTitle}</h2>}
+          {body && <h6>{body}</h6>}
           {btnContent && (
             <div className={style.btn}>
               <Button fullWidth content={btnContent} to={to} transparent={btnTransparent} bgClr={!btnTransparent ? (textColor === "dark" ? "var(--clr-dark-700)" : "var(--clr-light-400)") : "transparent"} clr={!btnTransparent ? (textColor === "dark" ? "var(--clr-light-400)" : "var(--clr-dark-700)") : textColor === "dark" ? "var(--clr-dark-700)" : "var(--clr-light-400)"} />
@@ -80,6 +79,7 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
           )}
         </div>
       )}
+      <div className={style.spacer} data-nth-last ></div>
     </div>
   );
 }
