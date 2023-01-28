@@ -19,6 +19,7 @@ import Navigation from "Components/4-Templates/Navigation";
 import Navbar from "Mock-Data/Home/Navigation";
 import Sidebar from "Mock-Data/Home/Sidebar";
 import WrCards from "Components/3-Organisms/Wrappers/WrCards";
+import Banner1 from "Components/4-Templates/Banner1";
 
 export default function Home() {
   const navigation = JSON.parse(Navbar);
