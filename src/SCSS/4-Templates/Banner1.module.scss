@@ -88,13 +88,27 @@
     }
   }
 
-  picture, video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
+  .ratio {
+    picture, picture img, video {
+      height: 100%;
+    }
   }
-  picture img {
-    height: 100%;
+  .ratio.stacked {
+    picture, video {
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: unset;
+  
+      @include mq(medium) {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    picture img {
+      height: unset;
+    }
   }
 
   .content {
@@ -158,6 +172,7 @@
     font-family: var(--ff-heading-400);
     font-weight: 400;
     line-height: var(--h2-lineHeight);
+    letter-spacing: 1px;
     margin-top: var(--h2-margTop);
   }
   h6 {

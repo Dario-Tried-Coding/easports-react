@@ -19,7 +19,7 @@ const defaultImgMockData = [
   "https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop7x2.1920w.png"
 ]
 
-function Banner1({ stacked = false, textPosition = "center", textAlign = "center", textColor = "dark", btnTransparent = false, title = "", subTitle = "", body = "", btnContent = "", to = "/", animateEntrance = false, videoOnce = false, bgImg = false, bgImageData = defaultImgMockData, video = false, videoData = defaultVideoMockData, logoImg = "", logoImgWidth = 100, spacerHeightSmall = 0, spacerHeightMedium = 0, spacerHeightLarge = 0, spacerHeightXlarge = 0 }) {
+function Banner1({ stacked = false, textPosition = "center", textAlign = "center", textColor = "dark", btnTransparent = false, title = "", subTitle = "", body = "", btnContent = "", to = "/", animateEntrance = false, delay = 0, videoOnce = false, bgImg = false, bgImageData = defaultImgMockData, video = false, videoData = defaultVideoMockData, logoImg = "", logoImgWidth = 100, spacerHeightSmall = 0, spacerHeightMedium = 0, spacerHeightLarge = 0, spacerHeightXlarge = 0 }) {
   const { width } = useWindowSize();
   const bannerRef = useRef(null);
   const isInView = useInView(bannerRef, { once: true });
@@ -37,7 +37,7 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
       <div className={`${style.ratio} ${stacked && style.stacked}`}>
         {video ? videoOnce ? <video muted autoPlay src={videoSrc}></video> : <video loop muted autoPlay src={videoSrc}></video> : null}
         {bgImg ? animateEntrance ? (
-          <motion.picture animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }} transition={{ duration: 1 }}>
+          <motion.picture initial={{x: 100, opacity: 0}} animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }} transition={{ duration: 1, delay: delay }}>
             <source media="(min-width: 1456px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop7x2.1920w.png" />
             <source media="(min-width: 1024px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop5x2.1455w.png" />
             <source media="(min-width: 768px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop2x1.1023w.png" />
@@ -55,7 +55,7 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
         ) : null}
       </div>
       {animateEntrance ? (
-        <motion.div className={`${style.content} ${stacked && style.stacked}`} initial={{y: 50, opacity: 0}} animate={isInView ? {y: 0, opacity: 1} : {y: 50, opacity: 0}} transition={{duration: 1}} data-text-position={textPosition} data-text-align={textAlign} data-text-color={textColor}>
+        <motion.div className={`${style.content} ${stacked && style.stacked}`} initial={{y: 50, opacity: 0}} animate={isInView ? {y: 0, opacity: 1} : {y: 50, opacity: 0}} transition={{duration: 1, delay: delay}} data-text-position={textPosition} data-text-align={textAlign} data-text-color={textColor}>
           {logoImg && <img className={style.logoImg} src={logoImg} alt="logo" />}
           {title && <h1>{title}</h1>}
           {subTitle && <h2>{subTitle}</h2>}
