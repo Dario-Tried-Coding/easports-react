@@ -38,11 +38,11 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
         {video ? videoOnce ? <video muted autoPlay src={videoSrc}></video> : <video loop muted autoPlay src={videoSrc}></video> : null}
         {bgImg ? animateEntrance ? (
           <motion.picture initial={{x: 100, opacity: 0}} animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }} transition={{ duration: 1, delay: delay }}>
-            <source media="(min-width: 1456px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop7x2.1920w.png" />
-            <source media="(min-width: 1024px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop5x2.1455w.png" />
-            <source media="(min-width: 768px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop2x1.1023w.png" />
-            <source media="(min-width: 320px)" srcSet="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop16x9.767w.png" />
-            <img src="https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop16x9.320w.png" alt="background" />
+            <source media="(min-width: 1456px)" srcSet={bgImageData[4]} />
+            <source media="(min-width: 1024px)" srcSet={bgImageData[3]} />
+            <source media="(min-width: 768px)" srcSet={bgImageData[2]} />
+            <source media="(min-width: 320px)" srcSet={bgImageData[1]} />
+            <img src={bgImageData[0]} alt="background" />
           </motion.picture>
         ) : (
           <picture>
