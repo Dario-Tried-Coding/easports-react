@@ -7,6 +7,7 @@ import Banner1 from 'Components/4-Templates/Banner1';
 import { bgImgData, videoData } from 'Mock-Data/EaApp/Hero';
 import { banner1, banner2, banner3 } from 'Mock-Data/EaApp/Banners';
 import { Links } from 'Components/4-Templates/Links';
+import { Genitori } from 'Components/4-Templates/Genitori';
 
 function EaApp({}) {
   const navigationData = JSON.parse(NavigationData)
@@ -19,10 +20,11 @@ function EaApp({}) {
 
   return ( <Navigation navigationData={navigationData} sidebarData={sidebarData}>
     <Banner1 stacked animateEntrance textPosition="left" textAlign='left' title='EA app per Windows' subTitle='Potenzia la nuova generazione di gioco per PC di EA' btnContent="Scarica l'EA app" video videoData={heroVideoData} bgImg bgImageData={heroBgImgData} />
-    <div style={{width: "100%", height: 100, backgroundColor: "var(--clr-dark-900)"}}></div>
-    <Banner1 stacked animateEntrance textPosition='right' textAlign='left' title='Progettata per la velocità' body='Con questa piattaforma veloce e ottimizzata, scoprire, scaricare e giocare è più facile che mai. Accedi ai tuoi giochi in meno tempo e meno clic.' videoOnce video videoData={banner1VideoData}/>
-    <Banner1 stacked animateEntrance textPosition='left' textAlign='left' title='Costruita per connettere' body='Collega il tuo account EA alle tue piattaforme di gioco preferite per importare le liste di amici e giocare con loro.' videoOnce video videoData={banner2VideoData}/>
-    <Banner1 stacked animateEntrance textPosition='right' textAlign='left' title='Novità a portata di mano' body='Scopri a cosa giocano i tuoi amici, scopri le ultime uscite di EA e aggiungile alla tua collezione in pochi clic.' videoOnce video videoData={banner3VideoData}/>
+    <Genitori bgColor='var(--clr-dark-900)' textClr='var(--clr-light-400)' heading='Giochi su Mac? Scarica Origin per Mac.' btnContent='Scarica' btnTransparent btnColor='var(--clr-light-400)' />
+    <Banner1 stacked animateEntrance delay={0.5} textPosition='right' textAlign='left' title='Progettata per la velocità' body='Con questa piattaforma veloce e ottimizzata, scoprire, scaricare e giocare è più facile che mai. Accedi ai tuoi giochi in meno tempo e meno clic.' videoOnce video videoData={banner1VideoData}/>
+    <Banner1 stacked animateEntrance delay={0.5} textPosition='left' textAlign='left' title='Costruita per connettere' body='Collega il tuo account EA alle tue piattaforme di gioco preferite per importare le liste di amici e giocare con loro.' videoOnce video videoData={banner2VideoData}/>
+    <Banner1 stacked animateEntrance delay={0.5} textPosition='right' textAlign='left' title='Novità a portata di mano' body='Scopri a cosa giocano i tuoi amici, scopri le ultime uscite di EA e aggiungile alla tua collezione in pochi clic.' videoOnce video videoData={banner3VideoData}/>
+    <Genitori spacerHeightSmall={4} spacerHeightMedium={3} spacerHeightLarge={2} spacerHeightXlarge={2} bgColor='var(--clr-dark-900)' textClr='var(--clr-light-400)' heading="L'EA app sostituirà Origin: leggi per saperne di più." btnContent='Leggi il post' btnTransparent btnColor='var(--clr-light-400)' />
     <Links />
   </Navigation> );
 }

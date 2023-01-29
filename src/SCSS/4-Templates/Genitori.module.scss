@@ -1,4 +1,17 @@
 @import "../Abstracts/mixins/_mixin-breakpoints.scss";
+.container {
+  --spacerHeight: var(--spacerHeightSmall);
+  @include mq(medium) {
+    --spacerHeight: var(--spacerHeightMedium);
+  }
+  @include mq(large) {
+    --spacerHeight: var(--spacerHeightLarge);
+  }
+  @include mq(xlarge) {
+    --spacerHeight: var(--spacerHeightXlarge);
+  }
+}
+
 .flow > * + * {
   margin-top: 16px;
 }
@@ -6,6 +19,11 @@
 .blocco_genitori {
   text-align: center;
   padding-block: 32px 32px;
+}
+
+.spacer {
+  width: 100%;
+  height: var(--spacerHeight)
 }
 
 .heading {
