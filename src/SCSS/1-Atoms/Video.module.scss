@@ -1,0 +1,7 @@
+.video {
+  width: 100%;
+}
+
+* + .video {
+  margin-top: 24px;
+}
