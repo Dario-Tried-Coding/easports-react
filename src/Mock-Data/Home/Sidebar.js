@@ -1,6 +1,6 @@
 const data = {
   bigImg: {
-    bgImg: "https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-play-16x9-png.adapt.crop1x1.767w.",
+    bgImg: "https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-play-16x9.png.adapt.crop1x1.767w.png",
     logoImg: "https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-play-mono-logo-svg.svg",
     to: "/ea-play-live",
     bgImgAlt: "EA Play",
