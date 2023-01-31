@@ -1,26 +1,30 @@
-
 import React from "react";
-import "../../SCSS/4-Templates/Footer-style.scss";
+import { Link } from "react-router-dom";
+import style from "../../SCSS/4-Templates/Footer.module.scss";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="logo">
-            <img src="https://media.contentapi.ea.com/content/dam/eacom/it-it/common/october-ea-ring.png" />
+    <div className={style.footer}>
+      <div className={style.logo}>
+        <Link to="/"><img src="https://media.contentapi.ea.com/content/dam/eacom/it-it/common/october-ea-ring.png" alt="logo" /></Link>
       </div>
-      <div className="meno-logo">
-        
-        <div className="section1">
-          <div className="scritte1">
-            <div className="libreria-giochi">Libreria dei giochi</div>
-            <div className="registrati">Registrati</div>
-            <div className="riscatta-codice">Riscatta codice</div>
-            <div className="EA-app">EA app</div>
-            <div className="informazioni">Informazioni</div>
-            <div className="accessibilità">Accessibilità</div>
-            <div className="aiuto">Aiuto</div>
-          </div> 
-          <div className="buttons"> 
+
+      <div className={style.content}>
+        <div className={style.section1}>
+          <div className={style.links}>
+            <Link to="/games/library">Libreria dei giochi</Link>
+            <Link to="/ea-play">Registrati</Link>
+            <Link to="/redeem">Riscatta codice</Link>
+            <Link to="/ea-app">EA app</Link>
+            <Link to="/about">Informazioni</Link>
+            <Link to="/">Accessibilità</Link>
+            <Link to="/">Aiuto</Link>
+          </div>
+          <div className={style.buttons}>
+            <div></div>
+            <div></div>
+          </div>
+          {/* <div className="buttons"> 
             <div className="dropdown-price">
             <div className="dropdown">
               <button id="swapArrow" className="button-link">
@@ -178,22 +182,21 @@ const Footer = () => {
               </div>
           </div>
             </div>
+          </div> */}
+        </div>
+        <div className={style.section2}>
+          <div className={style.links}>
+            <Link to="/legal">Note legali e privacy</Link>
+            <Link to="/legal/user-agreement">Accordo con l'utente</Link>
+            <Link to="/legal/privacy-and-cookie-policy">Politica sulla privacy e sui cookie (i tuoi diritti sulla privacy)</Link>
+            <Link to="/legal/service-updates">Aggiornamenti sui servizi online</Link>
+            <p>© 2023 Electronic Arts Inc.</p>
           </div>
-        </div>  
-        <div className="section2">
-          <div className="scritte2">
-          <div className="privacy">Note legali e privacy</div>
-          <div className="accordo-con-utente">Accordo con l'utente</div>
-          <div className="cookie-policy">Politica sulla privacy e sui cookie (i tuoi diritti sulla privacy)</div>
-          <div className="google-privacy">Aggiornamenti sui servizi online</div>
-          <div className="eletronic-arts">© 2023 Electronic Arts Inc.</div>
-          </div>
-          <div className="logo2">
-            <img src="https://privacy-policy.truste.com/privacy-seal/seal?rid=2593a571-b03b-4951-9a22-c175bd66b351"/>
+          <div className={style.policy}>
+            <Link to="/"><img src="https://privacy-policy.truste.com/privacy-seal/seal?rid=2593a571-b03b-4951-9a22-c175bd66b351" alt="policy"/></Link>
           </div>
         </div>
       </div>
-          
     </div>
   );
 };
