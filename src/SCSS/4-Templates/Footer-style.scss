@@ -157,9 +157,9 @@ margin-top: 10px;
            cursor: pointer;
            padding: 0px 8px;
 
-           &:focus::before {
-               content: url('/assets/img/icon-check.png');
-           }
+          //  &:focus::before {
+          //      content: url('/assets/img/icon-check.png');
+          //  }
 
           
        }
