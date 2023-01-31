@@ -13,7 +13,6 @@ const data = [
 ]
 
 const videoData = [
-  "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-about-top-video-sizzle-xs.mp4",
   "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-about-top-video-sizzle-s.mp4",
   "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-about-top-video-sizzle-m.mp4",
   "https://media.contentapi.ea.com/content/dam/eacom/videos/2022/10/ea-games-hero-md-fy23-sizzle-reel-5x2-lg.mp4",

@@ -50,6 +50,6 @@
 .section > *:nth-child(2) {
   margin-top: var(--headingMargBottom);
 }
-.section > *:last-child {
+.section > a:last-child {
   margin-top: var(--btnMargTop);
 }

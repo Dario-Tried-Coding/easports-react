@@ -1,0 +1,188 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.banner {
+  --height: 166.66vw;
+  --heightStacked: 56.25vw;
+
+  --contentMargTop: 32px;
+  --contentMargBottom: 32px;
+  --contentMargSmall: 7.5vw;
+  --contentMargMedium: 7.5vw;
+  --contentMargLarge: 7.5vw;
+
+  --h1LineHeight: 41.4px;
+  --h2-lineHeight: 25px;
+  --h6-lineHeight: 24px;
+
+  --h2-margTop: 13px;
+  --btnMargTop: 17px;
+
+  --spacerHeight: var(--spacerHeightSmall);
+
+  @include mq(medium) {
+    --height: 50vw;
+    --heightStacked: var(--height);
+
+    --contentMargTop: 32px;
+    --contentMargSmall: 7.8125vw;
+    --contentMargMedium: 22.35vw;
+    --contentMargLarge: 51.5vw;
+
+    --h1LineHeight: 43.7px;
+
+    --spacerHeight: var(--spacerHeightMedium);
+  }
+  @include mq(large) {
+    --height: 40vw;
+
+    --contentMargTop: 36px;
+    --contentMargSmall: 7.4218vw;
+    --contentMargMedium: 22vw;
+    --contentMargLarge: 51.2vw;
+
+    --h1LineHeight: 50.6px;
+
+    --btnMargTop: 21px;
+
+    --spacerHeight: var(--spacerHeightLarge);
+  }
+  @include mq(xlarge) {
+    --height: 28.57vw;
+
+    --contentMargTop: 40px;
+    --contentMargSmall: calc((100vw - 1120px) / 2);
+    --contentMargMedium: 25.7vw;
+    --contentMargLarge: 51vw;
+
+    --h1LineHeight: 62.1px;
+    --h2-lineHeight: 32.4px;
+    --h6-lineHeight: 27px;
+
+    --h2-margTop: 15.6px;
+    --btnMargTop: 24px;
+
+    --spacerHeight: var(--spacerHeightXlarge);
+  }
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .spacer {
+    width: 100%;
+    height: var(--spacerHeight);
+    &[data-nth-last] {
+      height: 0;
+      @include mq(medium) {
+        height: var(--spacerHeight);
+      }
+    }
+  }
+
+  .ratio {
+    height: var(--height);
+    &.stacked {
+      height: var(--heightStacked);
+    }
+  }
+
+  .ratio {
+    picture, picture img, video {
+      height: 100%;
+    }
+  }
+  .ratio.stacked {
+    picture, video {
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: unset;
+  
+      @include mq(medium) {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    picture img {
+      height: unset;
+    }
+  }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    &.stacked {
+      position: relative;
+      @include mq(medium) {
+        position: absolute;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    text-align: center;
+    &[data-text-align="center"] {
+      text-align: center;
+      align-items: center;
+    }
+    &[data-text-align="left"] {
+      text-align: left;
+      align-items: flex-start;
+    }
+    &[data-text-align="right"] {
+      text-align: right;
+      align-items: flex-end;
+    }
+
+    padding: var(--contentMargTop) var(--contentMargMedium) var(--contentMargBottom);
+    &[data-text-position="center"] {
+      padding: var(--contentMargTop) var(--contentMargMedium) var(--contentMargBottom);
+    }
+    &[data-text-position="left"] {
+      padding: var(--contentMargTop) var(--contentMargLarge) var(--contentMargBottom) var(--contentMargSmall);
+    }
+    &[data-text-position="right"] {
+      padding: var(--contentMargTop) var(--contentMargSmall) var(--contentMargBottom) var(--contentMargLarge);
+    }
+
+    color: var(--clr-dark-700);
+    &[data-text-color="dark"] {
+      color: var(--clr-dark-700);
+    }
+    &[data-text-color="light"] {
+      color: var(--clr-light-400);
+    }
+  }
+
+  .logoImg {
+    max-width: var(--imgWidth, 100%);
+  }
+  h1 {
+    font-size: var(--fs-1000);
+    line-height: var(--h1LineHeight);
+  }
+  h2 {
+    font-size: var(--fs-600);
+    font-family: var(--ff-heading-400);
+    font-weight: 400;
+    line-height: var(--h2-lineHeight);
+    letter-spacing: 1px;
+    margin-top: var(--h2-margTop);
+  }
+  h6 {
+    font-size: var(--fs-500);
+    line-height: var(--h6-lineHeight);
+    font-family: var(--ff-heading-400);
+    font-weight: 400;
+  }
+  .btn {
+    margin-top: var(--btnMargTop);
+    width: 100%;
+  }
+}

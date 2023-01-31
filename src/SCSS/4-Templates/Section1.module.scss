@@ -1,0 +1,86 @@
+@use "../Abstracts/mixins/_mixin-breakpoints.scss" as *;
+
+.container {
+  --spacerHeight: var(--spacerHeightSmall);
+  --margTop: 24px;
+  --flow: 24px;
+  --h3-margBlock: 14px;
+  --h3-lineHeight: 36.8px;
+  --h4-margBlock: 13px;
+  --h4-lineHeight: 25px;
+
+  @include mq(medium) {
+    --spacerHeight: var(--spacerHeightMedium);
+    --margTop: 28px;
+    --flow: 22px;
+  }
+
+  @include mq(large) {
+    --spacerHeight: var(--spacerHeightLarge);
+    --margTop: 30px;
+    --flow: 32px;
+    --h3-lineHeight: 46px;
+    --h3-margBlock: 20px;
+    --h4-margBlock: 15.6px;
+    --h4-lineHeight: 30px;
+  }
+  @include mq(xlarge) {
+    --spacerHeight: var(--spacerHeightXlarge);
+    --margTop: 33px;
+    --flow: 36px;
+    --h3-lineHeight: 50.6px;
+    --h3-margBlock: 20px;
+    --h4-lineHeight: 32.4px;
+  }
+}
+
+.spacer {
+  height: var(--spacerHeight);
+}
+
+.section > * + * {
+  margin-top: var(--flow);
+}
+
+.section {
+  padding-top: var(--margTop);
+  padding-bottom: var(--flow);
+  padding-inline: none;
+  text-align: center;
+
+  [data-margin-section] {
+    margin-inline: var(--marg-inline-section);
+    @include mq(medium) {
+      margin-inline: unset;
+    }
+  }
+
+  
+  h3 {
+    font-size: var(--fs-900);
+    line-height: var(--h3-lineHeight);
+  }
+
+  h4 {
+    margin-top: var(--h3-margBlock);
+    font-size: var(--fs-600);
+    font-family: var(--ff-heading-400);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: var(--h4-lineHeight);
+  }
+}
+
+[data-text-align="left"] {
+  text-align: left;
+}
+[data-text-align="center"] {
+  text-align: center;
+}
+[data-text-align="right"] {
+  text-align: right;
+}
+
+[data-padding-inline=true] {
+  padding-inline: var(--padd-inline-section);
+}
