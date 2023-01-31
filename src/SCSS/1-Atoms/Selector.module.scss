@@ -1,0 +1,87 @@
+.selector {
+  position: relative;
+  flex-basis: 100%;
+  min-width: 190px;
+
+  button {
+    background-color: transparent;
+    border: 2px solid var(--clr-light-900);
+    border-radius: 3px;
+
+    width: 100%;
+    padding: 8px 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: var(--fs-100);
+
+    span:first-child {
+      color: var(--clr-dark-400);
+    }
+
+    span:last-child {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      svg {
+        width: 16px;
+      }
+    }
+  }
+  button[data-active="true"] {
+    border: 3px solid #c2c2c2;
+  }
+
+  select {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .options {
+    position: absolute;
+    bottom: 95%;
+    right: -28px;
+
+    padding-inline: 30px;
+    padding-block: 21px;
+
+    background-color: var(--clr-light-400);
+    border: 3px solid #c2c2c2;
+    border-radius: 3px;
+
+    display: flex;
+    align-items: stretch;
+    gap: 28px;
+
+    .column {
+      min-width: 140px;
+      flex-basis: 100%;
+
+      .item {
+        display: flex;
+        align-items: center;
+
+        height: 56px;
+        border-bottom: 2px solid var(--clr-light-500);
+
+        span {
+          font-size: var(--fs-100);
+        }
+
+        svg {
+          margin-left: auto;
+          width: 16px;
+        }
+      }
+      .item:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
