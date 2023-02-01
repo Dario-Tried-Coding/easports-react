@@ -3,6 +3,18 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../../SCSS/4-Templates/Footer.module.scss";
 
+const selector1 = [
+  [["Austria"], ["Belgio"], ["Bulgaria"], ["Croazia"], ["Cipro"], ["Repubblica Ceca"], ["Danimarca"], ["Estonia"], ["Finlandia"]],
+  [["Francia"], ["Germania"], ["Greece"], ["Ungheria"], ["Islanda"], ["Irlanda"], ["Italia", "active"], ["Lettonia"], ["Liechtenstein"]],
+  [["Lituania"], ["Lussemburgo"], ["Malta"], ["Paesi Bassi"], ["Norvegia"], ["Polonia"], ["Portogallo"], ["Romania"], ["Slovenia"]],
+  [["Spagna"], ["Svezia"], ["Svizzera"]],
+];
+const selector2 = [
+  [["United States"], ["United Kingdom"], ["Australia"], ["France"], ["Deutschland"], ["Italia", "active"], ["日本"], ["Polska"], ["Brasil"]],
+  [["Россия"], ["España"], ["Česká republika"], ["Canada (En)"], ["Canada (Fr)"], ["Danmark"], ["Suomi"], ["México"], ["Nederland"]],
+  [["Norge"], ["Sverige"], ["中国"], ["대한민국"], ["繁體中文"], ["Türkiye"]],
+]
+
 const Footer = () => {
   const [is1Open, setIs1Open] = useState(false)
   const [is2Open, setIs2Open] = useState(false)
@@ -38,8 +50,8 @@ const Footer = () => {
             <Link to="/">Aiuto</Link>
           </div>
           <div className={style.buttons}>
-            <Selector label="Prezzi per regione" handleClick={handleClick} ref={selector1Ref} isOpen={is1Open} />
-            <Selector label="Lingua" handleClick={handleClick} ref={selector2Ref} isOpen={is2Open} />
+            <Selector data={selector1} label="Prezzi per regione" handleClick={handleClick} ref={selector1Ref} isOpen={is1Open} />
+            <Selector data={selector2} label="Lingua" handleClick={handleClick} ref={selector2Ref} isOpen={is2Open} />
           </div>
         </div>
         <div className={style.section2}>

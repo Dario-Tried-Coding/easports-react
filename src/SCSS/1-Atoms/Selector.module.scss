@@ -31,9 +31,6 @@
       }
     }
   }
-  button[data-active="true"] {
-    border: 3px solid #c2c2c2;
-  }
 
   select {
     position: absolute;
@@ -64,6 +61,7 @@
       flex-basis: 100%;
 
       .item {
+        cursor: pointer;
         display: flex;
         align-items: center;
 

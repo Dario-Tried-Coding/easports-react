@@ -1,4 +1,4 @@
-// @ts-nocheck
+import { motion } from "framer-motion";
 import useWindowSize from "Hooks/useWindowSize";
 import React from "react";
 import style from "../../SCSS/1-Atoms/Selector.module.scss";
@@ -30,7 +30,7 @@ const Selector = ({ isOpen, handleClick, label = "default", data = mockData }, r
       {width < 1024 ? (
         <select name="prova" id="prova">
           {data.map((arr) => arr.map(arr => {
-          if (arr[1]) return <option selected="selected">{arr[0]}</option>
+          if (arr[1]) return <option selected>{arr[0]}</option>
           else return <option>{arr[0]}</option>
           } ))}
         </select>
@@ -39,10 +39,10 @@ const Selector = ({ isOpen, handleClick, label = "default", data = mockData }, r
         {data.map((set, i) => (
           <div key={i} className={style.column}>
             {set.map((arr, i) => (
-              <div key={i} className={style.item}>
-                <span>{arr[0]}</span>
+              <motion.div key={i} className={style.item} whileHover="hover">
+                <motion.span variants={{hover: {x: 10}}} transition={{duration: 0.1, ease: "easeInOut"}}>{arr[0]}</motion.span>
                 {arr[1] === "active" && (<svg viewBox="0 0 16 16"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M7,13.3L7,13.3c-0.4,0.4-1,0.4-1.4,0L0.9,8.7 c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L7,11.9C7.4,12.3,7.4,12.9,7,13.3z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M5.7,13.4L5.7,13.4c-0.4-0.4-0.5-1-0.1-1.4l8-9.2 c0.4-0.4,1-0.5,1.4-0.1l0,0c0.4,0.4,0.5,1,0.1,1.4l-8,9.2C6.8,13.7,6.1,13.7,5.7,13.4z"></path></g></svg>)}
-              </div>
+              </motion.div>
             ))}
           </div>
         ))}
