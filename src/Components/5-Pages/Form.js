@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import style from "../../SCSS/5-Pages/Form.module.scss";
 
 const button1Variants = {
@@ -45,7 +46,7 @@ function Form({}) {
       </Helmet>
       <div className={style.page}>
         <div className={style.content}>
-          <img src="https://eaassets-a.akamaihd.net/resource_signin_ea_com/551.0.20230120.211.3ef4f9a/p/statics/juno/img/EALogo-New.svg" alt="Logo image" />
+          <Link to="/" className={style.logo}><img src="https://eaassets-a.akamaihd.net/resource_signin_ea_com/551.0.20230120.211.3ef4f9a/p/statics/juno/img/EALogo-New.svg" alt="Logo image" /></Link>
           {onLogin ? (
             <>
               <h1>Accedi al tuo account EA</h1>

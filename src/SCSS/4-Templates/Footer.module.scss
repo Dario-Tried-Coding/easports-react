@@ -25,7 +25,10 @@
 .footer {
     background-color: var(--clr-light-100);
     padding-block: var(--paddBlock);
-    padding-inline: var(--padd-inline-section);
+    padding-inline: 22px;
+    @include mq(medium) {
+        padding-inline: var(--padd-inline-section);
+    }
 
     display: flex;
     flex-direction: column;
