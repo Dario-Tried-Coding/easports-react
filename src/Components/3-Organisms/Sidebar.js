@@ -136,7 +136,7 @@ function Sidebar({ closeSidebar = () => console.log("pass function to close side
     <div ref={ref} className={style.sidebarMobile}>
       <header>
         <div className="logoImg">
-          <Link to="/"><img src="https://media.contentapi.ea.com/content/dam/eacom/common/ea-wordmark-network-nav-coral.svg" alt="logo image" /></Link>
+          <Link to="/"><img src="https://media.contentapi.ea.com/content/dam/eacom/common/ea-wordmark-network-nav-coral.svg" alt="logo" /></Link>
         </div>
         <div onClick={closeSidebar} className={style.closeSVG}>
           <svg x="0px" y="0px" viewBox="0 0 40 40">

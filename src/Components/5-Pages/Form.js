@@ -17,11 +17,10 @@ const button1Variants = {
   },
 };
 
-function Form({}) {
+function Form() {
   const [onLogin, setOnLogin] = useState(true);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password1Visible, setPassword1Visible] = useState(false);
-  const [checkboxChecked, setCheckboxChecked] = useState(false);
 
   const formRef = useRef(null)
 
@@ -46,7 +45,7 @@ function Form({}) {
       </Helmet>
       <div className={style.page}>
         <div className={style.content}>
-          <Link to="/" className={style.logo}><img src="https://eaassets-a.akamaihd.net/resource_signin_ea_com/551.0.20230120.211.3ef4f9a/p/statics/juno/img/EALogo-New.svg" alt="Logo image" /></Link>
+          <Link to="/" className={style.logo}><img src="https://eaassets-a.akamaihd.net/resource_signin_ea_com/551.0.20230120.211.3ef4f9a/p/statics/juno/img/EALogo-New.svg" alt="Logo" /></Link>
           {onLogin ? (
             <>
               <h1>Accedi al tuo account EA</h1>

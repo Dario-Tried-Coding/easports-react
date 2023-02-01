@@ -13,7 +13,7 @@ import Video from 'Components/1-Atoms/Video';
 import Section1 from 'Components/4-Templates/Section1';
 import Footer from 'Components/4-Templates/Footer';
 
-function EaApp({}) {
+function EaApp() {
   const navigationData = JSON.parse(NavigationData)
   const sidebarData = JSON.parse(Sidebar)
   const heroVideoData = JSON.parse(videoData)

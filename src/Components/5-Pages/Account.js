@@ -13,7 +13,7 @@ const button2Variants = {
   },
 };
 
-export default function Account({}) {
+export default function Account() {
   return (
     <>
       <Helmet>
@@ -21,7 +21,7 @@ export default function Account({}) {
       </Helmet>
       <div className={style.page}>
         <div className={style.content}>
-          <img src="https://eaassets-a.akamaihd.net/resource_signin_ea_com/551.0.20230120.211.3ef4f9a/p/statics/juno/img/EALogo-New.svg" alt="Logo image" />
+          <img src="https://eaassets-a.akamaihd.net/resource_signin_ea_com/551.0.20230120.211.3ef4f9a/p/statics/juno/img/EALogo-New.svg" alt="Logo" />
           <h1>Ciao, Nome!</h1>
           <ul>
             <li>Nome:</li>
