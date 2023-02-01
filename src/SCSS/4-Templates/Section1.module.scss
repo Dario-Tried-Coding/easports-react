@@ -48,7 +48,7 @@
   padding-inline: none;
   text-align: center;
 
-  [data-margin-section] {
+  [data-margin-section="true"] {
     margin-inline: var(--marg-inline-section);
     @include mq(medium) {
       margin-inline: unset;
