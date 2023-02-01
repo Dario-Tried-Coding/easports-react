@@ -16,8 +16,8 @@ function Section1({ children, title = "", subtitle = "", textAlign = "center", p
         data-text-align={textAlign}
         data-padding-inline={paddInline}
       >
-        <h3 data-margin-section>{title}</h3>
-        <h4 data-margin-section>{subtitle}</h4>
+        <h3 data-margin-section={!paddInline}>{title}</h3>
+        <h4 data-margin-section={!paddInline}>{subtitle}</h4>
         {children}
       </section>
       <div className={style.spacer}></div>
