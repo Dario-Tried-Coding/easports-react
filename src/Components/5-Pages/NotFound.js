@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function NotFound() {
   const navigate = useNavigate()
-  setTimeout(() => navigate("/"), 1000)
+  navigate("/")
 
   return ( <h1>Not Found</h1> );
 }

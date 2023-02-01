@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 // import Card from "Components/2-Molecules/Cards/Card1";
 // import CardsWrapper from "Components/3-Organisms/Wrappers/Custom/CardsWrapper";
 // import CardsSection from "Components/4-Templates/Custom/CardsSection";
@@ -29,6 +30,9 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Home Page Electronic Arts - Sito EA ufficiale</title>
+      </Helmet>
       <Navigation navigationData={navigation} sidebarData={sidebar}>
         <Banner1 stacked animateEntrance textPosition="right" textColor="light" title="Gioca oggi a Dead Space™" btnContent="Acquista ora" logoImg="https://media.contentapi.ea.com/content/dam/gin/common/logos/dead-space-logo-main-page-hero-marge.svg" video videoData={heroVideoData} spacerHeightSmall={43.75} spacerHeightMedium={6} spacerHeightLarge={6} spacerHeightXlarge={6} />
 
