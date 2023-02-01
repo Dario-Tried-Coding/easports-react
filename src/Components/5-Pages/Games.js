@@ -12,6 +12,7 @@ import UltimiGiochi from "Mock-Data/Games/UltimiGiochi";
 import Slider2 from "Components/2-Molecules/Sliders/Slider2";
 import Slider from "Mock-Data/Games/Slider";
 import Banner1 from "Components/4-Templates/Banner1";
+import Footer from "Components/4-Templates/Footer";
 
 export default function Games() {
   const navigationData = JSON.parse(NavigationData);
@@ -37,6 +38,7 @@ export default function Games() {
           </WrCards>
         </Section>
         <Links />
+        <Footer />
       </Navigation>
     </>
   );

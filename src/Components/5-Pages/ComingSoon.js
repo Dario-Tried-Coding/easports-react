@@ -13,6 +13,7 @@ import Hero, {HeroVideo} from "../../Mock-Data/ComingSoon/Hero"
 import Slider from 'Mock-Data/ComingSoon/Slider';
 import ComingSoonData from 'Mock-Data/ComingSoon/ComingSoon';
 import Banner1 from 'Components/4-Templates/Banner1';
+import Footer from 'Components/4-Templates/Footer';
 
 export default function ComingSoon() {
   const navigationData = JSON.parse(NavigationData)
@@ -36,6 +37,7 @@ export default function ComingSoon() {
         </WrCards2>
       </Section>
       <Links />
+      <Footer />
     </Navigation>
   </>)
 }

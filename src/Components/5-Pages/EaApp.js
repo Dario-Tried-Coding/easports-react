@@ -11,6 +11,7 @@ import { Links } from 'Components/4-Templates/Links';
 import { Genitori } from 'Components/4-Templates/Genitori';
 import Video from 'Components/1-Atoms/Video';
 import Section1 from 'Components/4-Templates/Section1';
+import Footer from 'Components/4-Templates/Footer';
 
 function EaApp({}) {
   const navigationData = JSON.parse(NavigationData)
@@ -37,6 +38,7 @@ function EaApp({}) {
         </Section1>
         <Genitori spacerHeightSmall={4} spacerHeightMedium={3} spacerHeightLarge={2} spacerHeightXlarge={2} bgColor='var(--clr-dark-900)' textClr='var(--clr-light-400)' heading="L'EA app sostituirà Origin: leggi per saperne di più." btnContent='Leggi il post' btnTransparent btnColor='var(--clr-light-400)' />
         <Links />
+        <Footer />
       </div>
     </Navigation>
   </> );
