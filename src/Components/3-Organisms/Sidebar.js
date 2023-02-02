@@ -117,7 +117,7 @@ function Sidebar({ closeSidebar = () => console.log("pass function to close side
   return width > 1024 ? (
     <div ref={ref} className={style.sidebarDesktop}>
       <header>
-        <Link to="/">Tutti i giochi</Link>
+        <Link to="/games">Tutti i giochi</Link>
         <svg onClick={closeSidebar} x="0px" y="0px" viewBox="0 0 16 16">
           <path d="M13.4,11.9l-4-4l3.9-3.9c0.6-0.6,0.7-1.3,0.3-1.7c-0.4-0.4-1.2-0.3-1.7,0.3L8,6.6l-4-4 C3.5,2.1,2.7,1.9,2.3,2.3C1.9,2.7,2.1,3.5,2.6,4.1l4,4l-3.9,3.9c-0.6,0.6-0.7,1.3-0.3,1.7c0.4,0.4,1.2,0.3,1.7-0.3L8,9.4l4,4 c0.6,0.6,1.3,0.7,1.7,0.3C14.1,13.3,13.9,12.5,13.4,11.9z"></path>
         </svg>
