@@ -22,7 +22,7 @@ const defaultImgMockData = [
 function Banner1({ stacked = false, textPosition = "center", textAlign = "center", textColor = "dark", btnTransparent = false, title = "", subTitle = "", body = "", btnContent = "", to = "/", animateEntrance = false, delay = 0, videoOnce = false, bgImg = false, bgImageData = defaultImgMockData, video = false, videoData = defaultVideoMockData, logoImg = "", logoImgWidth = 100, spacerHeightSmall = 0, spacerHeightMedium = 0, spacerHeightLarge = 0, spacerHeightXlarge = 0 }) {
   const { width } = useWindowSize();
   const bannerRef = useRef(null);
-  const isInView = useInView(bannerRef, { once: true });
+  const isInView = useInView(bannerRef, { once: true, margin: "0px 0px -200px 0px" });
 
   let videoSrc;
   if (width < 768) videoSrc = videoData[0];
