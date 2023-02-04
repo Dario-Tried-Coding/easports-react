@@ -13,10 +13,10 @@ const imgData = [
 ]
 
 export const videoData = JSON.stringify([
-  "https://media.contentapi.ea.com/content/dam/eacom/dead-space/videos/2022/11/dead-space-hero-video-landing-hero-sm-xs.mp4",
-  "https://media.contentapi.ea.com/content/dam/eacom/dead-space/videos/2022/11/dead-space-hero-video-landing-hero-md.mp4",
-  "https://media.contentapi.ea.com/content/dam/eacom/dead-space/videos/2022/11/dead-space-hero-video-landing-hero-l.mp4",
-  "https://media.contentapi.ea.com/content/dam/eacom/dead-space/videos/2022/11/dead-space-hero-video-landing-hero-xl.mp4"
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2023/01/wildhearts-hero-med-eacom-takeover-16x9-sm-xs.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2023/01/wildhearts-hero-med-eacom-takeover-2x1-md.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2023/01/wildhearts-hero-med-eacom-takeover-5x2-lg.mp4",
+  "https://media.contentapi.ea.com/content/dam/eacom/videos/2023/01/wildhearts-hero-med-eacom-takeover-7x2-xl.mp4"
 ])
 
 export default JSON.stringify(imgData)
