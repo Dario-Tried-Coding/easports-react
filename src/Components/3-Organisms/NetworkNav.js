@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
-import useScrollBlock from "Hooks/useScrollBlock";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -11,46 +10,41 @@ const heightVariants = { closed: { height: 0 }, open: { height: 400 } };
 const opacityVariants = { disabled: { opacity: 0, pointerEvents: "none" }, active: { opacity: 1, pointerEvents: "auto" } };
 const visiblityVariants = { visible: { transform: "translateY(0px)" }, hidden: { transform: "translateY(-200px)" } };
 
-function NetworkNav({ pageContentRef }) {
+function NetworkNav({isSidebarVisible}) {
   const [is1Active, setIs1Active] = useState(false);
   const [is2Active, setIs2Active] = useState(false);
   const [is1Visible, setIs1Visible] = useState(true);
   const [is2Visible, setIs2Visible] = useState(true);
-  const { isScrollBlocked } = useContext(ScrollBlockedContext);
+  const { setIsScrollBlocked } = useContext(ScrollBlockedContext);
 
   function closeNavbar() {
     setIs1Active(false);
     setIs2Active(false);
     setIs1Visible(true);
     setIs2Visible(true);
+    if (!isSidebarVisible) {setIsScrollBlocked(false)}
   }
 
   // close if click outside
   const networkNavbarRef = useRef(null);
   useEffect(() => {
-    document.addEventListener("click", (e) => {
+    function handleCloseNavbar(e) {
       if (is1Active || is2Active) {
         if (!networkNavbarRef.current.contains(e.target)) {
-          setIs1Active(false);
-          setIs2Active(false);
-          setIs1Visible(true);
-          setIs2Visible(true);
+          closeNavbar()
         }
       }
-    });
-  });
+    }
 
-  // anable/disable scroll
-  const [blockScroll, allowScroll] = useScrollBlock(pageContentRef);
-  if (!isScrollBlocked) {
-    if (is1Active || is2Active) blockScroll();
-    else allowScroll();
-  }
+    document.addEventListener("click", handleCloseNavbar);
+    return () => document.removeEventListener("click", handleCloseNavbar)
+  }, [is1Active, is2Active, networkNavbarRef]);
 
   function handleAccountSVGClick() {
     if (!is1Active && !is2Active) {
       setIs1Active(true);
       setIs2Visible(false);
+      setIsScrollBlocked(true)
     } else if (!is1Active && is2Active) {
       setIs1Active(true);
       setIs2Active(false);
@@ -59,12 +53,14 @@ function NetworkNav({ pageContentRef }) {
     } else if (is1Active && !is2Active) {
       setIs1Active(false);
       setIs2Visible(true);
+      if (!isSidebarVisible) {setIsScrollBlocked(false)}
     }
   }
   function handleHelpSVGClick() {
     if (!is1Active && !is2Active) {
       setIs2Active(true);
       setIs1Visible(false);
+      setIsScrollBlocked(true)
     } else if (is1Active && !is2Active) {
       setIs1Active(false);
       setIs2Active(true);
@@ -73,6 +69,7 @@ function NetworkNav({ pageContentRef }) {
     } else if (!is1Active && is2Active) {
       setIs2Active(false);
       setIs1Visible(true);
+      if (!isSidebarVisible) {setIsScrollBlocked(false)}
     }
   }
 
