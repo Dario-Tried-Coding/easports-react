@@ -7,7 +7,7 @@ export default {
 };
 
 export const template = (args) => (
-  <div style={{maxWidth: 800, marginInline: "auto", paddingInline: "5vw", backgroundColor: "white"}}>
+  <div style={{maxWidth: 800, marginInline: "auto", paddingInline: "5vw"}}>
     <FAQ {...args} />
   </div>
 );
