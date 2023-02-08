@@ -1,5 +1,5 @@
 import { motion, useScroll } from "framer-motion";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NavigationNav from "../3-Organisms/NavigationNav";
 import NetworkNav from "../3-Organisms/NetworkNav";
 

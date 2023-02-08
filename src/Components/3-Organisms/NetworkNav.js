@@ -120,10 +120,10 @@ function NetworkNav({isSidebarVisible}) {
           <motion.div className={style.flexContainer} variants={visiblityVariants} animate={is1Visible ? "visible" : "hidden"} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
             <ul>
               <li>
-                <NavbarLink to="/form" src="https://media.contentapi.ea.com/content/dam/eacom/common/200429_global-nav/eaglobalnav-iconsignin.svg" alt="login" text="Sing In" />
+                <NavbarLink to="/login" src="https://media.contentapi.ea.com/content/dam/eacom/common/200429_global-nav/eaglobalnav-iconsignin.svg" alt="login" text="Sing In" />
               </li>
               <li>
-                <NavbarLink to="/form" src="https://media.contentapi.ea.com/content/dam/eacom/common/200429_global-nav/eaglobalnav-iconregister.svg" alt="create account" text="Create Account" />
+                <NavbarLink to="/register" src="https://media.contentapi.ea.com/content/dam/eacom/common/200429_global-nav/eaglobalnav-iconregister.svg" alt="create account" text="Create Account" />
               </li>
             </ul>
           </motion.div>
