@@ -1,8 +1,8 @@
 import React from "react";
 import {Helmet} from "react-helmet";
-// import Card from "Components/2-Molecules/Cards/Card1";
-// import CardsWrapper from "Components/3-Organisms/Wrappers/Custom/CardsWrapper";
-// import CardsSection from "Components/4-Templates/Custom/CardsSection";
+import Card from "Components/2-Molecules/Cards/Card1";
+import CardsWrapper from "Components/3-Organisms/Wrappers/Custom/CardsWrapper";
+import CardsSection from "Components/4-Templates/Custom/CardsSection";
 import Section from "Components/4-Templates/Section";
 import Cards2Set from "Components/3-Organisms/Cards2Set";
 import { Genitori } from "Components/4-Templates/Genitori";
@@ -11,7 +11,7 @@ import { Genitori } from "Components/4-Templates/Genitori";
 import UltimeNovita from "Mock-Data/Home/UltimeNovita";
 
 //Style for Cards
-// import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
+import style from "../../SCSS/2-Molecules/Cards/Card1.module.scss";
 import { Links } from "Components/4-Templates/Links";
 import Play from "Mock-Data/Home/Play";
 import Navigation from "Components/4-Templates/Navigation";
@@ -38,7 +38,7 @@ export default function Home() {
       <Navigation navigationData={navigation} sidebarData={sidebar}>
         <Banner1 stacked contentBgColor="#161616" textColor="light" logoImgWidth={60} title="La caccia inizia il 17 febbraio 2023!" btnContent="Scopri di più" logoImg="https://media.contentapi.ea.com/content/dam/eacom/common/wild-hearts-light-logo-500.svg" video videoData={heroVideoData} />
 
-        {/* <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
+        <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
           <CardsWrapper wrapperClass={style["cards-wrapper"]}>
             {(cards) => {
               return cards.map((card, i) => {
@@ -46,15 +46,15 @@ export default function Home() {
               });
             }}
           </CardsWrapper>
-        </CardsSection> */}
+        </CardsSection>
 
-        <Section btnContent="Ultimi giochi" title="Ultime novità">
+        {/* <Section btnContent="Ultimi giochi" title="Ultime novità">
           <WrCards>
             {["", "", "", "", "", ""].map((item, i) => (
               <div style={{ backgroundColor: "lightgray", width: "100%", aspectRatio: "1 / 1" }}></div>
             ))}
           </WrCards>
-        </Section>
+        </Section> */}
 
         <Section title="Ultime Novita" btnContent="Scopri di più">
           <Cards2Set data={ultimeNovita} />
@@ -65,7 +65,7 @@ export default function Home() {
         <Genitori heading="Genitori: il controllo dei videogiochi è nelle vostre mani." btnContent="Scopri di più" />
 
         <Links />
-        
+
         <Footer />
       </Navigation>
     </>

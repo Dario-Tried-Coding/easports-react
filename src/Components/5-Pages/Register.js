@@ -98,7 +98,6 @@ function Register() {
     });
     const responseJSON = await response.json()
     if (response.status !== 200) {
-      console.log(response.status)
       if (!name || !surname || !email || !password || !confirmedPassword) setErrorMessage("Questo campo non può essere vuoto")
       if (!name) setNameError(true)
       if (!surname) setSurnameError(true)
@@ -109,6 +108,10 @@ function Register() {
         setErrorMessage("Le password devono coincidere")
         setPasswordError(true)
         setPasswordConfirmedError(true)
+      }
+      if (responseJSON === `Email: ${email} Already exists. Please Login`) {
+        setErrorMessage("Utente già registrato")
+        setEmailError(true)
       }
       if (responseJSON === '"email" must be a valid email') {
         setErrorMessage("Formato email non valido")
