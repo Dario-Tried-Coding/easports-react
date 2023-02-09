@@ -84,7 +84,7 @@ function Login() {
               <div className={style.input}>
                 <input type="email" name="email" id="email" value={email} onChange={handleEmailInput} placeholder="Inserisci la tua e-mail" data-error={error} />
               </div>
-              {error && <p className={style.error}>Il tuo indirizzo email o la tua password non sono validi</p>}
+              {error && <p className={style.error}>Email o password non corretti</p>}
               <label htmlFor="password">Password</label>
               <div className={style.input}>
                 <input type={passwordVisible ? "text" : "password"} name="password" id="password" value={password} onChange={handlePasswordInput} placeholder="Inserisci la tua password" data-error={error}/>
@@ -113,7 +113,7 @@ function Login() {
                   )}
                 </motion.button>
               </div>
-              {error && <p className={style.error}>Il tuo indirizzo email o la tua password non sono validi</p>}
+              {error && <p className={style.error}>Email o password non corretti</p>}
               <motion.button whileHover="hover" initial="rest" variants={button1Variants} type="submit" onClick={handleUserLogin} >
                 ACCEDI
               </motion.button>
