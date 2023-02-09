@@ -36,7 +36,7 @@ export default function Home() {
         <title>Home Page Electronic Arts - Sito EA ufficiale</title>
       </Helmet>
       <Navigation navigationData={navigation} sidebarData={sidebar}>
-        <Banner1 stacked textColor="light" logoImgWidth={60} title="La caccia inizia il 17 febbraio 2023!" btnContent="Scopri di più" logoImg="https://media.contentapi.ea.com/content/dam/eacom/common/wild-hearts-light-logo-500.svg" video videoData={heroVideoData} />
+        <Banner1 stacked contentBgColor="#161616" textColor="light" logoImgWidth={60} title="La caccia inizia il 17 febbraio 2023!" btnContent="Scopri di più" logoImg="https://media.contentapi.ea.com/content/dam/eacom/common/wild-hearts-light-logo-500.svg" video videoData={heroVideoData} />
 
         {/* <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
           <CardsWrapper wrapperClass={style["cards-wrapper"]}>

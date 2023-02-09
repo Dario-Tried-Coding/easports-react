@@ -19,7 +19,7 @@ const defaultImgMockData = [
   "https://media.contentapi.ea.com/content/dam/eacom/ea-app/images/2022/05/ea-app-hero-medium-xl-7x2.png.adapt.crop7x2.1920w.png"
 ]
 
-function Banner1({ stacked = false, textPosition = "center", textAlign = "center", textColor = "dark", btnTransparent = false, title = "", subTitle = "", body = "", btnContent = "", to = "/", animateEntrance = false, delay = 0, videoOnce = false, bgImg = false, bgImageData = defaultImgMockData, video = false, videoData = defaultVideoMockData, logoImg = "", logoImgWidth = 100, spacerHeightSmall = 0, spacerHeightMedium = 0, spacerHeightLarge = 0, spacerHeightXlarge = 0 }) {
+function Banner1({ stacked = false, contentBgColor = "transparent", textPosition = "center", textAlign = "center", textColor = "dark", btnTransparent = false, title = "", subTitle = "", body = "", btnContent = "", to = "/", animateEntrance = false, delay = 0, videoOnce = false, bgImg = false, bgImageData = defaultImgMockData, video = false, videoData = defaultVideoMockData, logoImg = "", logoImgWidth = 100, spacerHeightSmall = 0, spacerHeightMedium = 0, spacerHeightLarge = 0, spacerHeightXlarge = 0 }) {
   const { width } = useWindowSize();
   const bannerRef = useRef(null);
   const isInView = useInView(bannerRef, { once: true, margin: "0px 0px -200px 0px" });
@@ -32,7 +32,7 @@ function Banner1({ stacked = false, textPosition = "center", textAlign = "center
 
   return (
     // @ts-ignore
-    <div ref={bannerRef} className={style.banner} style={{"--imgWidth": `${logoImgWidth}%`, "--spacerHeightSmall": `${spacerHeightSmall}vw`, "--spacerHeightMedium": `${spacerHeightMedium}vw`, "--spacerHeightLarge": `${spacerHeightLarge}vw`, "--spacerHeightXlarge": `${spacerHeightXlarge}vw`}}>
+    <div ref={bannerRef} className={style.banner} style={{"--imgWidth": `${logoImgWidth}%`, "--contentBgColor": contentBgColor, "--spacerHeightSmall": `${spacerHeightSmall}vw`, "--spacerHeightMedium": `${spacerHeightMedium}vw`, "--spacerHeightLarge": `${spacerHeightLarge}vw`, "--spacerHeightXlarge": `${spacerHeightXlarge}vw`}}>
       <div className={style.spacer}></div>
       <div className={`${style.ratio} ${stacked && style.stacked}`}>
         {video ? videoOnce ? <video muted autoPlay src={videoSrc}></video> : <video loop muted autoPlay src={videoSrc}></video> : null}
