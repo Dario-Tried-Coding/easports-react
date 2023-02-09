@@ -21,11 +21,28 @@ function Register() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password1Visible, setPassword1Visible] = useState(false);
 
-  const navigate = useNavigate()
+  const [name, setName] = useState("")
+  const [surname, setSurname] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmedPassword, setConfirmedPassword] = useState("")
+
+  const [errorMessage, setErrorMessage] = useState("")
+  const [nameError, setNameError] = useState(false)
+  const [surnameError, setSurnameError] = useState(false)
+  const [emailError, setEmailError] = useState(false)
+  const [passwordError, setPasswordError] = useState(false)
+  const [passwordConfirmedError, setPasswordConfirmedError] = useState(false)
+
+  const navigate = useNavigate();
   const formRef = useRef(null);
 
   useEffect(() => {
-    formRef.current.reset();
+    setName("");
+    setSurname("")
+    setEmail("")
+    setPassword("")
+    setConfirmedPassword("")
     setPasswordVisible(false);
   }, []);
 
@@ -36,6 +53,75 @@ function Register() {
   function handlePasswordBtn1(e) {
     e.preventDefault();
     setPassword1Visible(!password1Visible);
+  }
+
+  function handleNameInput(e) {
+    setNameError(false)
+    setName(e.target.value)
+  }
+  function handleSurnameInput(e) {
+    setSurnameError(false)
+    setSurname(e.target.value)
+  }
+  function handleEmailInput(e) {
+    setEmailError(false)
+    setEmail(e.target.value)
+  }
+  function handlePasswordInput(e) {
+    setPasswordError(false)
+    setPassword(e.target.value)
+
+    if (errorMessage === "Le password devono coincidere") setPasswordConfirmedError(false)
+  }
+  function handleConfirmedPasswordInput(e) {
+    setPasswordConfirmedError(false)
+    setConfirmedPassword(e.target.value)
+
+    if (errorMessage === "Le password devono coincidere") setPasswordError(false)
+  }
+
+  async function handleUserCreation(e) {
+    e.preventDefault()
+    const response = await fetch("http://localhost:3000/users/register", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        name: name,
+        surname: surname,
+        email: email,
+        password: password,
+        confirmPassword: confirmedPassword,
+      }),
+    });
+    const responseJSON = await response.json()
+    if (response.status !== 200) {
+      console.log(response.status)
+      if (!name || !surname || !email || !password || !confirmedPassword) setErrorMessage("Questo campo non può essere vuoto")
+      if (!name) setNameError(true)
+      if (!surname) setSurnameError(true)
+      if (!email) setEmailError(true)
+      if (!password) setPasswordError(true)
+      if (!confirmedPassword) setPasswordConfirmedError(true)
+      if (responseJSON === "Passwords does not match!") {
+        setErrorMessage("Le password devono coincidere")
+        setPasswordError(true)
+        setPasswordConfirmedError(true)
+      }
+      if (responseJSON === '"email" must be a valid email') {
+        setErrorMessage("Formato email non valido")
+        setEmailError(true)
+      }
+      if (responseJSON === '"password" length must be at least 6 characters long') {
+        setErrorMessage("La password deve essere almeno di 6 caratteri")
+        setPasswordError(true)
+        setPasswordConfirmedError(true)
+      }
+    } else {
+      navigate("/login")
+    }
   }
 
   return (
@@ -53,19 +139,22 @@ function Register() {
             <form ref={formRef}>
               <label htmlFor="name">Nome</label>
               <div className={style.input}>
-                <input type="text" name="name" id="name" placeholder="Inserisci il tuo nome" />
+                <input type="text" name="name" id="name" value={name} onChange={handleNameInput} placeholder="Inserisci il tuo nome" data-error={nameError} />
               </div>
+              {nameError && <p className={style.error}>{errorMessage}</p>}
               <label htmlFor="surname">Cognome</label>
               <div className={style.input}>
-                <input type="text" name="surname" id="surname" placeholder="Inserisci il tuo cognome" />
+                <input type="text" name="surname" id="surname" value={surname} onChange={handleSurnameInput} placeholder="Inserisci il tuo cognome" data-error={surnameError} />
               </div>
+              {surnameError && <p className={style.error}>{errorMessage}</p>}
               <label htmlFor="email">E-mail</label>
               <div className={style.input}>
-                <input type="email" name="email" id="email" placeholder="Inserisci la tua e-mail" />
+                <input type="email" name="email" id="email" value={email} onChange={handleEmailInput} placeholder="Inserisci la tua e-mail" data-error={emailError} />
               </div>
+              {emailError && <p className={style.error}>{errorMessage}</p>}
               <label htmlFor="password">Password</label>
               <div className={style.input}>
-                <input type={passwordVisible ? "text" : "password"} name="password" id="password" placeholder="Inserisci la tua password" />
+                <input type={passwordVisible ? "text" : "password"} name="password" id="password" value={password} onChange={handlePasswordInput} placeholder="Inserisci la tua password" data-error={passwordError} />
                 <motion.button whileHover={{ scale: 0.94, backgroundColor: "#141724", transition: { backgroundColor: { duration: 0 } } }} initial={{ scale: 1, backgroundColor: "#343647" }} onClick={handlePasswordBtn}>
                   {!passwordVisible ? (
                     <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -91,9 +180,10 @@ function Register() {
                   )}
                 </motion.button>
               </div>
-              <label htmlFor="confirm-password">Password</label>
+              {passwordError && <p className={style.error}>{errorMessage}</p>}
+              <label htmlFor="confirm-password">Confirm password</label>
               <div className={style.input}>
-                <input type={password1Visible ? "text" : "password"} name="confirm-password" id="confirm-password" placeholder="Inserisci la tua password" />
+                <input type={password1Visible ? "text" : "password"} name="confirm-password" id="confirm-password" value={confirmedPassword} onChange={handleConfirmedPasswordInput} placeholder="Inserisci la tua password" data-error={passwordConfirmedError} />
                 <motion.button whileHover={{ scale: 0.94, backgroundColor: "#141724", transition: { backgroundColor: { duration: 0 } } }} initial={{ scale: 1, backgroundColor: "#343647" }} onClick={handlePasswordBtn1}>
                   {!password1Visible ? (
                     <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +209,8 @@ function Register() {
                   )}
                 </motion.button>
               </div>
-              <motion.button type="submit" whileHover="hover" initial="rest" variants={button1Variants}>
+              {passwordConfirmedError && <p className={style.error}>{errorMessage}</p>}
+              <motion.button type="submit" whileHover="hover" initial="rest" variants={button1Variants} onClick={handleUserCreation}>
                 Registrati
               </motion.button>
               <p>

@@ -27,7 +27,7 @@
       text-align: center;
       font-size: 30px;
       color: #fff;
-      margin-block: 16px 24px;
+      margin-block: 16px 8px;
     }
   
     form {
@@ -43,6 +43,7 @@
       text-transform: uppercase;
       color: #fff;
 
+      margin-top: 16px;
       margin-bottom: 8px;
     }
 
@@ -52,8 +53,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-
-      margin-bottom: 16px;
 
       button {
         cursor: pointer;
@@ -82,6 +81,9 @@
       height: 48px;
       transition: box-shadow 0.2s ease-in-out;
     }
+    input[data-error="true"] {
+      border-color: var(--clr-brand-400);
+    }
     input::placeholder {
       color: #4A5256;
     }
@@ -90,6 +92,11 @@
     }
     input:focus {
       box-shadow: 0 0 10px 0 rgba(255,255,255,0.76);
+    }
+
+    .error {
+      text-align: left;
+      color: var(--clr-brand-400);
     }
 
     .checkbox {
