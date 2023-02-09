@@ -13,9 +13,11 @@ export default {
 };
 
 export const template = (args) => <Section1 {...args}>
-  <div style={{height: 200, backgroundColor: "lightgrey", borderRadius: 10}}></div>
+  <div style={{height: 200, width: "80%", backgroundColor: "lightgrey", borderRadius: 10}}></div>
 </Section1>;
 template.args = {
+  bgColor: "hsla(0, 0%, 100%, 0)",
+  indentation: 1,
   textAlign: "center",
   paddInline: false,
   title: "Default title",

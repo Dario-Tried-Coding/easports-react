@@ -43,6 +43,10 @@
 }
 
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   padding-top: var(--margTop);
   padding-bottom: var(--flow);
   padding-inline: none;
@@ -73,14 +77,23 @@
 
 [data-text-align="left"] {
   text-align: left;
+  align-items: flex-start;
 }
 [data-text-align="center"] {
   text-align: center;
+  align-items: center;
 }
 [data-text-align="right"] {
   text-align: right;
+  align-items: flex-end;
 }
 
 [data-padding-inline=true] {
-  padding-inline: var(--padd-inline-section);
+  padding-inline: calc(var(--padd-inline-section) * var(--indentation));
+  @include mq(medium) {
+    padding-inline: calc(var(--padd-inline-section) * 2 * var(--indentation));
+  }
+  @include mq(xlarge) {
+    padding-inline: calc(var(--padd-inline-section) * 1.25 * var(--indentation));
+  }
 }

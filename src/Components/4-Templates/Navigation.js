@@ -1,12 +1,12 @@
 import { motion, useScroll } from "framer-motion";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NavigationNav from "../3-Organisms/NavigationNav";
 import NetworkNav from "../3-Organisms/NetworkNav";
 
 import style from "../../SCSS/4-Templates/Navigation.module.scss";
 import Sidebar from "../3-Organisms/Sidebar";
-import useScrollBlock from "Hooks/useScrollBlock";
 import ScrollBlockedContext from "Context/ScrollBlockedContext";
+import pageContentContext from "Context/pageContentContext";
 
 const isVisibleVariants = {
   visible: { y: 0 },
@@ -151,8 +151,8 @@ const MotionSidebar = motion(Sidebar);
 
 function Navigation({ navigationData = mockData, sidebarData = defaultSidebarDesktopMockData, children }) {
   const [isVisible, setIsVisible] = useState(true);
-  const { isScrollBlocked, setIsScrollBlocked } = useContext(ScrollBlockedContext);
-  const pageContent = useRef(null);
+  const { setIsScrollBlocked } = useContext(ScrollBlockedContext);
+  const pageContentRef = useContext(pageContentContext)
 
   // hide/show
   const { scrollY } = useScroll();
@@ -174,16 +174,13 @@ function Navigation({ navigationData = mockData, sidebarData = defaultSidebarDes
     setIsScrollBlocked(true);
   }
   function handleCloseSidebar() {
+    //@ts-ignore
     if (scrollY.current !== 0) setIsVisible(false);
     setSidebarOpen(false);
     setIsScrollBlocked(false);
   }
 
   // anable/disable scroll
-  const [blockScroll, allowScroll] = useScrollBlock();
-  if (isScrollBlocked) blockScroll();
-  else allowScroll();
-  
   useEffect(() => {
     setIsScrollBlocked(false)
   }, []);
@@ -191,13 +188,13 @@ function Navigation({ navigationData = mockData, sidebarData = defaultSidebarDes
   return (
     <>
       <motion.nav className={style.nav} animate={isVisible ? "visible" : "hidden"} variants={isVisibleVariants} transition={{ ease: [0.5, 0.25, 0.015, 1], duration: 0.4 }}>
-        <NetworkNav pageContentRef={pageContent} />
+        <NetworkNav isSidebarVisible={sidebarOpen} />
         <NavigationNav openSidebar={handleToggleClick} data={navigationData} />
         <MotionSidebar initial={false} animate={{ x: sidebarOpen ? 0 : "-100%" }} closeSidebar={handleCloseSidebar} navigationData={navigationData} sidebarData={sidebarData} />
         <motion.div onClick={handleCloseSidebar} className={style.backdrop} initial={false} animate={sidebarOpen ? { opacity: 0.7, pointerEvents: "auto" } : { opacity: 0, pointerEvents: "none" }} transition={{ duration: 0.2 }}></motion.div>
       </motion.nav>
       <div className={style.spacer}></div>
-      <div ref={pageContent}>{children}</div>
+      <div ref={pageContentRef}>{children}</div>
     </>
   );
 }

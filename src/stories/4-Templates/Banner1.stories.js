@@ -5,6 +5,9 @@ export default {
   title: "Templates/Banner1",
   component: Banner1,
   argTypes: {
+    contentBgColor: {
+      control: "color"
+    },
     textPosition: {
       control: "inline-radio",
       options: ["left", "center", "right"]
@@ -24,6 +27,7 @@ export const hero1 = (args) => <Banner1 {...args}/>
 hero1.args = {
   stacked: true,
   animateEntrance: false,
+  contentBgColor: "rgba(255, 255, 255, 0)",
   textPosition: "left",
   textAlign: "center",
   textColor: "dark",
@@ -50,6 +54,7 @@ export const hero2 = (args) => <Banner1 {...args}/>
 hero2.args = {
   stacked: true,
   animateEntrance: true,
+  contentBgColor: "rgba(255, 255, 255, 0)",
   textPosition: "right",
   textAlign: "center",
   textColor: "light",
@@ -79,6 +84,7 @@ export const hero3 = (args) => <Banner1 {...args}/>
 hero3.args = {
   stacked: true,
   animateEntrance: true,
+  contentBgColor: "rgba(255, 255, 255, 0)",
   videoOnce: true,
   textPosition: "right",
   textAlign: "left",
@@ -104,6 +110,7 @@ export const video = (args) => <Banner1 {...args}/>
 video.args = {
   stacked: true,
   animateEntrance: false,
+  contentBgColor: "rgba(255, 255, 255, 0)",
   bgImg: true,
   bgImageData: [
     "https://media.contentapi.ea.com/content/dam/eacom/images/2022/07/ea-hero-md-bg-mashup-trailer-pegi-16-7x2-xl.png.adapt.crop16x9.320w.png",

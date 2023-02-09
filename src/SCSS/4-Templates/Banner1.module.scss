@@ -116,8 +116,12 @@
     inset: 0;
     &.stacked {
       position: relative;
+      margin-top: -10px;
+      background-color: var(--contentBgColor);
       @include mq(medium) {
+        margin-top: 0;
         position: absolute;
+        background-color: transparent;
       }
     }
 

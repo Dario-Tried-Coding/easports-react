@@ -36,7 +36,7 @@ export default function Home() {
         <title>Home Page Electronic Arts - Sito EA ufficiale</title>
       </Helmet>
       <Navigation navigationData={navigation} sidebarData={sidebar}>
-        <Banner1 stacked animateEntrance textPosition="right" textColor="light" title="Gioca oggi a Dead Space™" btnContent="Acquista ora" logoImg="https://media.contentapi.ea.com/content/dam/gin/common/logos/dead-space-logo-main-page-hero-marge.svg" video videoData={heroVideoData} spacerHeightSmall={43.75} spacerHeightMedium={6} spacerHeightLarge={6} spacerHeightXlarge={6} />
+        <Banner1 stacked contentBgColor="#161616" textColor="light" logoImgWidth={60} title="La caccia inizia il 17 febbraio 2023!" btnContent="Scopri di più" logoImg="https://media.contentapi.ea.com/content/dam/eacom/common/wild-hearts-light-logo-500.svg" video videoData={heroVideoData} />
 
         <CardsSection title="Giochi in evidenza" sectionClass={style["section-wrapper"]}>
           <CardsWrapper wrapperClass={style["cards-wrapper"]}>
